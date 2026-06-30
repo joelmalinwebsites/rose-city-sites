@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rose City Sites — Websites for Portland Businesses, Live in 3 Days</title>
+<meta name="description" content="Rose City Sites builds beautiful, mobile-ready websites for local Portland businesses. Flat $497, live in 72 hours. Get a free redesign preview of your homepage.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#fbf8f6; --ink:#231a1d; --muted:#6c5f63; --line:#ece1dd;
+    --rose:#b8324f; --rose-deep:#8f1f3c; --rose-soft:#f6e7eb; --gold:#c98a5e;
+    --card:#fff; --serif:'Fraunces',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --shadow:0 22px 60px -28px rgba(35,26,29,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.5px}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rose);font-weight:700}
+  .btn{display:inline-block;background:var(--rose);color:#fff;padding:16px 32px;border-radius:50px;font-weight:600;font-size:15px;transition:.25s;border:1px solid var(--rose);cursor:pointer}
+  .btn:hover{background:var(--rose-deep);border-color:var(--rose-deep);transform:translateY(-2px)}
+  .btn-ghost{background:#fff;color:var(--ink);border:1px solid var(--line)}
+  .btn-ghost:hover{border-color:var(--rose);color:var(--rose);transform:translateY(-2px)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(251,248,246,.88);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .logo{font-family:var(--serif);font-size:23px;font-weight:600;display:flex;align-items:center;gap:9px}
+  .logo .dot{width:13px;height:13px;border-radius:50%;background:radial-gradient(circle at 35% 30%,var(--gold),var(--rose) 60%,var(--rose-deep))}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14.5px;color:var(--muted);font-weight:500}
+  .nav-links a:hover{color:var(--ink)}
+  .nav-cta{padding:11px 22px;font-size:14px}
+
+  .hero{padding:90px 0 80px;position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-180px;right:-160px;width:480px;height:480px;border-radius:50%;
+    background:radial-gradient(circle,var(--rose-soft),transparent 70%);z-index:0}
+  .hero .wrap{position:relative;z-index:1}
+  .hero-inner{max-width:760px}
+  .pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);padding:7px 15px;border-radius:50px;font-size:13px;font-weight:500;color:var(--muted);margin-bottom:26px}
+  .pill .g{color:var(--rose);font-weight:700}
+  .hero h1{font-size:66px;margin-bottom:24px}
+  .hero h1 em{font-style:italic;color:var(--rose)}
+  .hero .sub{font-size:21px;color:var(--muted);max-width:600px;margin-bottom:34px;font-weight:300}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-cta .tiny{font-size:13.5px;color:var(--muted)}
+  .hero-cta .tiny b{color:var(--ink)}
+
+  .logos{padding:30px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-top:64px}
+  .logos .wrap{display:flex;gap:14px 40px;align-items:center;justify-content:center;flex-wrap:wrap;color:var(--muted);font-size:13.5px;font-weight:500}
+  .logos b{color:var(--ink);font-weight:600}
+
+  section{padding:90px 0}
+  .sec-head{max-width:640px;margin:0 auto 56px;text-align:center}
+  .sec-head h2{font-size:44px;margin:14px 0 14px}
+  .sec-head p{color:var(--muted);font-size:18px;font-weight:300}
+
+  /* steps */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:34px 30px;position:relative}
+  .step .num{font-family:var(--serif);font-size:15px;font-weight:600;color:#fff;background:var(--rose);width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:20px}
+  .step h3{font-size:23px;margin-bottom:10px}
+  .step p{color:var(--muted);font-size:15px}
+
+  /* showcase */
+  .showcase{background:#fff}
+  .show-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .show-frame{border-radius:16px;overflow:hidden;box-shadow:var(--shadow);border:1px solid var(--line);background:#faf7f3}
+  .show-frame .bar{height:34px;background:#f1eae6;display:flex;align-items:center;gap:6px;padding:0 14px;border-bottom:1px solid var(--line)}
+  .show-frame .bar i{width:10px;height:10px;border-radius:50%;background:#d8cbc5;display:inline-block}
+  .show-frame iframe{width:100%;height:430px;border:0;display:block}
+  .show-copy .eyebrow{margin-bottom:14px;display:block}
+  .show-copy h2{font-size:40px;margin-bottom:18px}
+  .show-copy p{color:var(--muted);font-size:16px;margin-bottom:16px}
+  .show-copy .tag{display:inline-block;background:var(--rose-soft);color:var(--rose-deep);font-size:13px;font-weight:600;padding:6px 13px;border-radius:50px;margin:4px 6px 4px 0}
+
+  /* pricing */
+  .price-wrap{display:flex;justify-content:center}
+  .price-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:46px;max-width:560px;width:100%;box-shadow:var(--shadow);text-align:center}
+  .price-card .amt{font-family:var(--serif);font-size:72px;color:var(--ink);line-height:1}
+  .price-card .amt span{font-size:24px;color:var(--muted)}
+  .price-card .lede{color:var(--muted);font-size:16px;margin:10px 0 28px}
+  .price-list{text-align:left;max-width:380px;margin:0 auto 30px}
+  .price-list li{list-style:none;padding:11px 0 11px 32px;position:relative;font-size:15.5px;border-bottom:1px dashed var(--line)}
+  .price-list li:last-child{border-bottom:0}
+  .price-list li::before{content:"✓";position:absolute;left:0;color:var(--rose);font-weight:800}
+  .price-card .guarantee{font-size:13.5px;color:var(--muted);margin-top:18px}
+
+  /* about */
+  .about{background:linear-gradient(135deg,#2a1f22,#3a2a2e);color:#f3e9e6}
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:50px;align-items:center}
+  .about .photo{aspect-ratio:1;border-radius:20px;background:radial-gradient(circle at 35% 30%,var(--gold),var(--rose) 55%,var(--rose-deep));box-shadow:var(--shadow);position:relative}
+  .about .photo::after{content:"🌹";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:90px;opacity:.9}
+  .about h2{color:#fff;font-size:40px;margin-bottom:18px}
+  .about p{color:#d9c8c4;font-size:17px;margin-bottom:16px;font-weight:300}
+  .about .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:#fff;margin-top:8px}
+
+  /* faq */
+  .faq-grid{max-width:760px;margin:0 auto;display:grid;gap:14px}
+  .faq{background:#fff;border:1px solid var(--line);border-radius:14px;padding:24px 26px}
+  .faq h3{font-size:19px;margin-bottom:8px;font-family:var(--sans);font-weight:600;letter-spacing:0}
+  .faq p{color:var(--muted);font-size:15px}
+
+  /* final cta */
+  .final{text-align:center}
+  .final-card{background:linear-gradient(135deg,var(--rose),var(--rose-deep));color:#fff;border-radius:28px;padding:78px 40px;position:relative;overflow:hidden}
+  .final-card::after{content:"";position:absolute;bottom:-120px;left:-80px;width:360px;height:360px;border-radius:50%;background:rgba(255,255,255,.08)}
+  .final-card h2{color:#fff;font-size:50px;margin-bottom:18px;position:relative}
+  .final-card p{color:#fbe4ea;font-size:19px;margin-bottom:32px;font-weight:300;position:relative}
+  .final-card .btn{background:#fff;color:var(--rose-deep);position:relative;font-size:16px;padding:18px 40px}
+  .final-card .btn:hover{background:#fff5f7;transform:translateY(-2px)}
+
+  footer{padding:48px 0 30px}
+  .foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;color:var(--muted);font-size:14px}
+
+  @media(max-width:860px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero h1{font-size:42px}.hero .sub{font-size:18px}
+    .steps,.show-grid,.about-grid{grid-template-columns:1fr;gap:30px}
+    .sec-head h2{font-size:32px}.price-card{padding:32px 24px}.price-card .amt{font-size:56px}
+    .final-card h2{font-size:34px}.about .photo{max-width:260px;margin:0 auto}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <div class="logo"><span class="dot"></span>Rose City Sites</div>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#how">How it works</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#start" class="btn nav-cta">Get a free preview</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="pill"><span class="g">●</span> Based in NE Portland · building for local businesses</div>
+      <h1>A website your business <em>deserves</em> — live in 3 days.</h1>
+      <p class="sub">We design and launch beautiful, mobile-ready websites for Portland's local businesses. One flat price. No subscriptions, no agency runaround.</p>
+      <div class="hero-cta">
+        <a href="#start" class="btn">Get a free homepage preview</a>
+        <span class="tiny">Flat <b>$497</b> · live in <b>72 hours</b> · pay only when you love it</span>
+      </div>
+    </div>
+  </div>
+  <div class="logos">
+    <div class="wrap">
+      <span>Built for Portland's</span>
+      <b>med spas</b><b>contractors</b><b>dentists</b><b>salons</b><b>gyms</b><b>cafés</b><b>auto shops</b>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Dead simple</span>
+      <h2>How it works</h2>
+      <p>No long meetings. No deposits up front. You see the work before you pay a cent.</p>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="num">1</div><h3>We send a free preview</h3><p>We redesign your homepage and send it to you — a real, finished preview of what your new site could look like. Free, no strings.</p></div>
+      <div class="step"><div class="num">2</div><h3>You approve &amp; tweak</h3><p>Love it? We polish the details — your colors, photos, and copy — until it's exactly right. Revisions included.</p></div>
+      <div class="step"><div class="num">3</div><h3>We launch in 72 hours</h3><p>Your full mobile-ready site goes live, fast. One flat $497, paid only once you're thrilled with it.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="work" class="showcase">
+  <div class="wrap show-grid">
+    <div class="show-frame">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <iframe src="preview/bipartisan-cafe/index.html" title="Redesign for Bipartisan Café" loading="lazy"></iframe>
+    </div>
+    <div class="show-copy">
+      <span class="eyebrow">Recent work</span>
+      <h2>A real redesign, built to order.</h2>
+      <p>This is a homepage we redesigned for Bipartisan Café, a beloved Montavilla institution — using their own photos, their real reviews, and a look that's unmistakably theirs.</p>
+      <p>That's how we work: every site is custom to your business, your brand, your neighborhood. No cookie-cutter templates.</p>
+      <div>
+        <span class="tag">Mobile-first</span>
+        <span class="tag">Booking-ready</span>
+        <span class="tag">Google-optimized</span>
+        <span class="tag">Loads fast</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Simple pricing</span>
+      <h2>One price. Everything included.</h2>
+      <p>No monthly fees to us. No surprises. Just a great site, fast.</p>
+    </div>
+    <div class="price-wrap">
+      <div class="price-card">
+        <div class="amt">$497<span> flat</span></div>
+        <div class="lede">A complete, custom website — live in 72 hours.</div>
+        <ul class="price-list">
+          <li>Custom homepage + up to 5 sections/pages</li>
+          <li>Fully mobile-optimized &amp; fast-loading</li>
+          <li>Your photos &amp; copy, professionally polished</li>
+          <li>Click-to-call, contact &amp; booking buttons</li>
+          <li>Google / search-ready setup</li>
+          <li>Revisions until you love it</li>
+          <li>Launched &amp; ready in 2–3 days</li>
+        </ul>
+        <a href="#start" class="btn">Get my free preview</a>
+        <div class="guarantee">You only pay after you've seen the full site and approved it. Zero risk.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap about-grid">
+    <div class="photo"></div>
+    <div>
+      <span class="eyebrow" style="color:var(--gold)">Who's behind this</span>
+      <h2>A neighbor, not an agency.</h2>
+      <p>Hi, I'm Joel. I live right here in the Irvington neighborhood of NE Portland, and I started Rose City Sites because too many great local businesses are losing customers to a website that doesn't reflect how good they actually are.</p>
+      <p>When you work with me, you're working with one person who picks up the phone — not an offshore team or a $3,000/month contract. I build you something beautiful, fast, at a price that makes sense.</p>
+      <div class="sig">— Joel, Rose City Sites</div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head"><span class="eyebrow">Good to know</span><h2>Questions, answered</h2></div>
+    <div class="faq-grid">
+      <div class="faq"><h3>Is the preview really free?</h3><p>Yes. I'll redesign your homepage and send it over with no obligation. If you love it, we launch the full site for $497. If not, the preview is yours to keep as inspiration.</p></div>
+      <div class="faq"><h3>What does $497 actually cover?</h3><p>A complete, custom, mobile-optimized website — up to ~5 sections or pages — with your branding, photos, copy, and contact/booking buttons, launched and ready in 2–3 days. One flat fee.</p></div>
+      <div class="faq"><h3>Are there monthly fees?</h3><p>None to me. You'll just need basic hosting + a domain (usually ~$15–20/mo total), and I'll set it all up and walk you through it.</p></div>
+      <div class="faq"><h3>When do I pay?</h3><p>Only after you've seen the finished site and approved it. I send a secure Stripe link. No deposit, no risk.</p></div>
+      <div class="faq"><h3>What if I want changes?</h3><p>Revisions are included before launch. Tell me what to adjust and I'll get it right.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="start" class="final">
+  <div class="wrap">
+    <div class="final-card">
+      <h2>See your new website — free.</h2>
+      <p>Tell me your business and I'll send back a redesigned homepage, no strings attached.</p>
+      <a href="mailto:joelmalin2345@gmail.com?subject=Free%20website%20preview%20for%20my%20business&body=Hi%20Joel%2C%20here's%20my%20business%20name%20and%20current%20website%3A" class="btn">Get my free preview →</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <div class="logo"><span class="dot"></span>Rose City Sites</div>
+    <div>© 2026 Rose City Sites · NE Portland, OR · Websites for local businesses</div>
+  </div>
+</footer>
+
+</body>
+</html>
