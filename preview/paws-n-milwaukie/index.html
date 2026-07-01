@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paws n' Milwaukie — Full & Self-Serve Dog Grooming · Milwaukie, OR</title>
+<meta name="description" content="Paws n' Milwaukie — a family-owned full-service and self-serve dog wash in Milwaukie, Oregon since 2005. Walk-in dog baths, nail trims, and full grooms. 4.6★ on Google.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Nunito+Sans:wght@300;400;600;700;900&family=Gochi+Hand&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --plum:#4e2350; --plum-deep:#39163c; --grape:#823a78;
+    --aqua:#0f9fad; --aqua-deep:#0b7c88; --sky:#bfeef1; --sky-soft:#e4f7f8;
+    --coral:#ff6a54; --coral-deep:#e8503c; --sun:#ffc23d; --sun-deep:#f0a91f;
+    --cream:#fef4ea; --paper:#fffaf3; --ink:#3a2338; --muted:#8a7385; --line:#efe0d3;
+    --disp:'Baloo 2',system-ui,sans-serif; --body:'Nunito Sans',system-ui,sans-serif; --hand:'Gochi Hand',cursive;
+    --sh:0 24px 54px -26px rgba(58,35,56,.5); --sh-sm:0 12px 26px -14px rgba(58,35,56,.42);
+    --pad:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--body);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:800;line-height:1.04;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 var(--pad)}
+  .hand{font-family:var(--hand);font-weight:400}
+  .eyebrow{font-family:var(--disp);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--aqua-deep);font-weight:700}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--aqua-deep);color:#fff;padding:15px 27px;border-radius:50px;font-family:var(--disp);font-weight:700;font-size:16px;transition:.2s;border:none;cursor:pointer;box-shadow:0 8px 18px -8px rgba(11,124,136,.7)}
+  .btn:hover{transform:translateY(-3px);box-shadow:0 14px 24px -10px rgba(11,124,136,.75)}
+  .btn svg{width:18px;height:18px}
+  .btn-coral{background:var(--coral);box-shadow:0 8px 18px -8px rgba(232,80,60,.7)}
+  .btn-coral:hover{box-shadow:0 14px 24px -10px rgba(232,80,60,.8)}
+  .btn-ghost{background:#fff;color:var(--plum);border:2px solid #f0dcc9;box-shadow:none}
+  .btn-ghost:hover{border-color:var(--aqua);color:var(--aqua-deep)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--sun);outline-offset:3px}
+
+  /* paw + bubble decor */
+  .bubble{position:absolute;border-radius:50%;background:radial-gradient(circle at 32% 28%,rgba(255,255,255,.85),rgba(191,238,241,.55) 60%,rgba(15,159,173,.15));border:1px solid rgba(255,255,255,.6);pointer-events:none}
+
+  .topbar{background:var(--plum-deep);color:#f3d7ee;font-family:var(--disp);font-weight:600;font-size:13.5px;text-align:center;padding:9px 16px;letter-spacing:.2px}
+  .topbar b{color:var(--sun)}
+  .topbar a{color:#fff;border-bottom:1.5px dotted rgba(255,255,255,.5)}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(254,244,234,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .paw-badge{width:44px;height:44px;border-radius:50%;background:var(--aqua-deep);display:grid;place-items:center;flex:0 0 auto;box-shadow:var(--sh-sm)}
+  .paw-badge svg{width:26px;height:26px;fill:#fff}
+  .brand .bn{font-family:var(--disp);font-weight:800;font-size:20px;line-height:.98;color:var(--plum)}
+  .brand .bn small{display:block;font-family:var(--hand);font-size:15px;color:var(--coral);font-weight:400;letter-spacing:.3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a:not(.nav-cta){font-family:var(--disp);font-size:16px;color:var(--plum);font-weight:600}
+  .nav-links a:not(.nav-cta):hover{color:var(--aqua-deep)}
+  .nav-cta{padding:11px 20px;font-size:15px}
+
+  /* HERO */
+  .hero{position:relative;padding-top:52px;padding-bottom:30px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
+  .hero h1{font-size:63px;margin:12px 0 16px;color:var(--plum)}
+  .hero h1 .aq{color:var(--aqua-deep)}
+  .hero h1 .co{color:var(--coral)}
+  .hero .tag{font-size:19.5px;color:#6b5566;max-width:460px;margin-bottom:22px;font-weight:600}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:10px;margin-top:24px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--sun-deep);font-size:18px;letter-spacing:1px}
+  .hero-rating span{font-size:14.5px;color:var(--muted);font-weight:700}
+  .hero-rating b{color:var(--plum)}
+  .hero-visual{position:relative;height:540px}
+  .hero-photo{position:absolute;inset:0 0 34px 30px;border-radius:44% 44% 40% 40%/38% 38% 44% 44%;overflow:hidden;box-shadow:var(--sh);border:7px solid #fff}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .since-badge{position:absolute;top:-6px;left:-8px;width:104px;height:104px;border-radius:50%;background:var(--sun);color:var(--plum-deep);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(-9deg);box-shadow:var(--sh-sm);border:3px dashed #fff;z-index:3}
+  .since-badge b{font-family:var(--disp);font-size:15px;line-height:1;font-weight:800}
+  .since-badge .yr{font-family:var(--disp);font-weight:800;font-size:26px;line-height:1}
+  .since-badge small{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;font-weight:700}
+  .float-pill{position:absolute;background:#fff;border-radius:18px;box-shadow:var(--sh-sm);padding:11px 15px;display:flex;align-items:center;gap:9px;z-index:3}
+  .float-pill .em{font-size:22px}
+  .float-pill b{font-family:var(--disp);font-size:14.5px;color:var(--plum);display:block;line-height:1.1}
+  .float-pill span{font-size:12px;color:var(--muted);font-weight:700}
+  .fp-1{bottom:60px;right:-6px}
+  .fp-2{bottom:-6px;left:8px;background:var(--coral);color:#fff}
+  .fp-2 b{color:#fff}.fp-2 span{color:#ffe2db}
+
+  /* wave divider */
+  .wave{display:block;width:100%;height:60px}
+  .band-aqua{background:var(--aqua-deep)}
+
+  /* trust strip */
+  .strip{background:var(--aqua-deep);color:#eafcfd}
+  .strip .wrap{display:flex;flex-wrap:wrap;gap:14px 34px;justify-content:center;padding-top:6px;padding-bottom:22px}
+  .strip .it{display:flex;align-items:center;gap:9px;font-family:var(--disp);font-weight:600;font-size:16px}
+  .strip .it svg{width:22px;height:22px;fill:none;stroke:var(--sun);stroke-width:2.2}
+
+  section{padding:78px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .sec-head .hand{font-size:27px;color:var(--coral);display:block;transform:rotate(-2deg)}
+  .sec-head h2{font-size:46px;margin:2px 0 12px;color:var(--plum)}
+  .sec-head p{color:#6b5566;font-size:17.5px;font-weight:600}
+
+  /* SERVICES */
+  .svc{background:var(--paper)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .card{background:#fff;border-radius:26px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;border:1px solid #f3e7db;display:flex;flex-direction:column}
+  .card:hover{transform:translateY(-7px);box-shadow:var(--sh)}
+  .card .ph{aspect-ratio:4/3;overflow:hidden;position:relative}
+  .card .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .card:hover .ph img{transform:scale(1.05)}
+  .card .price{position:absolute;top:12px;right:12px;background:#fff;color:var(--aqua-deep);font-family:var(--disp);font-weight:800;font-size:15px;padding:6px 14px;border-radius:50px;box-shadow:var(--sh-sm)}
+  .card .price.co{color:var(--coral)}
+  .card .t{padding:22px 24px 26px;display:flex;flex-direction:column;flex:1}
+  .card h3{font-size:24px;color:var(--plum);margin-bottom:7px}
+  .card p{font-size:14.5px;color:#6b5566;font-weight:600;flex:1}
+  .card .meta{margin-top:14px;font-family:var(--disp);font-weight:600;font-size:13.5px;color:var(--aqua-deep);display:flex;align-items:center;gap:7px}
+  .card .meta svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:2.2}
+
+  /* self-serve feature */
+  .selfserve{position:relative;overflow:hidden}
+  .ss-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .ss-photo{border-radius:30px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:5/4;position:relative;border:6px solid #fff}
+  .ss-photo img{width:100%;height:100%;object-fit:cover}
+  .ss h2{font-size:44px;color:var(--plum);margin:8px 0 14px}
+  .ss p.lead{font-size:17px;color:#6b5566;font-weight:600;margin-bottom:20px}
+  .price-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+  .price-tile{background:var(--sky-soft);border:2px solid var(--sky);border-radius:18px;padding:14px 20px;min-width:130px}
+  .price-tile .n{font-family:var(--disp);font-weight:800;font-size:27px;color:var(--aqua-deep);line-height:1}
+  .price-tile .l{font-size:13px;color:#6b5566;font-weight:700;margin-top:3px}
+  .ss ul{list-style:none;display:grid;gap:9px;margin-bottom:24px}
+  .ss li{display:flex;align-items:flex-start;gap:10px;font-size:15.5px;font-weight:600;color:var(--ink)}
+  .ss li svg{width:20px;height:20px;fill:var(--aqua-deep);flex:0 0 auto;margin-top:2px}
+
+  /* YAPPY HOUR */
+  .yappy{background:linear-gradient(120deg,var(--coral),var(--sun-deep));color:#fff;border-radius:30px;padding:40px 44px;box-shadow:var(--sh);position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:28px;flex-wrap:wrap}
+  .yappy .hand{font-size:26px;color:#fff5cf}
+  .yappy h3{font-size:38px;margin:2px 0 8px}
+  .yappy p{font-size:17px;font-weight:700;max-width:520px;opacity:.96}
+  .yappy .big{font-family:var(--disp);font-weight:800;font-size:64px;line-height:.9;text-shadow:0 3px 0 rgba(0,0,0,.08)}
+  .yappy .big small{display:block;font-size:16px;letter-spacing:1px;text-transform:uppercase}
+
+  /* STORY */
+  .story{background:var(--plum);color:#f6e7f2;position:relative;overflow:hidden}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:52px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:26px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:1/1;border:6px solid rgba(255,255,255,.12)}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-14px;right:-8px;background:var(--sun);color:var(--plum-deep);font-family:var(--hand);font-size:20px;padding:8px 18px;border-radius:50px;box-shadow:var(--sh-sm);transform:rotate(-3deg)}
+  .story .eyebrow{color:var(--sun)}
+  .story h2{font-size:44px;margin:8px 0 18px;color:#fff}
+  .story p{color:#e6cfe0;font-size:16.5px;margin-bottom:15px;font-weight:500}
+  .story .sig{font-family:var(--hand);font-size:24px;color:var(--sun);margin-top:4px}
+
+  /* REVIEWS */
+  .reviews{background:var(--sky-soft)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:#fff;border-radius:24px;padding:28px 26px;box-shadow:var(--sh-sm);position:relative;border:1px solid #e7f2f3}
+  .rcard:nth-child(2){transform:translateY(-14px)}
+  .rcard .stars{color:var(--sun-deep);letter-spacing:2px;font-size:16px;margin-bottom:12px}
+  .rcard p{font-size:16px;line-height:1.55;margin-bottom:16px;color:#4a3547;font-weight:600}
+  .rcard .src{font-family:var(--disp);font-size:13.5px;color:var(--aqua-deep);font-weight:700}
+  .rquote{position:absolute;top:14px;right:22px;font-family:var(--disp);font-size:62px;color:var(--sky);line-height:1;font-weight:800}
+
+  /* VISIT */
+  .visit{background:var(--paper)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit h2{font-size:44px;color:var(--plum);margin:8px 0 20px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:15px;font-size:16px;font-weight:600}
+  .visit .row svg{width:23px;height:23px;color:var(--aqua-deep);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--disp);font-weight:700;color:var(--plum)}
+  .visit .row a:hover{color:var(--aqua-deep)}
+  .hours-mini{font-size:14.5px;color:#6b5566;font-weight:600;line-height:1.9}
+  .hours-mini b{font-family:var(--disp);color:var(--plum)}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+  .visit-photo{border-radius:28px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;border:6px solid #fff}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+
+  footer{background:var(--plum-deep);color:#d9c2d5;padding:52px 0 30px;text-align:center;position:relative}
+  footer .paw-badge{margin:0 auto 14px;background:var(--sun)}
+  footer .paw-badge svg{fill:var(--plum-deep)}
+  footer .fn{font-family:var(--disp);font-weight:800;font-size:23px;color:#fff;margin-bottom:8px}
+  footer p{font-size:14.5px;line-height:1.8}
+  footer a{color:#fff;border-bottom:1px dotted rgba(255,255,255,.4)}
+  footer .note{margin-top:20px;font-size:12.5px;color:#a98ca4;border-top:1px solid rgba(255,255,255,.12);padding-top:18px}
+
+  @media(max-width:900px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.ss-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:34px}
+    .hero h1{font-size:43px}
+    .hero-visual{height:420px;order:-1}
+    .svc-grid,.rgrid{grid-template-columns:1fr}
+    .card:hover,.rcard:nth-child(2){transform:none}
+    .sec-head h2{font-size:33px}
+    section{padding:56px 0}
+    .yappy{padding:30px 26px;text-align:center;justify-content:center}
+    .yappy .big{font-size:52px}
+    .story-photo .f{aspect-ratio:4/3}
+    .brand .bn{font-size:17px;line-height:1.05}
+    .brand .bn small{display:none}
+    .visit-photo{aspect-ratio:4/3}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:37px}
+    .float-pill{padding:9px 12px}
+    .since-badge{width:88px;height:88px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">🐾 Family-owned in Milwaukie since <b>2005</b> · Walk-in dog wash &amp; grooming · <a href="tel:+15036522176">(503) 652-2176</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#">
+        <span class="paw-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="10" r="2.1"/><circle cx="10.5" cy="6.6" r="2.1"/><circle cx="15.5" cy="6.6" r="2.1"/><circle cx="19" cy="10.2" r="2.1"/><path d="M12.4 11.2c2.6 0 4.7 2 4.7 3.9 0 1.7-1.6 2.3-3.1 2.9-.9.35-1.1 1.2-2 1.2-.9 0-1.2-.85-2.1-1.2-1.5-.6-3-1.2-3-2.9 0-1.9 2-3.9 5.5-3.9z"/></svg></span>
+        <span class="bn">Paws n' Milwaukie<small>full &amp; self-serve dog wash</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#selfserve">Self-Serve</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="tel:+15036522176" class="btn nav-cta">Call to Book</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <span class="bubble" style="width:26px;height:26px;top:70px;left:6%"></span>
+  <span class="bubble" style="width:16px;height:16px;top:150px;left:11%"></span>
+  <span class="bubble" style="width:38px;height:38px;top:40px;right:14%"></span>
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Milwaukie's neighborhood dog wash</span>
+      <h1>Happy dogs, <span class="aq">clean paws</span>, <span class="co">zero fuss.</span></h1>
+      <p class="tag">Full-service grooming and roll-up-your-sleeves self-serve dog baths — right on McLoughlin, family-owned since 2005.</p>
+      <div class="hero-cta">
+        <a href="tel:+15036522176" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call to Book a Groom</a>
+        <a href="#services" class="btn btn-ghost">See services &amp; prices</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.6</b> on Google · <b>166</b> reviews from local dog folks</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="since-badge"><b>EST.</b><span class="yr">2005</span><small>Milwaukie</small></div>
+      <div class="hero-photo"><img src="img/hero-bath.jpg" alt="A happy French bulldog getting a bubbly bath at the dog wash" width="700" height="900"></div>
+      <div class="float-pill fp-1"><span class="em">🛁</span><span><b>Self-serve baths</b><span>from $14 · walk right in</span></span></div>
+      <div class="float-pill fp-2"><span class="em">✂️</span><span><b>Full grooms</b><span>wash to fluff</span></span></div>
+    </div>
+  </div>
+</section>
+
+<div class="band-aqua"><svg class="wave" viewBox="0 0 1440 60" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--cream)" d="M0,30 C180,60 320,0 540,24 C760,48 900,4 1140,26 C1300,40 1380,20 1440,28 L1440,0 L0,0 Z"></path></svg></div>
+
+<!-- TRUST STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <div class="it"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Walk-ins welcome</div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>All shampoos, towels &amp; dryers provided</div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Dogs of every size</div>
+    <div class="it"><svg viewBox="0 0 24 24" fill="none"><path d="M20 6 9 17l-5-5" stroke-linecap="round" stroke-linejoin="round"/></svg>Cats welcome for nails too</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="svc">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="hand">everything your pup needs</span>
+      <h2>What we do</h2>
+      <p>Real prices, no surprises. Bring them in dirty — leave with a clean, happy, good-smelling dog.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="card">
+        <div class="ph"><img src="img/selfserve-tub.jpg" alt="A small terrier getting a self-serve bath in a raised tub" width="600" height="450" loading="lazy"><span class="price">$14–$22</span></div>
+        <div class="t">
+          <h3>Self-Serve Dog Wash</h3>
+          <p>Raised tubs, quality shampoo &amp; conditioner, towels, aprons and warm dryers — we do the setup and the cleanup, you get the good bubbly part. Priced by your dog's weight.</p>
+          <div class="meta"><svg viewBox="0 0 24 24"><path d="M12 8v8m-4-4h8" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>Walk in · first-come, first-served</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ph"><img src="img/groom-towel.jpg" alt="A Pomeranian wrapped in a towel being groomed" width="600" height="450" loading="lazy"><span class="price co">Call for quote</span></div>
+        <div class="t">
+          <h3>Full-Service Grooming</h3>
+          <p>A complete groom: bath, ear cleaning, nail trim, brush-out, and whatever trim style suits your pup. Priced by breed &amp; coat — give us a call for an estimate.</p>
+          <div class="meta"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z" stroke-linecap="round" stroke-linejoin="round"/></svg>By appointment</div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="ph"><img src="img/groom-scissor.jpg" alt="An apricot poodle having its coat scissor-trimmed" width="600" height="450" loading="lazy"><span class="price">$10</span></div>
+        <div class="t">
+          <h3>Nail Trims</h3>
+          <p>Quick, gentle nail trims for dogs <em>and</em> cats — no appointment needed. Pop in any time we're open and we'll take care of it.</p>
+          <div class="meta"><svg viewBox="0 0 24 24"><path d="M12 8v8m-4-4h8" stroke-linecap="round"/><circle cx="12" cy="12" r="9"/></svg>Walk in · any hour we're open</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SELF SERVE FEATURE -->
+<section id="selfserve" class="selfserve">
+  <span class="bubble" style="width:30px;height:30px;top:60px;right:8%"></span>
+  <span class="bubble" style="width:18px;height:18px;top:120px;right:13%"></span>
+  <div class="wrap ss-grid">
+    <div class="ss-photo"><img src="img/tub-dachshund.jpg" alt="A curious dachshund puppy standing in a clean white tub" width="700" height="560"></div>
+    <div class="ss">
+      <span class="eyebrow">The self-serve tubs</span>
+      <h2>Skip the bathtub battle at home.</h2>
+      <p class="lead">No hair down your drain, no soaked bathroom, no wrestling a wet dog. Just roll up, use our raised tubs and pro dryers, and walk out with a clean pup and a dry car.</p>
+      <div class="price-row">
+        <div class="price-tile"><div class="n">$14</div><div class="l">smaller pups</div></div>
+        <div class="price-tile"><div class="n">$22</div><div class="l">big fellas (100+ lbs)</div></div>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Shampoo, conditioner, towels &amp; aprons — all included</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Raised tubs so you're not bending over</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Staff right there if you need a hand</li>
+      </ul>
+      <a href="tel:+15036522176" class="btn btn-coral"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Questions? Give us a call</a>
+    </div>
+  </div>
+</section>
+
+<!-- YAPPY HOUR -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="yappy">
+      <span class="bubble" style="width:44px;height:44px;top:-10px;left:20%;opacity:.4"></span>
+      <div>
+        <span class="hand">our little weekly treat 🐶</span>
+        <h3>Yappy Hour</h3>
+        <p>Thursdays &amp; Fridays, 4:00–6:30pm — take <b>$3 off</b> any self-serve bath. Beat the weekend rush and send your pup into the weekend squeaky clean.</p>
+      </div>
+      <div class="big">$3<small>off self-serve</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <span class="bubble" style="width:60px;height:60px;bottom:30px;right:6%;opacity:.15"></span>
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/real-google-dog.jpg" alt="Inside Paws n' Milwaukie — a happy long-haired chihuahua being held by staff" width="600" height="600" loading="lazy"></div>
+      <span class="cap">the real us 🐾</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>A little shop that just loves dogs.</h2>
+      <p>Paws n' Milwaukie has been a family-owned corner of SE McLoughlin since 2005. We started with a simple idea: give neighbors an easy, affordable place to keep their dogs clean — whether they want to do it themselves or hand the whole job to us.</p>
+      <p>Two decades later, that hasn't changed. You'll get real people who know your dog's name, take their time, and genuinely care that every pup leaves happy, comfortable, and smelling great.</p>
+      <div class="sig">— your neighbors at Paws n' Milwaukie</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="hand">straight from the dog parents</span>
+      <h2>Loved by the neighborhood</h2>
+      <p>4.6★ across 166 Google reviews — here's what a few of them had to say.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="rquote" aria-hidden="true">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>"By far the best experience we've had with our 2 bloodhounds. They arranged an appointment the next day and now our pups are smelling so good and feeling even better! What a great job they do."</p>
+        <div class="src">— via Google</div>
+      </div>
+      <div class="rcard">
+        <div class="rquote" aria-hidden="true">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>"We use the self-serve dog baths here and they are perfect! Always have fresh towels and a clean facility. Staff is very nice."</p>
+        <div class="src">— via Google</div>
+      </div>
+      <div class="rcard">
+        <div class="rquote" aria-hidden="true">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>"SUPER friendly staff. I used the self-serve dog washing stalls and the employee was right there helping out and making sure everything went smoothly. Really nice person."</p>
+        <div class="src">— via Yelp</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Right on McLoughlin.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>13739 SE McLoughlin Blvd</b><br>Milwaukie, OR 97222</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="hours-mini"><b>Open 7 days</b><br>Mon–Wed 9am–3pm · Thu–Fri 9am–6:30pm · Sat–Sun 9am–4pm<br><span style="color:var(--coral);font-weight:700">Last self-serve wash 30 min before close</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15036522176"><b>(503) 652-2176</b></a> · or text <a href="sms:+15033200375"><b>(503) 320-0375</b></a></div></div>
+      <div class="cta">
+        <a href="tel:+15036522176" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call the shop</a>
+        <a href="https://maps.google.com/?q=Paws+n+Milwaukie+13739+SE+McLoughlin+Blvd+Milwaukie+OR+97222" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/towel-lick.jpg" alt="A freshly washed dog wrapped in a soft towel, licking its nose" width="700" height="875" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <span class="paw-badge" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="6" cy="10" r="2.1"/><circle cx="10.5" cy="6.6" r="2.1"/><circle cx="15.5" cy="6.6" r="2.1"/><circle cx="19" cy="10.2" r="2.1"/><path d="M12.4 11.2c2.6 0 4.7 2 4.7 3.9 0 1.7-1.6 2.3-3.1 2.9-.9.35-1.1 1.2-2 1.2-.9 0-1.2-.85-2.1-1.2-1.5-.6-3-1.2-3-2.9 0-1.9 2-3.9 5.5-3.9z"/></svg></span>
+    <div class="fn">Paws n' Milwaukie</div>
+    <p>13739 SE McLoughlin Blvd, Milwaukie, OR 97222 · <a href="tel:+15036522176">(503) 652-2176</a><br>Family-owned full &amp; self-serve dog grooming since 2005 · Open 7 days a week</p>
+    <p class="note">✦ This is a free redesign concept created for Paws n' Milwaukie by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
