@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Earthborn Landscape Services — Landscaping & Irrigation · Portland Metro, OR</title>
+<meta name="description" content="Earthborn Landscape Services — locally owned landscaping, lawn care & irrigation for the Portland metro & Clackamas County. Licensed LCB#9435, in the trade since 2006. Rated 4.9 across 121 reviews. Free estimates.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,500;0,600;0,700;0,800;1,500&family=Schibsted+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f7f3e8; --paper:#fffdf6; --ink:#1e2a20; --muted:#5f6f5f;
+    --forest:#1f3d2b; --forest-deep:#152a1e; --leaf:#2f5d3a; --leaf-soft:#3f7048;
+    --soil:#c2612e; --soil-deep:#9c4a1f; --lime:#8fbf3f; --lime-deep:#6f9e28;
+    --line:#e2dcc7; --line-warm:#e8d9c4;
+    --serif:'Bitter',Georgia,serif; --sans:'Schibsted Grotesk',system-ui,sans-serif;
+    --sh:0 24px 55px -26px rgba(21,42,30,.5); --sh-sm:0 10px 26px -14px rgba(21,42,30,.4);
+    --pad:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.08;letter-spacing:-.4px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--leaf-soft);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--leaf);color:#fff;padding:15px 26px;border-radius:14px;font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--leaf);cursor:pointer;font-family:var(--sans)}
+  .btn:hover{background:var(--forest);border-color:var(--forest);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px;flex:0 0 auto}
+  .btn-soil{background:var(--soil);border-color:var(--soil);color:#fff}
+  .btn-soil:hover{background:var(--soil-deep);border-color:var(--soil-deep)}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #c9c2ac}
+  .btn-ghost:hover{border-color:var(--leaf);color:var(--leaf);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--soil);outline-offset:3px}
+
+  .topbar{background:var(--forest-deep);color:#dfe8d8;font-size:13px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.2px}
+  .topbar b{color:#fff}
+  .topbar a{color:var(--lime);font-weight:700}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,243,232,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand .mark{width:42px;height:42px;flex:0 0 auto}
+  .brand .bn{font-family:var(--serif);font-weight:800;font-size:20px;line-height:1;color:var(--forest)}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:11px;color:var(--soil);font-weight:600;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--ink);font-weight:600}
+  .nav-links a:hover{color:var(--leaf)}
+  .nav-cta{padding:10px 18px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(1100px 500px at 82% -10%,rgba(143,191,63,.16),transparent 60%),
+    var(--cream)}
+  .hero .wrap{padding-top:64px;padding-bottom:48px}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
+  .hero h1{font-size:60px;margin:14px 0 18px;color:var(--forest)}
+  .hero h1 em{font-style:italic;color:var(--soil)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:460px;margin-bottom:26px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:26px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--soil);font-size:18px;letter-spacing:2px}
+  .hero-rating span{font-size:14px;color:var(--muted);font-weight:500}
+  .hero-rating b{color:var(--ink)}
+  .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:22px}
+  .trust .t{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--leaf)}
+  .trust .t svg{width:18px;height:18px}
+  .hero-visual{position:relative;height:520px}
+  .hero-photo{position:absolute;inset:0 0 0 auto;width:88%;height:100%;border-radius:24px;overflow:hidden;box-shadow:var(--sh)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .badge{position:absolute;bottom:-16px;left:-6px;width:128px;height:128px;border-radius:50%;background:var(--forest);color:#eef4e8;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh);border:3px solid var(--lime);padding:12px;transform:rotate(-6deg)}
+  .badge b{font-family:var(--serif);font-size:15px;line-height:1.1;font-weight:800}
+  .badge .lic{font-size:19px;font-family:var(--serif);color:var(--lime);font-weight:800;margin-top:2px}
+  .badge small{font-size:8px;letter-spacing:1.4px;text-transform:uppercase;margin-top:4px;opacity:.82}
+
+  /* leaf strip */
+  .marquee{background:var(--forest);color:#dfe8d8;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:var(--serif);font-size:17px;font-weight:600;font-style:italic}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--lime);font-style:normal}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:82px 0}
+  .sec-head{max-width:640px;margin:0 auto 48px;text-align:center}
+  .sec-head h2{font-size:42px;margin:6px 0 12px;color:var(--forest)}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .svc{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .svc .ph{aspect-ratio:3/2;overflow:hidden;position:relative}
+  .svc .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .svc:hover .ph img{transform:scale(1.05)}
+  .svc .ic{position:absolute;top:12px;left:12px;width:40px;height:40px;border-radius:11px;background:rgba(30,42,32,.85);display:flex;align-items:center;justify-content:center}
+  .svc .ic svg{width:21px;height:21px;color:var(--lime)}
+  .svc .t{padding:20px 22px 24px}
+  .svc h3{font-size:20px;margin-bottom:6px;color:var(--forest)}
+  .svc p{font-size:14.5px;color:var(--muted)}
+  .svc-note{text-align:center;margin-top:34px;font-size:15.5px;color:var(--ink)}
+  .svc-note b{font-family:var(--serif)}
+
+  /* WHY */
+  .why{background:var(--forest);color:#e9f0e3;position:relative;overflow:hidden}
+  .why::before{content:"";position:absolute;inset:0;background:radial-gradient(700px 380px at 12% 120%,rgba(143,191,63,.18),transparent 60%);pointer-events:none}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:#c3d2ba}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+  .why-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:30px 26px}
+  .why-card .ic{width:48px;height:48px;border-radius:13px;background:var(--lime);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .why-card .ic svg{width:25px;height:25px;color:var(--forest-deep)}
+  .why-card h3{font-size:20px;color:#fff;margin-bottom:8px}
+  .why-card p{font-size:14.5px;color:#c9d6c0}
+  .why-stats{display:flex;gap:14px;flex-wrap:wrap;justify-content:center;margin-top:44px;position:relative}
+  .stat{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.13);border-radius:14px;padding:18px 30px;text-align:center;min-width:150px}
+  .stat b{font-family:var(--serif);font-size:30px;color:var(--lime);display:block;line-height:1}
+  .stat span{font-size:12.5px;color:#c3d2ba;letter-spacing:.4px;margin-top:6px;display:block}
+
+  /* GALLERY */
+  .gallery{background:var(--cream)}
+  .gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .gal-grid figure{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);aspect-ratio:4/3}
+  .gal-grid figure.tall{grid-row:span 2;aspect-ratio:auto}
+  .gal-grid img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .gal-grid figure:hover img{transform:scale(1.05)}
+  .gal-grid figcaption{position:absolute;left:0;bottom:0;right:0;padding:22px 18px 14px;color:#fff;font-weight:600;font-size:14px;background:linear-gradient(transparent,rgba(21,42,30,.78))}
+
+  /* REVIEWS */
+  .reviews{background:var(--paper)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:var(--cream);border:1px solid var(--line);border-radius:16px;padding:28px 26px;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+  .rcard .stars{color:var(--soil);letter-spacing:2px;font-size:15px;margin-bottom:14px}
+  .rcard p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.55;margin-bottom:16px;color:var(--ink)}
+  .rcard .src{font-size:13px;color:var(--leaf);font-weight:700;margin-top:auto}
+  .rev-foot{text-align:center;margin-top:34px;font-size:14.5px;color:var(--muted)}
+  .rev-foot b{color:var(--ink)}
+
+  /* CONTACT */
+  .contact{background:var(--cream)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+  .contact h2{font-size:42px;margin:6px 0 20px;color:var(--forest)}
+  .contact .lead{color:var(--muted);font-size:17px;margin-bottom:24px;max-width:440px}
+  .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:15.5px}
+  .row svg{width:22px;height:22px;color:var(--soil);flex:0 0 auto;margin-top:2px}
+  .row b{font-family:var(--serif);font-weight:600;display:block}
+  .row a:hover{color:var(--leaf)}
+  .row span{color:var(--muted);font-size:14px}
+  .contact-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .map-card{border-radius:20px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);min-height:420px}
+  .map-card iframe{width:100%;height:100%;min-height:420px;border:0;display:block}
+
+  footer{background:var(--forest-deep);color:#b7c6ac;padding:52px 0 28px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand .bn{color:#fff}
+  footer .brand .bn small{color:var(--lime)}
+  footer p{font-size:14px;line-height:1.85}
+  footer a{color:#dbe6d2}
+  footer .note{margin-top:20px;font-size:12.5px;color:#7d8f74;border-top:1px solid #26382b;padding-top:18px}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+    .hero .wrap{padding-top:44px;padding-bottom:40px}
+    .hero h1{font-size:40px}
+    .hero-visual{height:360px}
+    .svc-grid,.why-grid,.rgrid,.gal-grid{grid-template-columns:1fr}
+    .gal-grid figure.tall{grid-row:auto;aspect-ratio:4/3}
+    .sec-head h2,.contact h2{font-size:31px}
+    section{padding:58px 0}
+    .badge{width:104px;height:104px;left:auto;right:-4px}
+  }
+  @media(max-width:430px){
+    .hero h1{font-size:33px}
+    .hero{text-align:left}
+    .sec-head{text-align:left}
+    .why-stats{gap:10px}
+    .stat{min-width:calc(50% - 5px);padding:16px 12px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Locally owned · serving the Portland metro &amp; Clackamas County · Free estimates · <a href="tel:+15037572164">(503) 757-2164</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Earthborn Landscape Services home">
+        <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#1f3d2b"/><path d="M24 37c0-9 5-15 13-16-1 9-6 15-13 16Z" fill="#8fbf3f"/><path d="M24 37c0-9-5-15-13-16 1 9 6 15 13 16Z" fill="#3f7048"/><path d="M24 37V19" stroke="#f7f3e8" stroke-width="2" stroke-linecap="round"/></svg>
+        <span class="bn">Earthborn<small>Landscape · PDX</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Earthborn</a>
+        <a href="#gallery">Our Work</a>
+        <a href="#reviews">Reviews</a>
+        <a href="tel:+15037572164" class="btn btn-soil nav-cta">Free Estimate</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Landscaping · Lawn Care · Irrigation</span>
+      <h1>Professional landscape &amp; irrigation, <em>done right.</em></h1>
+      <p class="tag">A small, locally owned crew serving the Portland metro and Clackamas County — treating every property as if it were our own.</p>
+      <div class="hero-cta">
+        <a href="tel:+15037572164" class="btn btn-soil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          Get a free estimate
+        </a>
+        <a href="#services" class="btn btn-ghost">See our services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.9</b> average across <b>121 reviews</b> · Portland metro</span>
+      </div>
+      <div class="trust">
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9C7.5 19.5 3 17 3 12V5l9-3 9 3z"/></svg>Licensed LCB#9435</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>In the trade since 2006</span>
+        <span class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Clackamas County based</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo"><img src="img/hero.jpg" alt="A lush, freshly maintained green lawn beside a modern Portland home" width="1600" height="900"></div>
+      <div class="badge">
+        <b>Licensed<br>&amp; Insured</b>
+        <span class="lic">LCB#9435</span>
+        <small>Oregon LCB</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Sod &amp; lawn replacement</span><span class="dot">✦</span><span>Irrigation systems</span><span class="dot">✦</span><span>Bi-weekly maintenance</span><span class="dot">✦</span><span>Hedge trimming</span><span class="dot">✦</span><span>Raised garden beds</span><span class="dot">✦</span><span>Hardscapes</span><span class="dot">✦</span><span>One-time cleanups</span><span class="dot">✦</span>
+    <span>Sod &amp; lawn replacement</span><span class="dot">✦</span><span>Irrigation systems</span><span class="dot">✦</span><span>Bi-weekly maintenance</span><span class="dot">✦</span><span>Hedge trimming</span><span class="dot">✦</span><span>Raised garden beds</span><span class="dot">✦</span><span>Hardscapes</span><span class="dot">✦</span><span>One-time cleanups</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Full-service landscaping for PNW yards</h2>
+      <p>From a fresh lawn to a full irrigation system, we handle the work that keeps Portland properties green, tidy, and thriving.</p>
+    </div>
+    <div class="svc-grid">
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M6 20c0-4 2-7 6-7s6 3 6 7"/><path d="M12 13V6"/><path d="M9 8l3-3 3 3"/></svg></div>
+          <img src="img/sod.jpg" alt="A healthy, freshly laid green lawn in a fenced Portland backyard" width="1600" height="1067" loading="lazy">
+        </div>
+        <div class="t"><h3>Sod &amp; Lawn Replacement</h3><p>Fresh sod installation and full lawn replacement — plus artificial turf when you want green year-round with less upkeep.</p></div>
+      </article>
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c3 4 5 7 5 10a5 5 0 0 1-10 0c0-3 2-6 5-10z"/><path d="M12 22v-4"/></svg></div>
+          <img src="img/lawncare.jpg" alt="Landscaper edging and trimming a healthy green lawn along a garden bed" width="1600" height="2405" loading="lazy">
+        </div>
+        <div class="t"><h3>Irrigation Systems</h3><p>Sprinkler installation, repairs, and seasonal winterization — designed and maintained for the Pacific Northwest climate.</p></div>
+      </article>
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21v-7"/><path d="M4 14c4 0 4-4 8-4"/><path d="M20 21v-9"/><path d="M20 12c-4 0-4-4-8-4"/></svg></div>
+          <img src="img/maintenance.jpg" alt="Mowing a lush green lawn during a routine maintenance visit" width="1600" height="1067" loading="lazy">
+        </div>
+        <div class="t"><h3>Landscape Maintenance</h3><p>Dependable bi-weekly maintenance to keep your yard mowed, trimmed, and looking its best all season long.</p></div>
+      </article>
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M12 8c-3-1-6 1-6 4 3 0 5-1 6-2"/><path d="M12 8c3-1 6 1 6 4-3 0-5-1-6-2"/></svg></div>
+          <img src="img/garden.jpg" alt="A landscaped garden path lined with flowering hedges and shrubs" width="1600" height="900" loading="lazy">
+        </div>
+        <div class="t"><h3>Hedges &amp; Privacy</h3><p>Privacy hedge installation and clean, precise hedge trimming to shape and screen your outdoor space.</p></div>
+      </article>
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="9" width="18" height="11" rx="1.5"/><path d="M7 9V6a5 5 0 0 1 10 0v3"/></svg></div>
+          <img src="img/beds.jpg" alt="A raised garden bed planted with fresh greens and herbs" width="1600" height="1067" loading="lazy">
+        </div>
+        <div class="t"><h3>Raised Beds &amp; Hardscapes</h3><p>Custom raised garden beds and hardscape work — the structure that turns a plain yard into a usable outdoor room.</p></div>
+      </article>
+      <article class="svc">
+        <div class="ph">
+          <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M6 6l1 14h10l1-14"/></svg></div>
+          <img src="img/cleanup.jpg" alt="A tidy, freshly maintained green pathway lined with trimmed shrubs" width="1600" height="2133" loading="lazy">
+        </div>
+        <div class="t"><h3>One-Time Cleanups</h3><p>Overgrown and messy? We&rsquo;ll clear, prune, and reset a neglected yard back to neat and tidy in a single visit.</p></div>
+      </article>
+    </div>
+    <p class="svc-note">Not sure where to start? <b>We&rsquo;ll walk your property and put together a free estimate.</b></p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--lime)">Why Earthborn</span>
+      <h2>A crew that treats your yard like their own</h2>
+      <p>We&rsquo;re a small, locally owned company — so you get personal attention, prompt responses, and work we stand behind.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><path d="M21 12c0 5-3.5 7.5-8.5 9C7.5 19.5 3 17 3 12V5l9-3 9 3z"/></svg></div>
+        <h3>Licensed &amp; insured</h3>
+        <p>Oregon Landscape Contractor LCB#9435 — properly licensed and insured for residential and commercial work.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4"/><path d="M12 2c-3 3-5 6-5 10a5 5 0 0 0 10 0c0-4-2-7-5-10z"/></svg></div>
+        <h3>In the trade since 2006</h3>
+        <p>Owner Daniel Dorosh has worked in landscaping since 2006 and brings that experience to every job, big or small.</p>
+      </div>
+      <div class="why-card">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 18z"/><path d="M8 9h8"/><path d="M8 12h5"/></svg></div>
+        <h3>Prompt &amp; reliable</h3>
+        <p>Clients tell us the same thing again and again: dependable service, quick responses, and clean-up done to a &ldquo;T.&rdquo;</p>
+      </div>
+    </div>
+    <div class="why-stats">
+      <div class="stat"><b>4.9★</b><span>Across 121 reviews</span></div>
+      <div class="stat"><b>2006</b><span>In the trade since</span></div>
+      <div class="stat"><b>LCB#9435</b><span>Licensed contractor</span></div>
+      <div class="stat"><b>Free</b><span>Estimates</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our work</span>
+      <h2>Yards we&rsquo;ve brought to life</h2>
+      <p>A look at the kind of clean, healthy outdoor spaces we build and maintain across the Portland metro.</p>
+    </div>
+    <div class="gal-grid">
+      <figure class="tall">
+        <img src="img/lawncare.jpg" alt="Detailed lawn edging along a flowering garden bed" width="1600" height="2405" loading="lazy">
+        <figcaption>Lawn care &amp; edging</figcaption>
+      </figure>
+      <figure>
+        <img src="img/project-1.jpg" alt="A manicured green lawn beside a contemporary home at dusk" width="1600" height="1067" loading="lazy">
+        <figcaption>Lawn install &amp; upkeep</figcaption>
+      </figure>
+      <figure>
+        <img src="img/project-2.jpg" alt="A backyard deck framed by raised planting beds and hanging baskets" width="1600" height="1067" loading="lazy">
+        <figcaption>Beds &amp; garden framing</figcaption>
+      </figure>
+      <figure>
+        <img src="img/garden.jpg" alt="A flowering garden path lined with full, healthy hedges" width="1600" height="900" loading="lazy">
+        <figcaption>Hedges &amp; planting</figcaption>
+      </figure>
+      <figure>
+        <img src="img/project-3.jpg" alt="A lush garden with shaped shrubs, perennials, and a paver path" width="1600" height="1067" loading="lazy">
+        <figcaption>Garden design &amp; pavers</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What clients say</span>
+      <h2>Rated 4.9 across 121 reviews</h2>
+      <p>Real words from Portland-area homeowners about working with Daniel and the Earthborn crew.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;From the sales call to the final clean-up, my experience working with Earthborn was exceptional.&rdquo;</p>
+        <div class="src">— Anne, Portland</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Their attention to detail, desire to meet customer expectation, work ethic, knowledge, and people skills were exceptional!&rdquo;</p>
+        <div class="src">— Client, Oregon City</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Dan from Earthborn did an amazing job of retrofitting my entire sprinkler system.&rdquo;</p>
+        <div class="src">— Client, West Linn</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Your crew worked hard and our yard has been transformed from &lsquo;overgrown and messy&rsquo; to &lsquo;neat and tidy.&rsquo;&rdquo;</p>
+        <div class="src">— Barbour Family</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Dependable, good customer service and good results. I definitely recommend them.&rdquo;</p>
+        <div class="src">— Jeff Gray, Happy Valley</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Dan and his crew did a beautiful job. Clean-up was to a &lsquo;T&rsquo;!!&rdquo;</p>
+        <div class="src">— Judith</div>
+      </div>
+    </div>
+    <p class="rev-foot">Reviews collected from Earthborn&rsquo;s testimonials and public review platforms · <b>4.9 average across 121 reviews.</b></p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let&rsquo;s green up your yard.</h2>
+      <p class="lead">Tell us what you&rsquo;re after — a new lawn, an irrigation fix, or a full cleanup — and we&rsquo;ll come out and give you a free estimate.</p>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><b><a href="tel:+15037572164">(503) 757-2164</a></b><span>Call or text for a free estimate</span></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+        <div><b><a href="mailto:Earthbornpdx@gmail.com">Earthbornpdx@gmail.com</a></b><span>Email us anytime</span></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>Portland metro &amp; Clackamas County</b><span>Happy Valley · West Linn · Clackamas · Oregon City · SE Portland</span></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div><b>Mon–Fri · 8am – 5pm</b><span>Licensed LCB#9435 · in the trade since 2006</span></div>
+      </div>
+      <div class="contact-cta">
+        <a href="tel:+15037572164" class="btn btn-soil">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          Call for a free estimate
+        </a>
+        <a href="mailto:Earthbornpdx@gmail.com" class="btn btn-ghost">Email us</a>
+        <a href="https://maps.google.com/?q=Earthborn+Landscape+Services+Clackamas+OR" target="_blank" rel="noopener" class="btn btn-ghost">Get directions</a>
+      </div>
+    </div>
+    <div class="map-card">
+      <iframe title="Earthborn Landscape Services service area map — Clackamas County, Oregon" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Clackamas,+Oregon&output=embed"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Earthborn Landscape Services home">
+      <svg class="mark" viewBox="0 0 48 48" fill="none" aria-hidden="true"><circle cx="24" cy="24" r="23" fill="#2f5d3a"/><path d="M24 37c0-9 5-15 13-16-1 9-6 15-13 16Z" fill="#8fbf3f"/><path d="M24 37c0-9-5-15-13-16 1 9 6 15 13 16Z" fill="#c2612e"/><path d="M24 37V19" stroke="#f7f3e8" stroke-width="2" stroke-linecap="round"/></svg>
+      <span class="bn">Earthborn<small>Landscape · PDX</small></span>
+    </a>
+    <p><b>Earthborn Landscape Services</b> · Clackamas, OR · <a href="tel:+15037572164">(503) 757-2164</a> · <a href="mailto:Earthbornpdx@gmail.com">Earthbornpdx@gmail.com</a><br>Landscaping, lawn care &amp; irrigation for the Portland metro · Licensed LCB#9435 · in the trade since 2006.</p>
+    <p class="note">✦ This is a free redesign concept created for Earthborn Landscape Services by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

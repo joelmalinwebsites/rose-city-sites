@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chop Chop Food Pod — Food Carts, Seating &amp; Community · SE Powell &amp; 174th, Portland</title>
+<meta name="description" content="Chop Chop Food Pod on SE Powell &amp; 174th in outer SE Portland — a food-cart pod with rotating international carts, covered seating, free parking, restrooms and a kids' play area. Open daily 9am.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,600;0,700;0,800;1,600;1,700&family=Figtree:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fdf3e3; --paper:#fffaf0; --ink:#241c16; --muted:#7c6a56;
+    --tomato:#e63220; --tomato-deep:#b4200f; --mustard:#f4b32c; --mustard-deep:#d4900f;
+    --char:#20232b; --char-2:#2d323d; --line:#efdcbd;
+    --display:'Kanit',system-ui,sans-serif; --sans:'Figtree',system-ui,sans-serif;
+    --sh:0 24px 54px -24px rgba(36,28,22,.5); --sh-sm:0 10px 26px -14px rgba(36,28,22,.42);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.02;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  :root{--pad:26px}
+  .eyebrow{font-family:var(--display);font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--tomato);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--tomato);color:#fff;padding:15px 26px;border-radius:14px;font-family:var(--display);font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--tomato);cursor:pointer}
+  .btn:hover{background:var(--tomato-deep);border-color:var(--tomato-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-gold{background:var(--mustard);border-color:var(--mustard);color:#3a2a08}
+  .btn-gold:hover{background:var(--mustard-deep);border-color:var(--mustard-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #dcc6a2}
+  .btn-ghost:hover{border-color:var(--tomato);color:var(--tomato);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--char);outline-offset:3px}
+
+  .topbar{background:var(--char);color:#f3e6cd;font-size:13px;font-weight:600;text-align:center;padding:9px 16px;letter-spacing:.2px}
+  .topbar b{color:var(--mustard)}
+  .topbar a{color:var(--mustard)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(253,243,227,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{height:56px;width:auto}
+  .brand .bn{font-family:var(--display);font-weight:800;font-size:21px;line-height:1;text-transform:uppercase;letter-spacing:.5px}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:11px;color:var(--tomato);font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-top:3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-family:var(--display);font-size:15px;color:var(--ink);font-weight:600}
+  .nav-links a:hover{color:var(--tomato)}
+  .nav-cta{padding:10px 18px;font-size:14px}
+
+  .hero{position:relative;padding:58px 0 40px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:46px;align-items:center}
+  .hero h1{font-size:70px;margin:14px 0 18px;text-transform:uppercase}
+  .hero h1 .b{color:var(--tomato)}
+  .hero h1 .y{color:var(--mustard-deep)}
+  .hero .tag{font-family:var(--sans);font-size:19px;color:var(--muted);max-width:460px;margin-bottom:14px;line-height:1.55}
+  .hero .note{font-family:var(--display);font-style:italic;font-size:18px;color:var(--char);margin-bottom:26px;display:inline-block}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-facts{display:flex;gap:22px;flex-wrap:wrap;margin-top:28px}
+  .hero-facts div{font-size:14px;color:var(--muted);font-weight:600}
+  .hero-facts b{display:block;font-family:var(--display);font-size:20px;color:var(--ink);font-weight:800;line-height:1.1}
+  .hero-visual{position:relative;height:520px}
+  .hero-main{position:absolute;top:0;right:0;width:82%;height:100%;border-radius:26px 26px 26px 90px;overflow:hidden;box-shadow:var(--sh)}
+  .hero-main img{width:100%;height:100%;object-fit:cover}
+  .snap{position:absolute;bottom:2px;left:0;width:46%;background:#fff;padding:9px 9px 12px;border-radius:8px;box-shadow:var(--sh);transform:rotate(-4deg)}
+  .snap img{width:100%;height:120px;object-fit:cover;border-radius:4px}
+  .snap p{font-family:var(--display);font-size:14px;font-weight:700;text-align:center;color:var(--ink);margin-top:6px;text-transform:uppercase;letter-spacing:.5px}
+  .badge{position:absolute;top:-14px;right:8px;width:120px;height:120px;border-radius:50%;background:var(--mustard);color:var(--char);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(9deg);box-shadow:var(--sh-sm);border:3px dashed var(--char);padding:10px}
+  .badge b{font-family:var(--display);font-size:15px;line-height:1;font-weight:800;text-transform:uppercase}
+  .badge small{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:700}
+  .badge .yr{font-family:var(--display);font-style:italic;font-size:18px;font-weight:800;margin-top:2px}
+
+  .marquee{background:var(--tomato);color:#fff2df;overflow:hidden;white-space:nowrap;padding:14px 0;font-family:var(--display);font-size:19px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;border-top:3px solid var(--char);border-bottom:3px solid var(--char)}
+  .marquee .track{display:inline-block;animation:scroll 28s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--mustard)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:82px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head .kick{font-family:var(--display);font-style:italic;font-size:20px;color:var(--tomato);font-weight:700;display:block}
+  .sec-head h2{font-size:48px;margin:6px 0 12px;text-transform:uppercase}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* CARTS */
+  .carts .lead{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:44px}
+  .cart-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;border:2px solid transparent}
+  .cart-card:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:var(--mustard)}
+  .cart-card .ph{aspect-ratio:3/2;overflow:hidden}
+  .cart-card .ph img{width:100%;height:100%;object-fit:cover}
+  .cart-card .t{padding:20px 22px 24px}
+  .cart-card h3{font-size:24px;margin-bottom:5px;text-transform:uppercase}
+  .cart-card p{font-size:14px;color:var(--muted)}
+  .board{background:var(--char);color:#f4e7cf;border-radius:22px;padding:44px 42px;box-shadow:var(--sh-sm)}
+  .board h4{font-family:var(--display);font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--mustard);margin-bottom:22px;text-align:center}
+  .board-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px;max-width:760px;margin:0 auto}
+  .vend{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px dashed rgba(244,231,207,.22)}
+  .vend .n{font-family:var(--display);font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.3px}
+  .vend .c{font-size:13.5px;color:#d8c2a0;text-align:right;flex:0 0 auto}
+  .board-note{text-align:center;margin-top:28px;font-size:14.5px;color:#cdb794}
+  .board-note b{color:#fff}
+
+  /* VIBE */
+  .vibe-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .vibe-photo{position:relative}
+  .vibe-photo .f{border-radius:18px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .vibe-photo .f img{width:100%;height:100%;object-fit:cover}
+  .vibe-photo .cap{position:absolute;bottom:-14px;left:-8px;background:var(--mustard);color:var(--char);font-family:var(--display);font-weight:700;font-size:16px;padding:8px 18px;border-radius:12px;box-shadow:var(--sh-sm);transform:rotate(-2deg);text-transform:uppercase;letter-spacing:.4px}
+  .vibe h2{font-size:44px;margin:8px 0 18px;text-transform:uppercase}
+  .vibe p{color:#5d4f42;font-size:16.5px;margin-bottom:16px}
+  .perks{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px;margin-top:8px}
+  .perks li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15.5px}
+  .perks li svg{width:20px;height:20px;color:var(--tomato);flex:0 0 auto}
+
+  /* VISIT */
+  .visit{background:var(--char);color:#f4e7cf}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit-photo{border-radius:20px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:16/9}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:46px;margin:8px 0 22px;text-transform:uppercase;color:#fff}
+  .visit .eyebrow{color:var(--mustard)}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--mustard);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--display);font-weight:700}
+  .visit .row a{color:#f4e7cf}
+  .visit .row a:hover{color:var(--mustard)}
+  .visit .row .sub{color:#c9b28f;font-size:14px}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+  .visit .btn-ghost{color:#f4e7cf;border-color:rgba(244,231,207,.4)}
+  .visit .btn-ghost:hover{border-color:var(--mustard);color:var(--mustard)}
+
+  footer{background:#161821;color:#b9a891;padding:52px 0 28px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:16px}
+  footer .brand img{height:64px}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#e6d2bf}
+  footer .social{display:flex;gap:14px;justify-content:center;margin:14px 0 6px}
+  footer .social a{display:inline-flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid #3a3d47;border-radius:10px;color:#e6d2bf;transition:.2s}
+  footer .social a:hover{background:var(--tomato);border-color:var(--tomato);color:#fff}
+  footer .social svg{width:19px;height:19px}
+  footer .note{margin-top:18px;font-size:12.5px;color:#7d6f5f;border-top:1px solid #2c2f38;padding-top:18px}
+
+  @media(max-width:900px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.vibe-grid,.visit-grid{grid-template-columns:1fr;gap:36px}
+    .hero{padding:40px 0}
+    .hero h1{font-size:44px;text-align:left}.hero-visual{height:400px}
+    .carts .lead{grid-template-columns:1fr}
+    .board-grid{grid-template-columns:1fr;gap:0 0}
+    .board{padding:30px 24px}
+    .sec-head h2{font-size:34px}section{padding:58px 0}
+    .visit-photo{aspect-ratio:4/3}
+    .perks{grid-template-columns:1fr}
+    .brand .bn{font-size:18px}.nav-cta{padding:9px 15px;font-size:13px}
+  }
+  @media(max-width:400px){
+    .hero h1{font-size:37px}
+    .hero-facts{gap:16px}
+    .badge{width:98px;height:98px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Open daily <b>9am</b> · Free parking · 17150 SE Powell Blvd (Powell &amp; 174th) · <a href="tel:+15038695212">(503) 869-5212</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <img src="img/logo.png" alt="Chop Chop Food Pod logo — a red food truck over the words Chop Chop Food Pod">
+        <span class="bn">Chop Chop<small>Food Pod · Powell &amp; 174th</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#carts">The Carts</a>
+        <a href="#vibe">The Pod</a>
+        <a href="#visit">Find Us</a>
+        <a href="https://maps.google.com/?q=Chop+Chop+Food+Pod+17150+SE+Powell+Blvd+Portland+OR+97236" target="_blank" rel="noopener" class="btn btn-gold nav-cta">Get Directions</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">A food-cart pod in outer SE Portland</span>
+      <h1>Many carts.<br><span class="b">One</span> <span class="y">hungry</span> block.</h1>
+      <p class="tag">A whole pod of food carts on SE Powell &amp; 174th — Mexican, halal cheesesteaks, shawarma, Thai-Lao and more — with covered seating, free parking and room for the whole family.</p>
+      <p class="note">Pull up, pick a cart, grab a table.</p>
+      <div class="hero-cta">
+        <a href="https://maps.google.com/?q=Chop+Chop+Food+Pod+17150+SE+Powell+Blvd+Portland+OR+97236" target="_blank" rel="noopener" class="btn">Get Directions</a>
+        <a href="#carts" class="btn btn-ghost">See what's cooking</a>
+      </div>
+      <div class="hero-facts">
+        <div><b>7 days</b>Open every day</div>
+        <div><b>Free</b>On-site parking</div>
+        <div><b>Kid-friendly</b>Play area on-site</div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main"><img src="img/hero-dusk.jpg" alt="Chop Chop Food Pod at dusk — covered seating strung with lights beside lit-up food carts including Shawarma Grill" width="1600" height="1447"></div>
+      <div class="snap">
+        <img src="img/carts-busy.jpg" alt="A busy day at Chop Chop Food Pod with a crowd lining up at the food carts" width="700" height="330" loading="lazy">
+        <p>Busy on the weekend</p>
+      </div>
+      <div class="badge">
+        <b>Open</b>
+        <small>Powell &amp; 174th</small>
+        <span class="yr">daily</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Mexican</span><span class="dot">✦</span><span>Halal Cheesesteaks</span><span class="dot">✦</span><span>Shawarma</span><span class="dot">✦</span><span>Thai · Lao</span><span class="dot">✦</span><span>Fish &amp; Chips</span><span class="dot">✦</span><span>Hibachi</span><span class="dot">✦</span><span>Beer &amp; Wine</span><span class="dot">✦</span>
+    <span>Mexican</span><span class="dot">✦</span><span>Halal Cheesesteaks</span><span class="dot">✦</span><span>Shawarma</span><span class="dot">✦</span><span>Thai · Lao</span><span class="dot">✦</span><span>Fish &amp; Chips</span><span class="dot">✦</span><span>Hibachi</span><span class="dot">✦</span><span>Beer &amp; Wine</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- CARTS -->
+<section id="carts" class="carts">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="kick">one pod, a passport of flavors</span>
+      <h2>What's cooking</h2>
+      <p>Every cart is its own small business, cooking to order. The lineup grows as new carts move in — here's who's been serving lately.</p>
+    </div>
+    <div class="lead">
+      <div class="cart-card">
+        <div class="ph"><img src="img/carts-busy.jpg" alt="The cart row at Chop Chop with Ah Huevo Que Si Mexican food cart and Captain Galley seafood trailer" width="800" height="533" loading="lazy"></div>
+        <div class="t"><h3>The Cart Row</h3><p>Order-window trailers lined up side by side — walk the row and pick whatever you're craving.</p></div>
+      </div>
+      <div class="cart-card">
+        <div class="ph"><img src="img/hero-dusk.jpg" alt="Lit-up carts including Shawarma Grill at Chop Chop Food Pod in the evening" width="800" height="533" loading="lazy"></div>
+        <div class="t"><h3>Open Late</h3><p>Warm lights and dinner service into the evening, seven days a week.</p></div>
+      </div>
+      <div class="cart-card">
+        <div class="ph"><img src="img/seating-day.jpg" alt="Guests eating at umbrella-shaded picnic tables at Chop Chop Food Pod" width="800" height="533" loading="lazy"></div>
+        <div class="t"><h3>Grab a Table</h3><p>Communal picnic seating right in the middle of it all — bring the group.</p></div>
+      </div>
+    </div>
+
+    <div class="board">
+      <h4>Carts &amp; cuisines serving lately</h4>
+      <div class="board-grid">
+        <div class="vend"><span class="n">Ah Huevo Que Si</span><span class="c">Mexican · Tacos</span></div>
+        <div class="vend"><span class="n">King of Philly</span><span class="c">Halal Cheesesteaks</span></div>
+        <div class="vend"><span class="n">Shawarma Grill</span><span class="c">Middle Eastern</span></div>
+        <div class="vend"><span class="n">Kelly Thai Lao Cuisine</span><span class="c">Thai · Lao</span></div>
+        <div class="vend"><span class="n">Captain Galley</span><span class="c">Fish &amp; Chips</span></div>
+        <div class="vend"><span class="n">Alpha Hibachi</span><span class="c">Japanese Hibachi</span></div>
+        <div class="vend"><span class="n">Tappy Camper</span><span class="c">Beer &amp; Wine</span></div>
+        <div class="vend"><span class="n">+ more moving in</span><span class="c">New carts welcome</span></div>
+      </div>
+      <p class="board-note">Carts rotate and hours can vary by cart. For the current lineup and daily specials, follow <b>@chopchoppdx</b> — or call <b>(503) 869-5212</b>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- VIBE / THE POD -->
+<section id="vibe" class="vibe">
+  <div class="wrap vibe-grid">
+    <div class="vibe-photo">
+      <div class="f"><img src="img/seating-day.jpg" alt="Families and friends eating at umbrella-covered picnic tables at Chop Chop Food Pod, with fall trees behind" width="1600" height="601" loading="lazy"></div>
+      <span class="cap">Room for everyone</span>
+    </div>
+    <div>
+      <span class="eyebrow">The Pod</span>
+      <h2>A gathering spot, not just a parking lot.</h2>
+      <p>Chop Chop opened in late 2024 to give outer SE Portland a place to slow down and eat well together — a clean, open pod on the corner of Powell and 174th, behind the Meadowland shops.</p>
+      <p>Pull into free on-site parking, order from whichever cart smells best, and settle in at the covered picnic tables. There's a play area for the kids and restrooms on-site, so it's an easy call for families, coworkers, and the whole neighborhood.</p>
+      <ul class="perks">
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10h18M6 10V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v4M4 10v9m16-9v9M8 14h.01M12 14h.01"/></svg> Free on-site parking</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20v-8a8 8 0 0 1 16 0v8M2 20h20M8 12h8"/></svg> Covered seating</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="7" r="3"/><path d="M6 21v-2a4 4 0 0 1 4-4h4a4 4 0 0 1 4 4v2"/></svg> Kids' play area</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M5 7c0 3 2 4 2 4M19 7c0 3-2 4-2 4"/></svg> Restrooms on-site</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT / FIND US -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Find us</span>
+      <h2>Corner of Powell &amp; 174th.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>17150 SE Powell Blvd</b>, Portland, OR 97236<br><span class="sub">Meadowland shops, at SE Powell &amp; SE 174th</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Open daily from 9:00am</b><br><span class="sub">Evening hours daily — individual cart hours may vary</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15038695212"><b>(503) 869-5212</b></a><br><span class="sub">Interested in a cart space? Give us a call.</span></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><div><a href="mailto:ChopchopfoodPod@gmail.com"><b>ChopchopfoodPod@gmail.com</b></a></div></div>
+      <div class="cta">
+        <a href="https://maps.google.com/?q=Chop+Chop+Food+Pod+17150+SE+Powell+Blvd+Portland+OR+97236" target="_blank" rel="noopener" class="btn btn-gold">Get Directions</a>
+        <a href="tel:+15038695212" class="btn btn-ghost">Call the Pod</a>
+        <a href="https://www.instagram.com/chopchoppdx" target="_blank" rel="noopener" class="btn btn-ghost">Follow @chopchoppdx</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/parking-play.jpg" alt="The Chop Chop Food Pod lot — open paved parking, a grassy play area, and a food trailer" width="1024" height="768" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Chop Chop Food Pod logo"></a>
+    <p><b>Chop Chop Food Pod</b> · 17150 SE Powell Blvd, Portland, OR 97236 · <a href="tel:+15038695212">(503) 869-5212</a><br>A food-cart pod with community at its core — open daily on Powell &amp; 174th.</p>
+    <div class="social">
+      <a href="https://www.instagram.com/chopchoppdx" target="_blank" rel="noopener" aria-label="Chop Chop Food Pod on Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+      <a href="https://www.facebook.com/chopchopPDX" target="_blank" rel="noopener" aria-label="Chop Chop Food Pod on Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h-3a5 5 0 0 0-5 5v3H4v4h3v6h4v-6h3l1-4h-4V8a1 1 0 0 1 1-1h3z"/></svg></a>
+    </div>
+    <p class="note">✦ This is a free redesign concept created for Chop Chop Food Pod by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

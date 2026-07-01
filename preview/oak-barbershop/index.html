@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oak Barbershop — Precision Cuts by Appointment · SE Division, Portland</title>
+<meta name="description" content="Oak Barbershop — a small two-chair, appointment-only barbershop on SE Division in Portland's Hosford-Abernethy. Precision cuts, beard trims, hot towel and neck massage from Gus & Kyle since 2011.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --oak:#8a5a2b; --oak-deep:#6b4420; --tobacco:#c98a4b; --cream:#f6efe3; --paper:#fdf9f1;
+    --ink:#241d17; --muted:#7a6b5a; --line:#e6d8c2;
+    --teal:#1f4a52; --teal-deep:#143338; --forest:#2f5136; --forest-deep:#233d29;
+    --disp:'Familjen Grotesk',system-ui,sans-serif; --serif:'DM Serif Display',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 24px 54px -26px rgba(36,29,23,.55); --sh-sm:0 10px 26px -14px rgba(36,29,23,.4);
+    --pad:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--oak);font-weight:600}
+  .serif-em{font-family:var(--serif);font-weight:400;font-style:italic}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--teal);color:#f4ead6;padding:15px 27px;border-radius:8px;font-family:var(--sans);font-weight:600;font-size:15px;transition:.2s;border:1.5px solid var(--teal);cursor:pointer}
+  .btn:hover{background:var(--teal-deep);border-color:var(--teal-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px;flex:0 0 auto}
+  .btn-oak{background:var(--oak);border-color:var(--oak);color:#fdf3e4}
+  .btn-oak:hover{background:var(--oak-deep);border-color:var(--oak-deep)}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid #d3c1a5}
+  .btn-ghost:hover{border-color:var(--oak);color:var(--oak);transform:translateY(-2px);background:transparent}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--forest);outline-offset:3px}
+
+  .topbar{background:var(--teal-deep);color:#e4d8c2;font-size:13px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.3px}
+  .topbar b{color:var(--tobacco)}
+  .topbar .leaf{color:var(--tobacco);margin:0 6px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,239,227,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:11px;min-width:0}
+  .brand img{height:30px;width:auto}
+  .brand .bn{font-family:var(--disp);font-weight:700;font-size:19px;line-height:1;letter-spacing:.5px}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:10.5px;color:var(--oak);font-weight:600;letter-spacing:2px;text-transform:uppercase;margin-top:3px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--ink);font-weight:500}
+  .nav-links a:hover{color:var(--oak)}
+  .nav-cta{padding:10px 19px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;padding:66px 0 46px;overflow:hidden}
+  .hero:before{content:"";position:absolute;inset:0;background:
+     radial-gradient(560px 380px at 88% 12%, rgba(201,138,75,.14), transparent 70%),
+     radial-gradient(520px 420px at 4% 96%, rgba(47,81,54,.10), transparent 68%);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.04fr .96fr;gap:52px;align-items:center}
+  .hero h1{font-size:70px;margin:16px 0 20px}
+  .hero h1 .em{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--oak)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:454px;margin-bottom:22px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:26px}
+  .hero-rating .stars{color:var(--tobacco);font-size:17px;letter-spacing:2px}
+  .hero-rating span{font-size:14px;color:var(--muted);font-weight:500}
+  .hero-rating b{color:var(--ink);font-weight:600}
+  .hero-visual{position:relative;height:530px}
+  .hero-photo{position:absolute;inset:0;border-radius:16px 16px 16px 90px;overflow:hidden;box-shadow:var(--sh)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{position:absolute;bottom:-22px;left:-20px;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 20px;box-shadow:var(--sh);display:flex;align-items:center;gap:13px;max-width:270px}
+  .hero-badge .acorn{width:40px;height:40px;flex:0 0 auto;color:var(--oak)}
+  .hero-badge b{font-family:var(--disp);font-size:15px;display:block;line-height:1.1}
+  .hero-badge span{font-size:12.5px;color:var(--muted)}
+  .est{position:absolute;top:-14px;right:16px;width:96px;height:96px;border-radius:50%;background:var(--forest);color:#e7ddc7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);transform:rotate(7deg)}
+  .est b{font-family:var(--serif);font-size:24px;line-height:1}
+  .est small{font-size:8.5px;letter-spacing:2px;text-transform:uppercase;margin-top:4px}
+
+  /* leaf divider */
+  .rule{display:flex;align-items:center;justify-content:center;gap:16px;padding:0 var(--pad);color:var(--oak)}
+  .rule .ln{height:1px;background:var(--line);flex:1;max-width:200px}
+  .rule svg{width:26px;height:26px}
+  .marquee{background:var(--teal);color:#e6d9c1;overflow:hidden;white-space:nowrap;padding:12px 0;font-family:var(--disp);font-size:16px;font-weight:500;letter-spacing:.5px}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--tobacco)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:46px;margin:8px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* SERVICES */
+  .services{background:var(--paper)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:34px}
+  .svc{background:var(--cream);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .svc .ph{aspect-ratio:4/3;overflow:hidden}
+  .svc .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .svc:hover .ph img{transform:scale(1.05)}
+  .svc .t{padding:22px 24px 26px;flex:1;display:flex;flex-direction:column}
+  .svc h3{font-size:25px;margin-bottom:6px;display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+  .svc h3 .price{font-family:var(--serif);font-style:normal;color:var(--oak);font-size:24px}
+  .svc p{font-size:14.5px;color:var(--muted);flex:1}
+  .svc .incl{margin-top:14px;font-size:12.5px;color:var(--forest);font-weight:600;letter-spacing:.3px;display:flex;align-items:center;gap:7px}
+  .svc .incl svg{width:15px;height:15px}
+  .svc-note{text-align:center;font-size:15px;color:var(--muted)}
+  .svc-note b{color:var(--ink);font-family:var(--disp);font-weight:600}
+
+  /* STORY */
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:540px}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;right:-12px;background:var(--oak);color:#fdf3e4;font-family:var(--serif);font-style:italic;font-size:18px;padding:9px 20px;border-radius:10px;box-shadow:var(--sh-sm)}
+  .story h2{font-size:44px;margin:10px 0 20px}
+  .story p{color:#54473b;font-size:16.5px;margin-bottom:16px}
+  .story .who{display:flex;gap:26px;margin-top:26px;flex-wrap:wrap}
+  .story .who .b{display:flex;flex-direction:column}
+  .story .who .b b{font-family:var(--disp);font-size:19px}
+  .story .who .b span{font-size:13px;color:var(--muted)}
+
+  /* REVIEWS */
+  .reviews{background:var(--teal-deep);color:#e9ddc6}
+  .reviews .sec-head h2{color:#fdf9f1}
+  .reviews .sec-head p{color:#bcae94}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:var(--paper);color:var(--ink);border-radius:14px;padding:28px 26px;box-shadow:var(--sh)}
+  .rcard:nth-child(2){transform:translateY(-14px)}
+  .rcard .stars{color:var(--tobacco);letter-spacing:2px;font-size:15px;margin-bottom:13px}
+  .rcard p{font-family:var(--serif);font-style:italic;font-size:16.5px;line-height:1.5;margin-bottom:16px}
+  .rcard .src{font-size:12.5px;color:var(--muted);font-weight:600;letter-spacing:.3px}
+  .rfoot{text-align:center;margin-top:40px;font-size:14px;color:#bcae94}
+  .rfoot a{color:var(--tobacco);font-weight:600}
+
+  /* VISIT */
+  .visit{background:var(--paper)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .visit-photo{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:520px}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:44px;margin:10px 0 24px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--oak);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--disp);font-weight:600}
+  .visit .row a:hover{color:var(--oak)}
+  .visit .row small{display:block;color:var(--muted);font-size:13.5px}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+
+  footer{background:var(--ink);color:#b9a790;padding:56px 0 30px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:16px}
+  footer .brand img{height:34px;filter:brightness(0) invert(.85)}
+  footer p{font-size:14px;line-height:1.85}
+  footer a{color:#e0d0ba}
+  footer .note{margin-top:20px;font-size:12.5px;color:#7c6c5a;border-top:1px solid #3a2f26;padding-top:20px}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:44px}
+    .hero{padding:44px 0 30px}
+    .hero h1{font-size:44px}
+    .hero .hero-grid > div:first-child{padding-left:0}
+    .hero-visual{height:400px}
+    .svc-grid,.rgrid{grid-template-columns:1fr}
+    .svc,.rcard{transform:none!important}
+    .sec-head h2{font-size:34px}section{padding:62px 0}
+    .story-photo .cap{right:8px}
+    .hero-badge{left:8px}
+    .visit-photo{max-height:420px}
+  }
+  @media(max-width:400px){
+    .hero h1{font-size:38px}
+    .btn{padding:14px 20px;font-size:14px}
+    .sec-head h2{font-size:29px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Appointment-only <span class="leaf">✦</span> 2308 SE Division St, Portland <span class="leaf">✦</span> Precision cuts by <b>Gus &amp; Kyle</b> since 2011</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <img src="img/logo.png" alt="Oak Barbershop logo" width="750" height="277">
+        <span class="bn">OAK<small>Barbershop</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.oakbarbershop.com/booknow" target="_blank" rel="noopener" class="btn btn-oak nav-cta">Book Now</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="top" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Hosford-Abernethy · SE Portland</span>
+      <h1>A quiet chair,<br>a <span class="em">precise</span> cut.</h1>
+      <p class="tag">A small two-chair, appointment-only barbershop in the heart of Southeast Portland — where you're a regular from the first visit. Cuts, beard trims, hot towel and neck massage included.</p>
+      <div class="hero-cta">
+        <a href="https://www.oakbarbershop.com/booknow" target="_blank" rel="noopener" class="btn">Book an appointment</a>
+        <a href="#services" class="btn btn-ghost">See services &amp; prices</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>45+</b> reviews on Yelp · loved by the neighborhood</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo"><img src="img/hero-cut.jpg" alt="A barber trimming a client's beard with scissors in a warm, low-lit shop" width="1600" height="1067"></div>
+      <div class="est"><b>’11</b><small>Since</small></div>
+      <div class="hero-badge">
+        <svg class="acorn" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9h12M5 9c0-2.8 3.1-5 7-5s7 2.2 7 5"/><path d="M6.5 9c0 4.4 2.5 9 5.5 9s5.5-4.6 5.5-9"/><path d="M12 18v3"/></svg>
+        <div><b>By appointment only</b><span>No walk-ins, no phone — book online or email us.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Precision cuts</span><span class="dot">✦</span><span>Beard trims</span><span class="dot">✦</span><span>Hot towel</span><span class="dot">✦</span><span>Neck massage</span><span class="dot">✦</span><span>Two chairs, no rush</span><span class="dot">✦</span><span>Since 2011</span><span class="dot">✦</span>
+    <span>Precision cuts</span><span class="dot">✦</span><span>Beard trims</span><span class="dot">✦</span><span>Hot towel</span><span class="dot">✦</span><span>Neck massage</span><span class="dot">✦</span><span>Two chairs, no rush</span><span class="dot">✦</span><span>Since 2011</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Services &amp; prices</h2>
+      <p>Two chairs, unhurried appointments, and the same careful hands every time. Every cut finishes with a hot towel and a neck massage.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ph"><img src="img/service-cut.jpg" alt="A clean fade and straight-razor line-up in progress" width="1600" height="1063" loading="lazy"></div>
+        <div class="t">
+          <h3>Haircut <span class="price">$40</span></h3>
+          <p>A tailored cut built around how your hair actually grows — scissor work, clippers, and a crisp line-up, finished with a straight-razor neck detail.</p>
+          <div class="incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hot towel + neck massage included</div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/service-beard.jpg" alt="A barber shaping a beard with a straight razor and brush" width="1400" height="2488" loading="lazy"></div>
+        <div class="t">
+          <h3>Cut &amp; Beard <span class="price">$55</span></h3>
+          <p>The full sit-down: a fresh haircut plus a shaped, cleaned-up beard trim so everything lines up the way it should. Our most-booked service.</p>
+          <div class="incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Hot towel + neck massage included</div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/service-clipper.jpg" alt="Close-up of clipper work along the neckline" width="1400" height="931" loading="lazy"></div>
+        <div class="t">
+          <h3>Attention to detail <span class="price">★</span></h3>
+          <p>Blending that can't be beat. Gus and Kyle remember your cut — and your last conversation — so each visit picks up right where the last one left off.</p>
+          <div class="incl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>The regular's welcome, every time</div>
+        </div>
+      </div>
+    </div>
+    <p class="svc-note">Beard trims are offered as part of a <b>Cut &amp; Beard</b>, not as a standalone service. Booking is online only — appointments open for the next 21 days.</p>
+  </div>
+</section>
+
+<div class="rule" aria-hidden="true"><span class="ln"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c-3 3-6 5-6 9a6 6 0 0 0 12 0c0-4-3-6-6-9z"/><path d="M12 8v13"/><path d="M12 15c-2 0-3.5-1-4.5-2.5M12 13c1.6 0 2.8-.8 3.7-2"/></svg>
+  <span class="ln"></span>
+</div>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/story-scissors.jpg" alt="A barber's tattooed hand trimming a beard with shears" width="1400" height="2108" loading="lazy"></div>
+      <span class="cap">precision is the watchword</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Small shop. Steady hands. Since 2011.</h2>
+      <p>Augustus "Gus" Bowman opened Oak in 2011 with a simple idea: a calm, unpretentious room where a good haircut is the whole point — and where you feel like a regular from the moment you sit down.</p>
+      <p>It's stayed small on purpose. Two chairs, appointments only, no rush and no phone ringing off the hook — just careful work, a hot towel, and time to talk. Gus and Kyle remember your cut and pick up the conversation where you left it.</p>
+      <p>Tucked into Hosford-Abernethy off SE Division, Oak has quietly become the neighborhood's go-to for a precise, honest cut at a fair price.</p>
+      <div class="who">
+        <div class="b"><b>Gus</b><span>Founder &amp; barber</span></div>
+        <div class="b"><b>Kyle</b><span>Barber · detail &amp; blends</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--tobacco)">The neighborhood agrees</span>
+      <h2>What clients say</h2>
+      <p>★★★★★ · 45+ reviews on Yelp for Oak Barbershop, Portland.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Kyle always does a great job and has an incredible attention to detail — his blending skills can't be beat."</p>
+        <div class="src">— via Yelp</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"They give great haircuts, and you get a free neck massage and hot towel. Both barbers are super talented and friendly."</p>
+        <div class="src">— via Yelp</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"I've been getting my cut from Gus for over a year and love it. Precision haircuts at an affordable price."</p>
+        <div class="src">— via Yelp</div>
+      </div>
+    </div>
+    <p class="rfoot">Read every review on <a href="https://www.yelp.com/biz/oak-barbershop-portland" target="_blank" rel="noopener">Oak Barbershop on Yelp →</a></p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Find us on Division.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>2308 SE Division St</b><small>Hosford-Abernethy, Portland, OR 97202</small></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><div><b>By appointment only</b><small>Online scheduler shows the next 21 days of openings.</small></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><div><a href="mailto:oakbarbershoppdx@gmail.com"><b>oakbarbershoppdx@gmail.com</b></a><small>No phone — email is the fastest way to reach us.</small></div></div>
+      <div class="cta">
+        <a href="https://www.oakbarbershop.com/booknow" target="_blank" rel="noopener" class="btn">Book online</a>
+        <a href="mailto:oakbarbershoppdx@gmail.com" class="btn btn-ghost">Email the shop</a>
+        <a href="https://maps.google.com/?q=Oak+Barbershop+2308+SE+Division+St+Portland+OR+97202" target="_blank" rel="noopener" class="btn btn-ghost">Get directions</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/service-beard.jpg" alt="A finished beard shape being detailed with a straight razor at Oak Barbershop" width="1400" height="2488" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="Oak Barbershop logo" width="750" height="277"></a>
+    <p><b>Oak Barbershop</b> · 2308 SE Division St, Portland OR 97202 · <a href="mailto:oakbarbershoppdx@gmail.com">oakbarbershoppdx@gmail.com</a><br>Appointment-only precision cuts &amp; beard trims from Gus &amp; Kyle since 2011.</p>
+    <p class="note">✦ This is a free redesign concept created for Oak Barbershop by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

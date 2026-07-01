@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Record Pub — Records, Tapes, Beer &amp; Gear · Sellwood-Moreland, Portland</title>
+<meta name="description" content="The Record Pub in Sellwood-Moreland, Portland — dig for new &amp; used vinyl and tapes, sip Northwest beer &amp; cider on tap, and hang out. A record store and a pub, under one roof in the historic Iron Horse Building.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Monoton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0e0d10; --bg2:#151318; --panel:#1b181f; --panel2:#221e28;
+    --cream:#f4ecdd; --muted:#a99f93; --line:#2f2a34;
+    --amber:#f2a83b; --amber-deep:#c9801a; --gold:#e9c46a;
+    --neon:#ff3d8b; --neon-deep:#d6246d; --teal:#38d0c4;
+    --disp:'Syne',system-ui,sans-serif; --neonf:'Monoton',cursive; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 26px 60px -22px rgba(0,0,0,.75); --sh-sm:0 12px 30px -14px rgba(0,0,0,.7);
+    --pad:22px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--cream);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--disp);font-weight:800;line-height:1.02;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--amber);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--amber);color:#1a1206;padding:15px 26px;border-radius:6px;font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--amber);cursor:pointer}
+  .btn:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-neon{background:var(--neon);border-color:var(--neon);color:#fff;box-shadow:0 0 22px -6px var(--neon)}
+  .btn-neon:hover{background:var(--neon-deep);border-color:var(--neon-deep)}
+  .btn-ghost{background:transparent;color:var(--cream);border:2px solid #443c4e}
+  .btn-ghost:hover{border-color:var(--amber);color:var(--amber);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  .topbar{background:#000;color:var(--muted);font-size:13px;font-weight:600;text-align:center;padding:9px 16px;letter-spacing:.3px;border-bottom:1px solid var(--line)}
+  .topbar b{color:var(--gold)}
+  .topbar a{color:var(--amber)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(14,13,16,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{height:42px;width:auto}
+  .brand .bn{font-family:var(--disp);font-weight:800;font-size:17px;line-height:1;letter-spacing:.5px}
+  .brand .bn small{display:block;font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--amber);font-weight:700;margin-top:4px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--cream);font-weight:600;letter-spacing:.3px}
+  .nav-links a:hover{color:var(--amber)}
+  .nav-cta{padding:10px 18px;font-size:13px}
+
+  /* HERO */
+  .hero{position:relative;padding:66px 0 46px;overflow:hidden}
+  .hero::before{content:"";position:absolute;top:-140px;right:-120px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,61,139,.22),transparent 62%);filter:blur(10px);pointer-events:none}
+  .hero::after{content:"";position:absolute;bottom:-160px;left:-120px;width:460px;height:460px;border-radius:50%;
+    background:radial-gradient(circle,rgba(242,168,59,.18),transparent 62%);filter:blur(10px);pointer-events:none}
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .neon-tag{font-family:var(--neonf);font-size:22px;color:var(--neon);letter-spacing:1px;
+    text-shadow:0 0 10px rgba(255,61,139,.7),0 0 26px rgba(255,61,139,.4);margin-bottom:18px;display:inline-block}
+  .hero h1{font-size:70px;margin:6px 0 20px;letter-spacing:-1.5px}
+  .hero h1 .amb{color:var(--amber)}
+  .hero h1 .out{color:transparent;-webkit-text-stroke:2px var(--cream)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:470px;margin-bottom:26px}
+  .hero .tag b{color:var(--cream);font-weight:600}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:26px}
+  .hero-rating .stars{color:var(--gold);font-size:17px;letter-spacing:2px}
+  .hero-rating span{font-size:14px;color:var(--muted);font-weight:600}
+  .hero-rating b{color:var(--cream)}
+  .hero-visual{position:relative;height:520px}
+  .hero-shot{position:absolute;inset:0;border-radius:16px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line)}
+  .hero-shot img{width:100%;height:100%;object-fit:cover}
+  .hero-shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(10,9,12,.55))}
+  .disc{position:absolute;bottom:-26px;left:-26px;width:132px;height:132px;border-radius:50%;
+    background:conic-gradient(from 0deg,#141014,#2a232f,#141014,#2a232f,#141014);
+    display:flex;align-items:center;justify-content:center;box-shadow:var(--sh);border:3px solid #000}
+  .disc::before{content:"";position:absolute;inset:16px;border-radius:50%;
+    background:repeating-radial-gradient(circle,#0c0a0d 0 2px,#1c171f 2px 4px)}
+  .disc .lbl{position:relative;width:46px;height:46px;border-radius:50%;background:var(--neon);
+    display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--disp);font-weight:800;font-size:10px;text-align:center;line-height:1;box-shadow:0 0 16px -2px var(--neon)}
+  .badge{position:absolute;top:16px;right:16px;background:rgba(0,0,0,.7);backdrop-filter:blur(6px);border:1px solid var(--line);
+    border-radius:50px;padding:8px 15px;font-size:12px;font-weight:700;color:var(--gold);letter-spacing:.5px}
+
+  /* MARQUEE */
+  .marquee{background:var(--amber);color:#1a1206;overflow:hidden;white-space:nowrap;padding:12px 0;font-family:var(--disp);font-size:16px;font-weight:800;letter-spacing:1px;text-transform:uppercase;border-top:2px solid #000;border-bottom:2px solid #000}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--neon)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:86px 0}
+  .sec-head{max-width:660px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:44px;margin:8px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* CONCEPT */
+  .concept{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .two{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+  .ccard{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.25s}
+  .ccard:hover{transform:translateY(-6px);box-shadow:var(--sh);border-color:#3a3342}
+  .ccard .ph{aspect-ratio:16/10;overflow:hidden;position:relative}
+  .ccard .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .ccard:hover .ph img{transform:scale(1.05)}
+  .ccard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(10,9,12,.5))}
+  .ccard .t{padding:26px 28px 30px}
+  .ccard .kick{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;margin-bottom:8px}
+  .ccard.records .kick{color:var(--teal)}
+  .ccard.pub .kick{color:var(--amber)}
+  .ccard h3{font-size:27px;margin-bottom:9px}
+  .ccard p{color:var(--muted);font-size:15px}
+
+  /* SPIN + TAP columns */
+  .lists{display:grid;grid-template-columns:1fr 1fr;gap:30px;margin-top:8px}
+  .board{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:34px 32px}
+  .board .hd{display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:16px}
+  .board .hd h3{font-size:22px}
+  .board .hd .pill{font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:20px}
+  .board.spin .pill{background:rgba(56,208,196,.15);color:var(--teal)}
+  .board.tap .pill{background:rgba(242,168,59,.16);color:var(--amber)}
+  .board ul{list-style:none}
+  .board li{display:flex;justify-content:space-between;gap:14px;padding:9px 0;font-size:15.5px;border-bottom:1px dashed var(--line)}
+  .board li:last-child{border-bottom:0}
+  .board li span{color:var(--muted);font-size:13.5px;text-align:right}
+  .board li .st{color:var(--gold)}
+  .board .foot{margin-top:16px;font-size:13.5px;color:var(--muted)}
+  .taps-note{text-align:center;margin-top:30px;color:var(--muted);font-size:15px}
+  .taps-note b{color:var(--cream)}
+
+  /* EVENTS */
+  .events{background:var(--bg2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .egrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .ecard{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:16px;padding:28px 26px;position:relative;overflow:hidden}
+  .ecard::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--neon);box-shadow:0 0 16px var(--neon)}
+  .ecard .day{font-family:var(--disp);font-weight:800;color:var(--amber);font-size:14px;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:8px}
+  .ecard h3{font-size:22px;margin-bottom:8px}
+  .ecard p{color:var(--muted);font-size:14.5px}
+
+  /* STORY */
+  .story-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:54px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:16px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);aspect-ratio:4/5;max-height:540px}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;right:-10px;background:var(--neon);color:#fff;font-family:var(--disp);font-weight:800;font-size:14px;letter-spacing:.5px;padding:9px 18px;border-radius:8px;box-shadow:0 0 22px -6px var(--neon)}
+  .story h2{font-size:42px;margin:8px 0 18px}
+  .story p{color:#cabfb2;font-size:16px;margin-bottom:15px}
+  .story p b{color:var(--cream)}
+  .story .sig{font-family:var(--disp);font-weight:700;font-size:16px;color:var(--amber);margin-top:8px;letter-spacing:.5px}
+
+  /* REVIEWS */
+  .reviews .sec-head h2{color:var(--cream)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:28px 26px}
+  .rcard .stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin-bottom:12px}
+  .rcard p{font-size:16px;line-height:1.55;margin-bottom:16px;color:var(--cream)}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:600}
+  .rate-strip{display:flex;gap:26px;justify-content:center;flex-wrap:wrap;margin-top:40px;padding-top:34px;border-top:1px solid var(--line)}
+  .rate-strip .r{text-align:center}
+  .rate-strip .r b{display:block;font-family:var(--disp);font-weight:800;font-size:30px;color:var(--amber)}
+  .rate-strip .r span{font-size:13px;color:var(--muted);letter-spacing:.5px}
+
+  /* VISIT */
+  .visit{background:var(--bg2);border-top:1px solid var(--line)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit-photo{border-radius:16px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);aspect-ratio:4/3}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:44px;margin:8px 0 24px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:15.5px}
+  .visit .row svg{width:21px;height:21px;color:var(--amber);flex:0 0 auto;margin-top:2px}
+  .visit .row b{color:var(--cream);font-weight:600}
+  .visit .row a:hover{color:var(--amber)}
+  .visit .hrs{color:var(--muted);font-size:14.5px;line-height:1.9}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+  footer{background:#000;color:var(--muted);padding:52px 0 30px;text-align:center;border-top:1px solid var(--line)}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand img{height:48px}
+  footer .socials{display:flex;gap:16px;justify-content:center;margin:16px 0}
+  footer .socials a{width:38px;height:38px;border:1px solid var(--line);border-radius:50%;display:flex;align-items:center;justify-content:center;transition:.2s}
+  footer .socials a:hover{border-color:var(--amber);color:var(--amber)}
+  footer .socials svg{width:18px;height:18px}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:var(--cream)}
+  footer .note{margin-top:20px;font-size:12.5px;color:#6f6656;border-top:1px solid var(--line);padding-top:18px}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+    .hero{padding:48px 0 40px}
+    .hero h1{font-size:44px}
+    .hero-visual{height:400px}
+    .two,.lists,.egrid,.rgrid{grid-template-columns:1fr}
+    .ccard,.rcard{transform:none!important}
+    .sec-head h2{font-size:32px}
+    section{padding:60px 0}
+    .board{padding:26px 22px}
+    .story-photo .cap{right:8px}
+    .story h2,.visit h2{font-size:34px}
+  }
+  @media(max-width:400px){
+    .hero h1{font-size:38px}
+    .hero .wrap,.hero-grid{text-align:left}
+    .neon-tag{font-size:18px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Open 7 days · <b>Records + a bar, under one roof</b> · 6034 SE Milwaukie Ave, Sellwood-Moreland · <a href="tel:+15038890917">503.889.0917</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <img src="img/logo.png" alt="The Record Pub logo" width="234" height="125">
+        <span class="bn">The Record Pub<small>Sellwood-Moreland · PDX</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#concept">The Concept</a>
+        <a href="#tap">On Tap</a>
+        <a href="#events">What's On</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Visit</a>
+        <a href="tel:+15038890917" class="btn btn-neon nav-cta">Call Us</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="neon-tag">Records · Tapes · Beer · Gear</span>
+      <h1>Dig for <span class="amb">vinyl.</span><br>Stay for a <span class="out">pint.</span></h1>
+      <p class="tag">A record store and a neighborhood pub, together in one room. Flip through new &amp; used records and tapes, then grab a <b>Northwest beer or cider on tap</b> and settle in. Sellwood-Moreland's Iron Horse Building.</p>
+      <div class="hero-cta">
+        <a href="#tap" class="btn">See what's on tap</a>
+        <a href="https://maps.google.com/?q=The+Record+Pub+6034+SE+Milwaukie+Ave+Portland+OR+97202" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.9</b> · loved across 60+ neighborhood reviews</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-shot">
+        <img src="img/real-interior.jpg" alt="Inside The Record Pub — long bins of vinyl records leading back to the bar and tap wall, with band photos on the walls" width="3648" height="3648">
+      </div>
+      <div class="badge">◉ Now spinning</div>
+      <div class="disc" aria-hidden="true"><span class="lbl">TRP</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>New &amp; used vinyl</span><span class="dot">✦</span><span>Cassette tapes</span><span class="dot">✦</span><span>7 rotating taps</span><span class="dot">✦</span><span>NW beer &amp; cider</span><span class="dot">✦</span><span>Vintage stereo gear</span><span class="dot">✦</span><span>$5 weekend mimosas</span><span class="dot">✦</span>
+    <span>New &amp; used vinyl</span><span class="dot">✦</span><span>Cassette tapes</span><span class="dot">✦</span><span>7 rotating taps</span><span class="dot">✦</span><span>NW beer &amp; cider</span><span class="dot">✦</span><span>Vintage stereo gear</span><span class="dot">✦</span><span>$5 weekend mimosas</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The concept</span>
+      <h2>Two great things, one great room.</h2>
+      <p>We combined our two favorite kinds of place — the local record shop and the neighborhood pub — into a single spot where you can crate-dig with a cold one in hand.</p>
+    </div>
+    <div class="two">
+      <div class="ccard records">
+        <div class="ph"><img src="img/stock-crates.jpg" alt="Hands flipping through crates of vinyl records" width="1600" height="1067" loading="lazy"></div>
+        <div class="t">
+          <div class="kick">The Record Shop</div>
+          <h3>New &amp; used vinyl and tapes</h3>
+          <p>Long bins packed with new releases and used finds across every genre — plus cassettes and vintage stereo gear. We buy used collections, so the racks are always turning over. There are even cupholders on the bins, so your pint comes digging with you.</p>
+        </div>
+      </div>
+      <div class="ccard pub">
+        <div class="ph"><img src="img/real-beer.jpg" alt="A lineup of poured beers on the bar at The Record Pub" width="600" height="466" loading="lazy"></div>
+        <div class="t">
+          <div class="kick">The Pub</div>
+          <h3>Northwest beer, cider &amp; wine</h3>
+          <p>Seven rotating taps focused on Northwest and seasonal pours, plus canned beer, cider, seltzer, wine and non-alcoholic options — enjoy it at the horseshoe bar or take it to go. Mix-and-match four-packs and $5 mimosas every Saturday &amp; Sunday.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT WE SPIN / ON TAP -->
+<section class="racks" id="tap">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we spin &amp; what we pour</span>
+      <h2>The racks &amp; the taps.</h2>
+      <p>Taps rotate constantly, and so do the records — here's a taste of a recent day. Come in to see what's landed.</p>
+    </div>
+    <div class="lists">
+      <div class="board spin">
+        <div class="hd"><h3>In the racks</h3><span class="pill">Records &amp; tapes</span></div>
+        <ul>
+          <li>Recent arrivals — new <span>fresh pressings</span></li>
+          <li>Recent arrivals — used <span>bought this week</span></li>
+          <li><span class="st">★</span> PDX &amp; Northwest artists <span>local shelf</span></li>
+          <li>Rock, punk &amp; indie <span>A–Z bins</span></li>
+          <li>Jazz, soul &amp; funk <span>deep cuts</span></li>
+          <li>Box sets &amp; cassette tapes <span>+ vintage gear</span></li>
+        </ul>
+        <p class="foot">Bins are cupholder-equipped and always turning over as we buy used collections.</p>
+      </div>
+      <div class="board tap">
+        <div class="hd"><h3>On the taps</h3><span class="pill">A recent pour list</span></div>
+        <ul>
+          <li>Baerlic — Nugs <span>IPA</span></li>
+          <li>Commensal — Thumb Rule <span>Hazy IPA</span></li>
+          <li>Cooper Mountain — Lucy in the Sky <span>Pilsner</span></li>
+          <li>Rosenstadt <span>Kölsch</span></li>
+          <li>Viola Orchards — Schoolhouse <span>Dry Cider</span></li>
+          <li>Rainier <span>Lager</span></li>
+        </ul>
+        <p class="foot">Seven rotating lines, NW &amp; seasonal focus. Also: canned beer, cider, seltzer, wine &amp; N/A options — to stay or to go.</p>
+      </div>
+    </div>
+    <p class="taps-note">Tap list changes often — <b>call <a href="tel:+15038890917">503.889.0917</a></b> for today's pours, or just come see for yourself.</p>
+  </div>
+</section>
+
+<!-- EVENTS -->
+<section class="events" id="events">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What's on</span>
+      <h2>More than a store.</h2>
+      <p>The Record Pub is a gathering spot — trivia, comedy, listening parties, and the record-lover's high holiday. Follow along for dates and details.</p>
+    </div>
+    <div class="egrid">
+      <div class="ecard">
+        <div class="day">Weekly</div>
+        <h3>Community Trivia</h3>
+        <p>A weekly trivia night that gives back — proceeds benefit local non-profits. Bring a team, bring your record knowledge.</p>
+      </div>
+      <div class="ecard">
+        <div class="day">Monthly</div>
+        <h3>Comedy Jam</h3>
+        <p>A recurring monthly comedy night in the pub. Local laughs, cold beer, and good company.</p>
+      </div>
+      <div class="ecard">
+        <div class="day">Ongoing</div>
+        <h3>Listening Parties &amp; Tap Takeovers</h3>
+        <p>Album listening parties, live music, tap takeovers with local breweries, and our big Record Store Day celebration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/stock-turntable-warm.jpg" alt="A turntable and a crate of records glowing under warm light" width="1600" height="2133" loading="lazy"></div>
+      <span class="cap">records + beer</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Born from two loves: records and beer.</h2>
+      <p>The Record Pub came together during 2020, dreamed up by a few friends who loved the local record store and the neighborhood pub in equal measure. So we did the obvious thing — <b>we combined the two.</b></p>
+      <p>We opened in the historic Iron Horse Building in Sellwood-Moreland in summer 2022, and it's grown into exactly what we hoped: a place where people flip through records, talk music at the bar, trade tips, and turn into regulars.</p>
+      <p>It has, as we like to say, surpassed our expectations — and we're just getting started.</p>
+      <div class="sig">— The crew at The Record Pub</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The neighborhood agrees</span>
+      <h2>What folks are saying.</h2>
+      <p>Rated 4.9 stars across 60+ reviews — for the selection, the prices, and the vibe.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Very fun and hip, great music selection, and REALLY good prices considering how most shops price their vinyl nowadays."</p>
+        <div class="src">— Yelp review</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"A great selection of tunes, cold beers, and friendly service. It offers a unique and chill vibe, and the pricing is reasonable for the quality."</p>
+        <div class="src">— Google review</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"There's a bar to sit down for a drink and think about what records you need — and staff to talk about your selections with. Something for everyone."</p>
+        <div class="src">— Customer review</div>
+      </div>
+    </div>
+    <div class="rate-strip">
+      <div class="r"><b>4.9★</b><span>average rating</span></div>
+      <div class="r"><b>60+</b><span>reviews &amp; counting</span></div>
+      <div class="r"><b>7</b><span>rotating taps</span></div>
+      <div class="r"><b>2022</b><span>opened in Sellwood</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Find us on Milwaukie Ave.</h2>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>6034 SE Milwaukie Ave</b> · Sellwood-Moreland, Portland, OR 97202<br><span style="color:var(--muted);font-size:14px">In the historic Iron Horse Building</span></div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div>
+          <b>Open 7 days</b>
+          <div class="hrs">Sun &amp; Mon · 12pm – 7pm<br>Tue – Thu · 12pm – 9pm<br>Fri &amp; Sat · 12pm – 10pm</div>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><a href="tel:+15038890917"><b>503.889.0917</b></a> · call for today's tap list</div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 8h16M8 4v4"/></svg>
+        <div><a href="mailto:TRPstaff@therecordpub.com"><b>TRPstaff@therecordpub.com</b></a></div>
+      </div>
+      <div class="cta">
+        <a href="https://maps.google.com/?q=The+Record+Pub+6034+SE+Milwaukie+Ave+Portland+OR+97202" target="_blank" rel="noopener" class="btn">Get Directions</a>
+        <a href="tel:+15038890917" class="btn btn-ghost">Call the Pub</a>
+        <a href="https://www.instagram.com/therecordpub/" target="_blank" rel="noopener" class="btn btn-ghost">Follow on Instagram</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/stock-taps.jpg" alt="Chrome beer taps pouring a fresh amber pint at the bar" width="1600" height="2400" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="img/logo.png" alt="The Record Pub logo" width="234" height="125"></a>
+    <div class="socials">
+      <a href="https://www.instagram.com/therecordpub/" target="_blank" rel="noopener" aria-label="The Record Pub on Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+      </a>
+      <a href="https://www.facebook.com/therecordpub/" target="_blank" rel="noopener" aria-label="The Record Pub on Facebook">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-2.2 0-4 1.8-4 4v2H7v3h3v6h3v-6h3l1-3h-4v-2c0-.6.4-1 1-1z"/></svg>
+      </a>
+    </div>
+    <p><b>The Record Pub</b> · 6034 SE Milwaukie Ave, Sellwood-Moreland, Portland OR 97202 · <a href="tel:+15038890917">503.889.0917</a><br>Records, tapes, beer &amp; gear — open seven days a week.</p>
+    <p class="note">✦ This is a free redesign concept created for The Record Pub by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

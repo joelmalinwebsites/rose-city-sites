@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brooklyn Mall — Consignment Furniture &amp; Antiques · NE Portland</title>
+<meta name="description" content="Brooklyn Mall on NE Sandy Blvd — an eclectic Portland collective of antique, vintage & mid-century furniture, lighting, art, decor and collectibles. Consign your home furnishings and earn 50% on every sale. Open Tue–Sun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6efe0; --paper:#fdf9f0; --ink:#26241d; --muted:#6f6a5b;
+    --olive:#3a4a35; --olive-deep:#2a3627; --teal:#2f5d54; --teal-deep:#234740;
+    --ochre:#c98a2b; --ochre-deep:#a86e17; --mustard:#e0a83c; --walnut:#6b4a2f;
+    --line:#e3d7bf; --tagbg:#fbf4e6;
+    --serif:'DM Serif Display',Georgia,serif; --sans:'Mulish',system-ui,sans-serif;
+    --sh:0 24px 54px -26px rgba(38,36,29,.5); --sh-sm:0 10px 24px -14px rgba(38,36,29,.4);
+    --pad:26px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.06;letter-spacing:-.3px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--ochre-deep);font-weight:800}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--olive);color:#f6efe0;padding:15px 27px;border-radius:4px;font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--olive);cursor:pointer}
+  .btn:hover{background:var(--olive-deep);border-color:var(--olive-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-mustard{background:var(--mustard);border-color:var(--mustard);color:#3a2a10}
+  .btn-mustard:hover{background:var(--ochre-deep);border-color:var(--ochre-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #cdbf9f}
+  .btn-ghost:hover{border-color:var(--olive);color:var(--olive);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  .topbar{background:var(--olive-deep);color:#e7dcc2;font-size:13px;font-weight:600;text-align:center;padding:9px 16px;letter-spacing:.3px}
+  .topbar a{color:var(--mustard)}
+  .topbar b{color:#fff}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,239,224,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;flex-direction:column;line-height:1;min-width:0}
+  .brand .bn{font-family:var(--serif);font-size:24px;color:var(--olive)}
+  .brand small{font-size:10.5px;letter-spacing:2.4px;text-transform:uppercase;color:var(--muted);font-weight:800;margin-top:4px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--ink);font-weight:600}
+  .nav-links a:hover{color:var(--ochre-deep)}
+  .nav-cta{padding:10px 18px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;padding:58px 0 42px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:50px;align-items:center}
+  .hero h1{font-size:62px;margin:15px 0 20px}
+  .hero h1 em{font-style:italic;color:var(--ochre-deep)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:460px;margin-bottom:26px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:26px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--mustard);font-size:17px;letter-spacing:1px}
+  .hero-rating span{font-size:14px;color:var(--muted);font-weight:600}
+  .hero-rating b{color:var(--ink)}
+  .hero-visual{position:relative}
+  .hero-frame{border-radius:8px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:560px;border:6px solid #fff}
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  .tag-badge{position:absolute;top:-16px;right:-8px;background:var(--tagbg);border:2px solid var(--walnut);color:var(--walnut);width:118px;height:80px;transform:rotate(6deg);box-shadow:var(--sh-sm);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;border-radius:8px}
+  .tag-badge::before{content:"";position:absolute;top:11px;left:13px;width:11px;height:11px;border-radius:50%;background:#fff;border:2px solid var(--walnut)}
+  .tag-badge b{font-family:var(--serif);font-size:17px;line-height:1}
+  .tag-badge small{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;font-weight:800}
+  .est-badge{position:absolute;bottom:-18px;left:-14px;background:var(--teal);color:#eaf3ef;font-family:var(--serif);font-size:16px;padding:11px 20px;border-radius:6px;box-shadow:var(--sh-sm);transform:rotate(-2deg)}
+  .est-badge em{font-style:italic;color:var(--mustard)}
+
+  /* MARQUEE */
+  .marquee{background:var(--olive);color:#eadfc4;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:var(--serif);font-size:19px;font-style:italic;border-top:3px solid var(--mustard);border-bottom:3px solid var(--mustard)}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--mustard);font-style:normal}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:82px 0}
+  .sec-head{max-width:640px;margin:0 auto 48px;text-align:center}
+  .sec-head h2{font-size:44px;margin:8px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* FINDS */
+  .finds{background:var(--paper)}
+  .finds-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+  .find{background:#fff;border-radius:8px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;position:relative}
+  .find:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .find .ph{aspect-ratio:3/4;overflow:hidden}
+  .find .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .find:hover .ph img{transform:scale(1.05)}
+  .find .t{padding:16px 18px 20px}
+  .find h3{font-size:21px;margin-bottom:4px}
+  .find p{font-size:13.5px;color:var(--muted)}
+  .find .pricetag{position:absolute;top:12px;left:12px;background:var(--tagbg);border:1.5px solid var(--walnut);color:var(--walnut);font-size:11px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:4px 10px 4px 20px;border-radius:3px}
+  .find .pricetag::before{content:"";position:absolute;top:50%;left:8px;transform:translateY(-50%);width:6px;height:6px;border-radius:50%;background:#fff;border:1.5px solid var(--walnut)}
+  .finds-note{text-align:center;margin-top:38px;font-size:16px;color:var(--ink)}
+  .finds-note b{font-family:var(--serif)}
+  .finds-cta{display:flex;justify-content:center;gap:13px;flex-wrap:wrap;margin-top:26px}
+
+  /* CONSIGN */
+  .consign{background:var(--olive);color:#eee4ca}
+  .consign .sec-head h2{color:#fff}
+  .consign .sec-head p{color:#cfc6ac}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:20px}
+  .step{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:30px 26px}
+  .step .n{font-family:var(--serif);font-size:15px;color:var(--olive-deep);background:var(--mustard);width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+  .step h3{font-size:23px;color:#fff;margin-bottom:8px}
+  .step p{font-size:14.5px;color:#d6cdb3}
+  .payout{display:flex;gap:26px;align-items:center;flex-wrap:wrap;justify-content:space-between;margin-top:34px;background:var(--teal-deep);border-radius:12px;padding:30px 34px}
+  .payout .big{font-family:var(--serif);font-size:56px;color:var(--mustard);line-height:1}
+  .payout .txt{flex:1;min-width:220px}
+  .payout .txt b{font-family:var(--serif);font-size:21px;color:#fff;display:block;margin-bottom:5px}
+  .payout .txt p{font-size:14.5px;color:#cfe0da}
+  .payout .cta{flex:0 0 auto}
+
+  /* STORY */
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:10px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:540px}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;right:-10px;background:var(--ochre);color:#3a2a10;font-family:var(--serif);font-size:17px;padding:9px 18px;border-radius:6px;box-shadow:var(--sh-sm);transform:rotate(-2deg)}
+  .story h2{font-size:42px;margin:8px 0 18px}
+  .story p{color:#4f4a3d;font-size:16.5px;margin-bottom:16px}
+  .story .sig{font-family:var(--serif);font-style:italic;font-size:23px;color:var(--teal-deep);margin-top:8px}
+  .story .chip{display:inline-flex;align-items:center;gap:8px;background:var(--tagbg);border:1px solid var(--line);border-radius:50px;padding:8px 16px;font-size:13.5px;font-weight:700;color:var(--walnut);margin-top:6px}
+
+  /* REVIEWS */
+  .reviews{background:var(--teal-deep);color:#e7f0ec}
+  .reviews .sec-head h2{color:#fff}
+  .reviews .sec-head p{color:#b9d0c8}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:#fbf6ea;color:var(--ink);border-radius:10px;padding:26px 24px;box-shadow:var(--sh)}
+  .rcard:nth-child(2){transform:translateY(-12px)}
+  .rcard .stars{color:var(--mustard);letter-spacing:2px;font-size:15px;margin-bottom:12px}
+  .rcard p{font-family:var(--serif);font-size:16.5px;line-height:1.48;margin-bottom:14px}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:700}
+  .rrating{text-align:center;margin-top:40px;font-size:15px;color:#cfe0da}
+  .rrating b{color:#fff}
+
+  /* VISIT */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .visit-photo{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:44px;margin:8px 0 22px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--ochre-deep);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--serif);font-weight:400}
+  .visit .row a:hover{color:var(--ochre-deep)}
+  .hours{font-size:15px;color:var(--muted)}
+  .visit .cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}
+
+  footer{background:var(--ink);color:#c4bba6;padding:52px 0 30px;text-align:center}
+  footer .bn{font-family:var(--serif);font-size:26px;color:#f6efe0;display:block;margin-bottom:6px}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#e6dcc6}
+  footer .note{margin-top:20px;font-size:12.5px;color:#8a7f68;border-top:1px solid #3b382f;padding-top:20px}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+    .hero{padding:44px 0 34px}
+    .hero h1{font-size:39px}
+    .finds-grid{grid-template-columns:1fr 1fr}
+    .steps,.rgrid{grid-template-columns:1fr}
+    .rcard:nth-child(2){transform:none}
+    .sec-head h2{font-size:31px}section{padding:58px 0}
+    .payout{padding:24px}
+    .story-photo .cap{right:6px}
+    .est-badge{left:0}
+    .tag-badge{right:0}
+  }
+  @media(max-width:430px){
+    .finds-grid{grid-template-columns:1fr}
+    .hero h1{font-size:33px}
+    .payout .big{font-size:44px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Open Tue–Sat <b>11–6</b> · Sun <b>12–5</b> · 3213 NE Sandy Blvd, Portland · <a href="tel:+15032332550">(503) 233-2550</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <span class="bn">Brooklyn Mall</span>
+        <small>Consignment · Antiques · NE Portland</small>
+      </a>
+      <div class="nav-links">
+        <a href="#finds">What You'll Find</a>
+        <a href="#consign">Consign</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit" class="btn btn-mustard nav-cta">Visit the Shop</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">An eclectic Portland furniture collective</span>
+      <h1>Treasures with a <em>second story</em> to tell.</h1>
+      <p class="tag">Antique, vintage &amp; mid-century furniture, lighting, art, decor and collectibles — gathered by a family of dealers and consigners on NE Sandy Blvd.</p>
+      <div class="hero-cta">
+        <a href="#finds" class="btn">Browse the Finds</a>
+        <a href="#consign" class="btn btn-ghost">Consign Your Pieces</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>5.0</b> on Yelp · 27 reviews &amp; ~105 across the web</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-frame">
+        <img src="img/hero-interior.jpg" alt="Sunlit interior of an antique and vintage furniture shop, filled with dressers, chairs, mirrors, clocks and curios" width="1600" height="1200">
+      </div>
+      <div class="tag-badge"><b>50%</b><small>Consigner Payout</small></div>
+      <div class="est-badge">One item to a <em>whole house</em></div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Mid-Century Modern</span><span class="dot">✦</span><span>Antiques</span><span class="dot">✦</span><span>Vintage Lighting</span><span class="dot">✦</span><span>Dressers &amp; Dining Sets</span><span class="dot">✦</span><span>Fine Art &amp; Decor</span><span class="dot">✦</span><span>Rugs &amp; Collectibles</span><span class="dot">✦</span>
+    <span>Mid-Century Modern</span><span class="dot">✦</span><span>Antiques</span><span class="dot">✦</span><span>Vintage Lighting</span><span class="dot">✦</span><span>Dressers &amp; Dining Sets</span><span class="dot">✦</span><span>Fine Art &amp; Decor</span><span class="dot">✦</span><span>Rugs &amp; Collectibles</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- FINDS -->
+<section id="finds" class="finds">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The gallery of finds</span>
+      <h2>Every visit is a treasure hunt.</h2>
+      <p>The floor refreshes often, so no two trips are the same. A rotating mix of eras and makers — from solid-wood antiques to sleek mid-century pieces.</p>
+    </div>
+    <div class="finds-grid">
+      <article class="find">
+        <div class="ph"><img src="img/find-midcentury-chair.jpg" alt="A mid-century wooden armchair with green upholstery beside a small side table" width="1600" height="2400" loading="lazy"></div>
+        <span class="pricetag">Mid-Century</span>
+        <div class="t"><h3>Mid-Century Modern</h3><p>Teak, walnut &amp; MCM seating, credenzas and clean-lined classics.</p></div>
+      </article>
+      <article class="find">
+        <div class="ph"><img src="img/find-lighting.jpg" alt="Vintage chandeliers and lamps hanging above a room full of antique chairs and mirrors" width="1600" height="2397" loading="lazy"></div>
+        <span class="pricetag">Lighting</span>
+        <div class="t"><h3>Lighting &amp; Mirrors</h3><p>Chandeliers, lamps and framed mirrors to finish any room.</p></div>
+      </article>
+      <article class="find">
+        <div class="ph"><img src="img/find-sideboard.jpg" alt="A mid-century wooden sideboard and coffee tables styled in a warm living room" width="1600" height="1060" loading="lazy"></div>
+        <span class="pricetag">Furniture</span>
+        <div class="t"><h3>Dressers &amp; Dining</h3><p>Sideboards, dining sets, bookcases and bedroom pieces.</p></div>
+      </article>
+      <article class="find">
+        <div class="ph"><img src="img/find-decor.jpg" alt="An antique shop entrance packed with copper cookware, chairs, artwork and curios" width="1600" height="2397" loading="lazy"></div>
+        <span class="pricetag">Decor</span>
+        <div class="t"><h3>Art, Decor &amp; Curios</h3><p>Fine art, glassware, rugs, books and one-of-a-kind collectibles.</p></div>
+      </article>
+    </div>
+    <p class="finds-note">New arrivals land nearly every week — the full, ever-changing selection lives on their <b>Craigslist</b> listings and <b>Facebook</b> page.</p>
+    <div class="finds-cta">
+      <a href="https://www.facebook.com/BrooklynMallPDX/" target="_blank" rel="noopener" class="btn">See the Latest Arrivals</a>
+      <a href="#visit" class="btn btn-ghost">Plan a Visit</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONSIGN -->
+<section id="consign" class="consign">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--mustard)">Sell with us</span>
+      <h2>Consigning is simple.</h2>
+      <p>Downsizing, redecorating, or clearing an estate? Let your good furniture find its next home — and earn while it does.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="n">1</div>
+        <h3>Bring it in</h3>
+        <p>From a single standout piece to a whole house full, we're flexible on how much you consign. Give us a call to talk it through.</p>
+      </div>
+      <div class="step">
+        <div class="n">2</div>
+        <h3>We display &amp; sell</h3>
+        <p>Your furnishings join our curated floor and online listings, in front of Portland shoppers who come looking for exactly this.</p>
+      </div>
+      <div class="step">
+        <div class="n">3</div>
+        <h3>You get paid</h3>
+        <p>When an item sells, you receive a 50% payout. Delivery service is available for buyers — just ask about pricing.</p>
+      </div>
+    </div>
+    <div class="payout">
+      <div class="big">50%</div>
+      <div class="txt">
+        <b>You keep half of every sale.</b>
+        <p>We also help seniors evaluate and downsize their furnishings for consignment or estate sales — co-owner Jerry is a Certified Relocation &amp; Transition Specialist.</p>
+      </div>
+      <div class="cta">
+        <a href="mailto:consign@PersonalLogistics.biz?subject=Consignment%20Inquiry%20—%20Brooklyn%20Mall" class="btn btn-mustard">Start a Consignment</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/story-shopper.jpg" alt="A shopper browsing shelves of glassware and furniture inside Brooklyn Mall" width="1600" height="1068" loading="lazy"></div>
+      <span class="cap">come find yours</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>A family shop, built from many hands.</h2>
+      <p>Brooklyn Mall began when Julie Evans and her husband Jerry Leffel combined the smaller furniture businesses they'd run — including Julie's teak shop — into one collective. They invited other dealers and consigners to join in, and the result is the eclectic mix you'll wander through today.</p>
+      <p>That's the charm of the place: handmade furniture, imports, antiques and estate-sale finds all under one roof, each with its own history. Reviewers keep pointing to the same thing — knowledgeable, genuinely friendly folks who care about the pieces they sell.</p>
+      <div class="chip">✦ Owned &amp; run by Julie Evans &amp; Jerry Leffel</div>
+      <div class="sig">— Julie &amp; Jerry</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--mustard)">What shoppers say</span>
+      <h2>Portland keeps coming back.</h2>
+      <p>A 5.0 rating on Yelp and glowing notes across the web — here's a taste, in their own words.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"This place is amazing! A veritable wonderland for all things vintage and cool."</p>
+        <div class="src">— Cindy W.</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"The owner works on all the pieces himself and knows what he's doing. Very cool guy. The merchandise quality is 10/10."</p>
+        <div class="src">— Doug W.</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Great finds from a variety of periods. Friendly staff, great selection that refreshes often and great prices."</p>
+        <div class="src">— Kimberly R.</div>
+      </div>
+    </div>
+    <p class="rrating"><b>5.0 ★</b> on Yelp (27 reviews) · roughly <b>105</b> reviews across platforms</p>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Find us on NE Sandy.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>3213 NE Sandy Blvd</b> · Portland, OR 97232</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Hours</b><div class="hours">Tue–Sat · 11:00am – 6:00pm<br>Sun · 12:00pm – 5:00pm · Closed Mon</div></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15032332550"><b>(503) 233-2550</b></a> · call about a piece or delivery</div></div>
+      <div class="cta">
+        <a href="tel:+15032332550" class="btn">Call the Shop</a>
+        <a href="mailto:consign@PersonalLogistics.biz?subject=Consignment%20Inquiry%20—%20Brooklyn%20Mall" class="btn btn-ghost">Email About Consigning</a>
+        <a href="https://maps.google.com/?q=Brooklyn+Mall+3213+NE+Sandy+Blvd+Portland+OR+97232" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/storefront.jpg" alt="An antique furniture shop entrance filled with chairs, mirrors, chandeliers and curios" width="1600" height="1032" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <span class="bn">Brooklyn Mall</span>
+    <p><b>Consignment Furniture &amp; Antiques</b> · 3213 NE Sandy Blvd, Portland, OR 97232 · <a href="tel:+15032332550">(503) 233-2550</a><br>Open Tue–Sat 11–6 · Sun 12–5 · Consign with us and earn 50% on every sale.</p>
+    <p class="note">✦ This is a free redesign concept created for Brooklyn Mall by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

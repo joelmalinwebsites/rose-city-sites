@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Law Office of Wendell L. Belknap — Estate Planning &amp; Probate · Oregon City, OR</title>
+<meta name="description" content="Wendell L. Belknap, attorney at law in Oregon City, Oregon. Wills, trusts, probate, powers of attorney, and estate planning — practiced with an old-country-lawyer's care since 1985. He answers his own phone. Call (503) 657-8946.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6f1e7; --paper:#fdfaf3; --ivory:#efe7d6;
+    --ink:#241f18; --body:#453c30; --muted:#7c6f5c;
+    --forest:#1f3d30; --forest-deep:#152a21; --forest-soft:#2c5442;
+    --gold:#b3893f; --gold-deep:#946e2c; --gold-soft:#d9b877;
+    --line:#e2d7c1; --line-forest:rgba(255,255,255,.16);
+    --serif:'Spectral',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 26px 60px -30px rgba(21,42,33,.55); --sh-sm:0 12px 30px -16px rgba(21,42,33,.42);
+    --pad:24px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--body);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--serif);color:var(--ink);font-weight:600;line-height:1.12;letter-spacing:-.3px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-size:12px;letter-spacing:2.6px;text-transform:uppercase;color:var(--gold-deep);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--forest);color:#f4efe3;padding:15px 26px;border-radius:6px;font-family:var(--sans);font-weight:600;font-size:15px;transition:.2s;border:1.5px solid var(--forest);cursor:pointer}
+  .btn:hover{background:var(--forest-deep);border-color:var(--forest-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-gold{background:var(--gold);border-color:var(--gold);color:#241a08}
+  .btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:1.5px solid #cbbc9c}
+  .btn-ghost:hover{background:var(--forest);border-color:var(--forest);color:#f4efe3;transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+  /* fine rule + monogram */
+  .rule{display:inline-flex;align-items:center;gap:12px;color:var(--gold)}
+  .rule::before,.rule::after{content:"";height:1px;width:34px;background:var(--gold);opacity:.6}
+  .seal{width:60px;height:60px;flex:0 0 auto}
+
+  .topbar{background:var(--forest-deep);color:#e7ddc7;font-size:13px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.3px}
+  .topbar b{color:#fff}
+  .topbar a{color:var(--gold-soft);font-weight:600}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;align-items:center;gap:13px;min-width:0}
+  .brand .mono{width:44px;height:44px;flex:0 0 auto}
+  .brand .bn{font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.1;color:var(--ink)}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:2px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14.5px;color:var(--ink);font-weight:500}
+  .nav-links a:hover{color:var(--forest-soft)}
+  .nav-cta{padding:11px 20px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;padding:66px 0 46px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:52px;align-items:center}
+  .hero h1{font-size:57px;margin:16px 0 20px;font-weight:600}
+  .hero h1 em{font-style:italic;color:var(--forest-soft);font-weight:500}
+  .hero .lede{font-size:19px;color:var(--body);max-width:480px;margin-bottom:22px}
+  .hero .quote{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--muted);border-left:2px solid var(--gold);padding-left:16px;margin-bottom:28px;max-width:470px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-recog{display:flex;align-items:center;gap:22px;margin-top:30px;flex-wrap:wrap}
+  .hero-recog .item{display:flex;flex-direction:column;line-height:1.25}
+  .hero-recog .item b{font-family:var(--serif);font-size:16px;color:var(--ink);font-weight:600}
+  .hero-recog .item span{font-size:12px;color:var(--muted);letter-spacing:.3px}
+  .hero-recog .div{width:1px;height:34px;background:var(--line)}
+
+  .hero-visual{position:relative}
+  .hero-photo{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3.15}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-frame{position:absolute;inset:12px;border:1px solid rgba(255,255,255,.5);border-radius:8px;pointer-events:none;z-index:2}
+  .hero-badge{position:absolute;bottom:-26px;right:-14px;width:132px;height:132px;background:var(--forest);color:#f0e7d3;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);border:1.5px solid var(--gold-soft);padding:12px;z-index:3}
+  .hero-badge .yr{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold-soft);line-height:1}
+  .hero-badge small{font-size:9px;letter-spacing:1.6px;text-transform:uppercase;margin-top:5px;opacity:.9}
+  .hero-tag{position:absolute;top:-16px;left:-14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:9px 15px;box-shadow:var(--sh-sm);display:flex;align-items:center;gap:9px;z-index:3}
+  .hero-tag img{width:40px;height:40px;border-radius:5px;object-fit:cover}
+  .hero-tag span{font-size:12px;color:var(--muted);line-height:1.3}
+  .hero-tag b{display:block;font-family:var(--serif);font-size:13.5px;color:var(--ink)}
+
+  /* strip */
+  .strip{background:var(--forest);color:#e9dfc9}
+  .strip .wrap{display:flex;gap:14px 40px;justify-content:center;flex-wrap:wrap;padding-top:20px;padding-bottom:20px;font-family:var(--serif);font-size:17px;font-style:italic;align-items:center}
+  .strip .d{color:var(--gold-soft)}
+
+  section{padding:88px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 52px}
+  .sec-head .eyebrow{margin-bottom:14px;display:block}
+  .sec-head h2{font-size:42px;margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* PRACTICE */
+  .practice{background:var(--paper)}
+  .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:30px 28px;transition:.25s}
+  .pcard:hover{transform:translateY(-5px);box-shadow:var(--sh-sm);border-color:var(--gold-soft)}
+  .pcard .ic{width:46px;height:46px;border-radius:9px;background:var(--forest);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .pcard .ic svg{width:24px;height:24px;color:var(--gold-soft)}
+  .pcard h3{font-size:22px;margin-bottom:9px}
+  .pcard p{font-size:14.5px;color:var(--muted);line-height:1.6}
+  .practice-note{text-align:center;margin-top:40px;font-size:15.5px;color:var(--muted)}
+  .practice-note b{font-family:var(--serif);color:var(--ink);font-weight:600}
+
+  /* ABOUT / since */
+  .about-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .about-photo{position:relative}
+  .about-photo .f{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .about-photo .f img{width:100%;height:100%;object-fit:cover}
+  .about-photo .cap{position:absolute;bottom:-18px;left:-14px;background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:10px 16px;box-shadow:var(--sh-sm);font-family:var(--serif);font-style:italic;font-size:14.5px;color:var(--forest-soft);max-width:230px}
+  .about h2{font-size:40px;margin:10px 0 20px}
+  .about p{color:var(--body);font-size:16.5px;margin-bottom:16px}
+  .about p .hl{font-family:var(--serif);font-style:italic;color:var(--forest-soft)}
+  .about .sig{font-family:var(--serif);font-size:24px;font-style:italic;color:var(--ink);margin-top:10px}
+  .about .sig small{display:block;font-family:var(--sans);font-style:normal;font-size:12.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-top:4px}
+
+  /* WHY / value band */
+  .why{background:var(--ivory)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .why-photo{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:3/3.4;max-height:520px}
+  .why-photo img{width:100%;height:100%;object-fit:cover;object-position:center 30%}
+  .why h2{font-size:38px;margin:10px 0 24px}
+  .why .pt{display:flex;gap:16px;margin-bottom:22px}
+  .why .pt .n{font-family:var(--serif);font-size:19px;color:var(--gold-deep);font-weight:600;flex:0 0 auto;width:34px;height:34px;border:1px solid var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center}
+  .why .pt h4{font-size:19px;margin-bottom:4px}
+  .why .pt p{font-size:15px;color:var(--muted);margin:0}
+
+  /* REVIEWS */
+  .reviews{background:var(--forest);color:#e9dfc9}
+  .reviews .sec-head h2{color:#fff}
+  .reviews .sec-head .eyebrow{color:var(--gold-soft)}
+  .reviews .sec-head p{color:#cbbfa4}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:var(--paper);color:var(--ink);border-radius:12px;padding:28px 26px;box-shadow:var(--sh)}
+  .rcard .stars{color:var(--gold);letter-spacing:3px;font-size:14px;margin-bottom:14px}
+  .rcard p{font-family:var(--serif);font-style:italic;font-size:16.5px;line-height:1.55;color:var(--body);margin-bottom:16px}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:600}
+  .rcard .src b{color:var(--forest-soft);font-family:var(--serif);font-style:normal}
+  .awards{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:42px}
+  .award{background:rgba(255,255,255,.06);border:1px solid var(--line-forest);border-radius:10px;padding:18px 24px;text-align:center;max-width:260px}
+  .award b{font-family:var(--serif);color:#fff;font-size:16px;display:block;margin-bottom:4px}
+  .award span{font-size:12.5px;color:#cbbfa4}
+  .reviews .disclaim{text-align:center;margin-top:26px;font-size:12px;color:#a99e84}
+
+  /* CONTACT */
+  .contact{background:var(--paper)}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .visit h2{font-size:42px;margin:12px 0 8px}
+  .visit .sub{color:var(--muted);font-size:16px;margin-bottom:26px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--gold-deep);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--serif);font-weight:600;color:var(--ink)}
+  .visit .row a{color:var(--body)}
+  .visit .row a:hover{color:var(--forest-soft)}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .visit-photo{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3.4}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+
+  footer{background:var(--forest-deep);color:#b9ad93;padding:56px 0 30px;text-align:center}
+  footer .seal{margin:0 auto 14px;display:block}
+  footer .fn{font-family:var(--serif);font-size:20px;color:#f0e7d3;margin-bottom:6px}
+  footer p{font-size:14px;line-height:1.85}
+  footer a{color:#dcd0b6}
+  footer .disc{margin-top:12px;font-size:12.5px;color:#8f836b;font-style:italic}
+  footer .note{margin-top:20px;font-size:12.5px;color:var(--gold-soft);border-top:1px solid var(--line-forest);padding-top:20px;font-family:var(--serif);font-style:italic}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.about-grid,.why-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+    .hero{padding-top:44px;padding-bottom:44px}
+    .hero h1{font-size:38px}
+    .hero-visual{margin-bottom:14px}
+    .hero-badge{width:104px;height:104px;bottom:-18px;right:6px}
+    .hero-badge .yr{font-size:24px}
+    .hero-tag{left:6px}
+    .pgrid,.rgrid{grid-template-columns:1fr}
+    .sec-head h2{font-size:31px}
+    section{padding:60px 0}
+    .about h2,.why h2,.visit h2,.reviews .sec-head h2{font-size:30px}
+    .about-photo .cap{left:8px}
+    .why-photo{max-height:none;aspect-ratio:4/3}
+    .brand .bn{font-size:16px}
+    .nav-cta{padding:9px 15px;font-size:13px}
+  }
+  @media(max-width:390px){
+    .hero h1{font-size:32px}
+    .hero-recog{gap:14px}
+    .hero-recog .div{display:none}
+    .btn{padding:14px 20px;font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Estate planning &amp; probate · Oregon City, OR &nbsp;·&nbsp; <b>Mr. Belknap answers his own phone:</b> <a href="tel:+15036578946">(503) 657-8946</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Law Office of Wendell L. Belknap — home">
+        <svg class="mono" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="30" cy="30" r="28.5" fill="none" stroke="#b3893f" stroke-width="1.2"/>
+          <circle cx="30" cy="30" r="24" fill="#1f3d30"/>
+          <text x="30" y="37" text-anchor="middle" font-family="Spectral,Georgia,serif" font-weight="600" font-size="19" fill="#d9b877" letter-spacing="1">WLB</text>
+        </svg>
+        <span class="bn">Wendell L. Belknap<small>Attorney at Law</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#practice">Practice Areas</a>
+        <a href="#about">About Wendell</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+        <a href="tel:+15036578946" class="btn btn-gold nav-cta">Call (503) 657-8946</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Serving Oregon families since 1985</span>
+      <h1>Thoughtful counsel for your <em>will, your estate, and what comes next.</em></h1>
+      <p class="lede">Wills, trusts, probate, and powers of attorney — handled personally by an Oregon City attorney who treats every client like a neighbor.</p>
+      <p class="quote">"Whether or not you should hire an attorney is almost always a business decision, not a matter of principle. If I cannot help you, I will tell you."</p>
+      <div class="hero-cta">
+        <a href="tel:+15036578946" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          Schedule a consultation
+        </a>
+        <a href="#practice" class="btn btn-ghost">See how I can help</a>
+      </div>
+      <div class="hero-recog">
+        <div class="item"><b>Avvo Clients' Choice</b><span>&amp; Top Contributor</span></div>
+        <div class="div" aria-hidden="true"></div>
+        <div class="item"><b>Martindale "Distinguished"</b><span>Peer-rated · 2025</span></div>
+        <div class="div" aria-hidden="true"></div>
+        <div class="item"><b>40 years at the bar</b><span>Lewis &amp; Clark, cum laude</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="img/office-real.jpg" alt="The Law Office of Wendell L. Belknap — a restored Craftsman bungalow at 411 5th Street in Oregon City, Oregon" width="480" height="342">
+      </div>
+      <div class="hero-frame" aria-hidden="true"></div>
+      <div class="hero-tag">
+        <img src="img/heron-sign-real.jpg" alt="The hand-carved wooden office sign outside the firm" width="40" height="40">
+        <span><b>411 5th Street</b>Oregon City, Oregon</span>
+      </div>
+      <div class="hero-badge">
+        <span class="yr">1985</span>
+        <small>Since</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STRIP -->
+<div class="strip">
+  <div class="wrap">
+    <span>Wills &amp; Trusts</span><span class="d">✦</span>
+    <span>Probate</span><span class="d">✦</span>
+    <span>Powers of Attorney</span><span class="d">✦</span>
+    <span>Advance Directives</span><span class="d">✦</span>
+    <span>Guardianship</span>
+  </div>
+</div>
+
+<!-- PRACTICE -->
+<section id="practice" class="practice">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Practice Areas</span>
+      <h2>Estate planning, made plain.</h2>
+      <p>Most families come to me to put their affairs in good order — or to settle an estate after a loss. I keep the process clear, unhurried, and free of jargon.</p>
+    </div>
+    <div class="pgrid">
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/><path d="M9 9h1M9 13h6M9 17h6"/></svg></div>
+        <h3>Wills &amp; Trusts</h3>
+        <p>Simple and complex wills, revocable living trusts, and joint wills — drafted to say exactly what you mean, so your wishes are honored.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4v5c0 4.5-3.2 7.8-8 9-4.8-1.2-8-4.5-8-9V7l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+        <h3>Probate</h3>
+        <p>Guiding families and personal representatives through Oregon probate after a death — patiently, and at a fair fee, when you have enough to carry already.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"/><circle cx="9.5" cy="8" r="3.5"/><path d="M19 8v6M16 11h6"/></svg></div>
+        <h3>Powers of Attorney</h3>
+        <p>Durable powers of attorney and advance directives so a trusted person can act for you — should illness or age ever make that necessary.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h3>Guardianship &amp; Conservatorship</h3>
+        <p>Standing up protections for a minor or an adult who can no longer manage their own affairs, with care for the whole family involved.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h3>Real Estate &amp; Deeds</h3>
+        <p>Purchases and sales, promissory notes, and trust deeds — often the companion piece to a sound estate plan.</p>
+      </div>
+      <div class="pcard">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12h6M9 16h6M9 8h2"/><rect x="4" y="3" width="16" height="18" rx="2"/></svg></div>
+        <h3>Business &amp; Beyond</h3>
+        <p>Forming an LLC or corporation, business sales, and general counsel — plus family law and personal injury matters when they arise.</p>
+      </div>
+    </div>
+    <p class="practice-note">Not sure where your situation fits? <b>Just call and ask.</b> Mr. Belknap will tell you honestly whether he's the right lawyer for the job.</p>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <div class="f"><img src="img/heron-sign-real.jpg" alt="The hand-carved wooden sign at 411 5th Street reading Law Office · Wendell L. Belknap" width="300" height="220" loading="lazy"></div>
+      <span class="cap">The hand-carved sign that's greeted clients on 5th Street for years.</span>
+    </div>
+    <div>
+      <span class="eyebrow">About Wendell</span>
+      <h2>An old-country lawyer, by design.</h2>
+      <p>Wendell L. Belknap has practiced law in Oregon City since being admitted to the bar in <span class="hl">1985</span>, after graduating <span class="hl">cum laude</span> from Lewis &amp; Clark Law School. A sixth-generation Oregonian, he built his practice to feel less like a firm and more like the office of an old country lawyer — the kind who knows your name and answers the phone himself.</p>
+      <p>That means no gatekeepers and no meter running before you've even said hello. When you call, you reach Wendell. He'll listen, tell you plainly what your options are, and give you an honest read on whether hiring an attorney is worth the cost in your situation.</p>
+      <p>For estate planning and probate especially — matters that arrive at tender moments — that candor and steadiness are the whole point.</p>
+      <div class="sig">Wendell L. Belknap<small>Attorney at Law · Oregon City</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section id="why" class="why">
+  <div class="wrap why-grid">
+    <div class="why-photo">
+      <img src="img/family-warm.jpg" alt="A family sharing a warm, joyful moment at home" width="1600" height="2400" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow">Why plan now</span>
+      <h2>A good plan is a gift to the people you love.</h2>
+      <div class="pt">
+        <span class="n">1</span>
+        <div><h4>Spare your family the hard questions</h4><p>A clear will and durable power of attorney answer the questions your family would otherwise face at the worst possible time.</p></div>
+      </div>
+      <div class="pt">
+        <span class="n">2</span>
+        <div><h4>Keep it out of a courtroom where you can</h4><p>The right plan can simplify — or avoid — probate, keeping decisions in the family's hands rather than the court's.</p></div>
+      </div>
+      <div class="pt">
+        <span class="n">3</span>
+        <div><h4>Work with one attorney, start to finish</h4><p>No handoffs to associates. The lawyer you meet is the lawyer who drafts your documents and picks up when you call.</p></div>
+      </div>
+      <div class="hero-cta" style="margin-top:8px">
+        <a href="mailto:wendell@belknaplaw.com?subject=Estate%20planning%20consultation" class="btn">Email Wendell</a>
+        <a href="tel:+15036578946" class="btn btn-ghost">Or call (503) 657-8946</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">In their words</span>
+      <h2>What clients say</h2>
+      <p>A few notes from clients, shared publicly on Avvo — the source of Mr. Belknap's Clients' Choice recognition.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"He was not only kind and caring but also knowledgeable and thorough."</p>
+        <div class="src">— <b>Kathy</b> · via Avvo</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Wendell was always supportive and immediately responsive to my questions."</p>
+        <div class="src">— <b>Debra</b> · via Avvo</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"I would highly recommend Wendell as your first contact lawyer."</p>
+        <div class="src">— <b>Eric</b> · via Avvo</div>
+      </div>
+    </div>
+    <div class="awards">
+      <div class="award"><b>Avvo Clients' Choice</b><span>Awarded for a strong record of favorable client reviews</span></div>
+      <div class="award"><b>Martindale "Distinguished"</b><span>A peer rating for professional achievement · 2025</span></div>
+      <div class="award"><b>Avvo Top Contributor</b><span>For answering the public's legal questions</span></div>
+    </div>
+    <p class="disclaim">Reviews are individual client experiences and are not a guarantee of any particular result.</p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Get in touch</span>
+      <h2>Let's talk it through.</h2>
+      <p class="sub">Call or email and you'll reach Wendell directly. He'll let you know how he can help — and if he can't, he'll point you in the right direction.</p>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>411 5th Street</b><br>Oregon City, OR 97045</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15036578946"><b>(503) 657-8946</b></a><br>Wendell answers his own phone</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><div><a href="mailto:wendell@belknaplaw.com"><b>wendell@belknaplaw.com</b></a><br>Email anytime — he reads it himself</div></div>
+      <div class="cta">
+        <a href="tel:+15036578946" class="btn">Call the office</a>
+        <a href="mailto:wendell@belknaplaw.com?subject=Consultation%20request" class="btn btn-ghost">Send an email</a>
+        <a href="https://maps.google.com/?q=411+5th+Street+Oregon+City+OR+97045" target="_blank" rel="noopener" class="btn btn-ghost">Get directions</a>
+      </div>
+    </div>
+    <div class="visit-photo">
+      <img src="img/office-real.jpg" alt="Exterior of the Law Office of Wendell L. Belknap, a grey Craftsman bungalow with a covered porch in Oregon City" width="480" height="342" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <svg class="seal" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="30" cy="30" r="28.5" fill="none" stroke="#b3893f" stroke-width="1.2"/>
+      <circle cx="30" cy="30" r="24" fill="none" stroke="#8f836b" stroke-width=".7"/>
+      <text x="30" y="37" text-anchor="middle" font-family="Spectral,Georgia,serif" font-weight="600" font-size="18" fill="#d9b877" letter-spacing="1">WLB</text>
+    </svg>
+    <div class="fn">Law Office of Wendell L. Belknap</div>
+    <p>411 5th Street, Oregon City, OR 97045 · <a href="tel:+15036578946">(503) 657-8946</a> · <a href="mailto:wendell@belknaplaw.com">wendell@belknaplaw.com</a><br>Estate planning, probate &amp; general practice — serving Oregon families since 1985.</p>
+    <p class="disc">This website is for general information and is not legal advice. Contacting the office does not create an attorney–client relationship.</p>
+    <p class="note">✦ This is a free redesign concept created for the Law Office of Wendell L. Belknap by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dig Vinyl — Used Records · Jazz &amp; Soul · Sellwood, Portland</title>
+<meta name="description" content="Dig Vinyl is a used vinyl record store in the Sellwood neighborhood of SE Portland — all genres, with a deep emphasis on jazz and soul. Buy, sell, trade, consign. Open daily 12–7.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&family=Chivo+Mono:wght@400;500;600&family=Nunito+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6ead3; --paper:#fdf5e6; --ink:#2a1c14; --muted:#7a6551;
+    --ochre:#e0a127; --ochre-deep:#c07d12; --burnt:#c04a1e; --burnt-deep:#9a3612;
+    --brown:#3d2818; --brown-deep:#2a1a0e; --teal:#2f6b5e; --line:#e4d0ac;
+    --disp:'Righteous',system-ui,sans-serif; --mono:'Chivo Mono',ui-monospace,monospace; --sans:'Nunito Sans',system-ui,sans-serif;
+    --pad:24px;
+    --sh:0 24px 54px -26px rgba(42,28,20,.55); --sh-sm:0 10px 26px -14px rgba(42,28,20,.42);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.02;letter-spacing:.2px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--burnt);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--burnt);color:#fff;padding:15px 26px;border-radius:50px;font-weight:800;font-size:15px;transition:.2s;border:2px solid var(--burnt);cursor:pointer}
+  .btn:hover{background:var(--burnt-deep);border-color:var(--burnt-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px;flex:0 0 auto}
+  .btn-gold{background:var(--ochre);border-color:var(--ochre);color:#3a2708}
+  .btn-gold:hover{background:var(--ochre-deep);border-color:var(--ochre-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #cdb488}
+  .btn-ghost:hover{border-color:var(--burnt);color:var(--burnt);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  /* vinyl record motif */
+  .vinyl{border-radius:50%;background:
+    repeating-radial-gradient(circle at center,#1c120b 0 2px,#241710 2px 4px);
+    position:relative;box-shadow:var(--sh)}
+  .vinyl::before{content:"";position:absolute;inset:0;margin:auto;width:34%;height:34%;border-radius:50%;background:radial-gradient(circle at center,var(--ochre) 0 62%,var(--burnt) 62% 100%)}
+  .vinyl::after{content:"";position:absolute;inset:0;margin:auto;width:5%;height:5%;border-radius:50%;background:var(--cream)}
+
+  .topbar{background:var(--brown-deep);color:#f0dcb8;font-family:var(--mono);font-size:12.5px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.4px}
+  .topbar b{color:var(--ochre)}
+  .topbar a{color:var(--ochre)}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,234,211,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand .disc{width:40px;height:40px;flex:0 0 auto}
+  .brand .bn{font-family:var(--disp);font-size:25px;line-height:.95}
+  .brand .bn small{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:2px;color:var(--burnt);text-transform:uppercase;margin-top:3px}
+  .nav-links{display:flex;gap:26px;align-items:center}
+  .nav-links a{font-size:15px;font-weight:700}
+  .nav-links a:hover{color:var(--burnt)}
+  .nav-cta{padding:10px 18px;font-size:13.5px}
+
+  /* HERO */
+  .hero{position:relative;padding:64px 0 40px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
+  .hero h1{font-size:70px;margin:16px 0 20px;color:var(--brown)}
+  .hero h1 .o{color:var(--burnt)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:460px;margin-bottom:24px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .chip{font-family:var(--mono);font-size:11.5px;letter-spacing:1px;text-transform:uppercase;color:var(--brown);background:rgba(224,161,39,.22);border:1px solid rgba(192,125,18,.4);padding:6px 12px;border-radius:40px;font-weight:600}
+  .hero-visual{position:relative;height:520px}
+  .hero-photo{position:absolute;top:0;right:0;width:82%;height:100%;border-radius:22px 22px 22px 90px;overflow:hidden;box-shadow:var(--sh);border:6px solid var(--paper)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-disc{position:absolute;bottom:-24px;left:-6px;width:150px;height:150px;animation:spin 14s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media(prefers-reduced-motion:reduce){.hero-disc{animation:none}}
+  .hero-badge{position:absolute;top:6px;left:-4px;background:var(--teal);color:#f3ead6;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;padding:9px 15px;border-radius:40px;box-shadow:var(--sh-sm);transform:rotate(-4deg)}
+
+  /* marquee */
+  .marquee{background:var(--burnt);color:#f6e2c4;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:var(--disp);font-size:20px;border-top:3px solid var(--brown-deep);border-bottom:3px solid var(--brown-deep)}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 20px}
+  .marquee .track .dot{color:var(--ochre)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:82px 0}
+  .sec-head{max-width:660px;margin:0 auto 48px;text-align:center}
+  .sec-head h2{font-size:46px;margin:8px 0 12px;color:var(--brown)}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* CARRY */
+  .carry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .cc{background:var(--paper);border:2px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s}
+  .cc:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .cc .ph{aspect-ratio:3/2;overflow:hidden}
+  .cc .ph img{width:100%;height:100%;object-fit:cover}
+  .cc .t{padding:22px 22px 26px}
+  .cc h3{font-size:24px;margin-bottom:7px;color:var(--brown)}
+  .cc p{font-size:14.5px;color:var(--muted)}
+  .genres{margin-top:44px;background:var(--brown);color:#f0dcb8;border-radius:20px;padding:36px 40px;text-align:center}
+  .genres h4{font-family:var(--mono);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--ochre);margin-bottom:18px}
+  .genres .list{display:flex;flex-wrap:wrap;gap:10px 12px;justify-content:center}
+  .genres .g{font-family:var(--sans);font-weight:700;font-size:15px;background:rgba(246,234,211,.08);border:1px solid rgba(246,234,211,.18);padding:8px 16px;border-radius:40px}
+  .genres .g.hot{background:var(--ochre);color:#3a2708;border-color:var(--ochre)}
+
+  /* BUY */
+  .buy{background:var(--ochre)}
+  .buy-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .buy-photo{border-radius:20px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:3/2;border:6px solid var(--paper)}
+  .buy-photo img{width:100%;height:100%;object-fit:cover}
+  .buy h2{font-size:46px;margin:8px 0 16px;color:var(--brown-deep)}
+  .buy p{color:#5a3d1c;font-size:16.5px;margin-bottom:18px}
+  .buy .steps{display:flex;flex-direction:column;gap:14px;margin:22px 0 26px}
+  .buy .step{display:flex;gap:14px;align-items:flex-start}
+  .buy .step .n{font-family:var(--disp);font-size:20px;background:var(--brown-deep);color:var(--ochre);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .buy .step b{font-family:var(--sans);font-weight:800;color:var(--brown-deep);display:block}
+  .buy .step span{font-size:14.5px;color:#5a3d1c}
+  .buy .eyebrow{color:var(--burnt-deep)}
+
+  /* STORY */
+  .story{background:var(--brown-deep);color:#ecd8b6}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:18px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:540px;border:6px solid #3d2818}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;right:-8px;background:var(--burnt);color:#fff;font-family:var(--mono);font-size:12px;letter-spacing:1px;text-transform:uppercase;padding:9px 16px;border-radius:40px;box-shadow:var(--sh-sm);transform:rotate(-2deg)}
+  .story h2{font-size:44px;margin:8px 0 20px;color:var(--ochre)}
+  .story p{font-size:16.5px;margin-bottom:16px;color:#e2cfab}
+  .story .eyebrow{color:var(--ochre)}
+  .story .sig{font-family:var(--disp);font-size:22px;color:#fff;margin-top:8px}
+
+  /* VISIT */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit-photo{border-radius:20px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;border:6px solid var(--paper)}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:46px;margin:8px 0 24px;color:var(--brown)}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--burnt);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-weight:800}
+  .visit .row a:hover{color:var(--burnt)}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+  footer{background:var(--brown-deep);color:#c9b394;padding:52px 0 30px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand .bn{color:#f0dcb8}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#e6d2ae}
+  footer a:hover{color:var(--ochre)}
+  footer .note{margin-top:20px;font-size:12.5px;color:#8a7455;border-top:1px solid #41301e;padding-top:18px}
+
+  @media(max-width:880px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.buy-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:38px}
+    .hero{padding-top:44px;padding-bottom:30px}
+    .hero h1{font-size:44px}
+    .hero .tag,.hero-cta,.hero-tags{padding-left:0}
+    .hero-visual{height:400px}
+    .carry-grid{grid-template-columns:1fr}
+    .sec-head h2{font-size:33px}section{padding:58px 0}
+    .genres{padding:28px 22px}
+    .buy,.buy .step span{}
+    .brand .bn{font-size:21px}
+    .story-photo .cap{right:8px}
+  }
+  @media(max-width:430px){
+    :root{--pad:20px}
+    .hero h1{font-size:37px;text-align:left}
+    .hero-visual{height:330px}
+    .hero-disc{width:110px;height:110px}
+    .sec-head h2{font-size:28px}
+    .btn{padding:13px 20px;font-size:14px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Open daily <b>12–7pm</b> · 8235 SE 13th Ave, Sellwood · <a href="tel:+15037032408">(503) 703-2408</a> · Buy · Sell · Trade · Consign</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <span class="vinyl disc" aria-hidden="true"></span>
+        <span class="bn">Dig Vinyl<small>Sellwood · Portland</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#carry">Records</a>
+        <a href="#buy">We Buy</a>
+        <a href="#story">Our Story</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.discogs.com/user/digvinylportland" target="_blank" rel="noopener" class="btn btn-gold nav-cta">Shop on Discogs</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Used vinyl · Sellwood, SE Portland</span>
+      <h1>Dig deep for the <span class="o">good stuff.</span></h1>
+      <p class="tag">A used record store with every genre on the shelves — and a deep, carefully-curated love of jazz and soul. Even the bargain bins feel hand-picked.</p>
+      <div class="hero-cta">
+        <a href="#visit" class="btn">Visit the shop</a>
+        <a href="https://www.discogs.com/user/digvinylportland" target="_blank" rel="noopener" class="btn btn-ghost">Browse on Discogs</a>
+      </div>
+      <div class="hero-tags">
+        <span class="chip">Jazz</span>
+        <span class="chip">Soul</span>
+        <span class="chip">Used LPs</span>
+        <span class="chip">Buy · Sell · Trade</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="img/hero-crates.jpg" alt="A crate-digger flipping through used soul and jazz LPs" width="1600" height="1119">
+      </div>
+      <span class="vinyl hero-disc" aria-hidden="true"></span>
+      <span class="hero-badge">Est. in Sellwood</span>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Jazz</span><span class="dot">●</span><span>Soul &amp; Funk</span><span class="dot">●</span><span>Rare &amp; Collectible</span><span class="dot">●</span><span>$5 Bargain Bins</span><span class="dot">●</span><span>Buy · Sell · Trade · Consign</span><span class="dot">●</span>
+    <span>Jazz</span><span class="dot">●</span><span>Soul &amp; Funk</span><span class="dot">●</span><span>Rare &amp; Collectible</span><span class="dot">●</span><span>$5 Bargain Bins</span><span class="dot">●</span><span>Buy · Sell · Trade · Consign</span><span class="dot">●</span>
+  </div>
+</div>
+
+<!-- CARRY -->
+<section id="carry" class="carry">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What's in the crates</span>
+      <h2>Every genre. Curated like a mixtape.</h2>
+      <p>All genres of music with a real emphasis on jazz and soul — from high-end collectibles to bins where a big chunk of the inventory is under $10.</p>
+    </div>
+    <div class="carry-grid">
+      <div class="cc">
+        <div class="ph"><img src="img/digging.jpg" alt="Hands flipping through genre-divided crates of used records" width="1600" height="1067" loading="lazy"></div>
+        <div class="t"><h3>Used LPs</h3><p>Bins to lose an afternoon in — a large portion of the inventory sits under $10, so digging is half the fun.</p></div>
+      </div>
+      <div class="cc">
+        <div class="ph"><img src="img/turntable.jpg" alt="A record spinning on a warm wood turntable" width="1600" height="2400" loading="lazy"></div>
+        <div class="t"><h3>Jazz &amp; Soul</h3><p>The heart of the shop — hand-selected jazz and soul, curated by an ear that knows the deep cuts from the filler.</p></div>
+      </div>
+      <div class="cc">
+        <div class="ph"><img src="img/shop-interior.jpg" alt="A record store wall packed with LPs, posters and album art" width="1600" height="1067" loading="lazy"></div>
+        <div class="t"><h3>Rare &amp; Collectible</h3><p>High-end and collectible pressings for the serious digger, right alongside the everyday spins.</p></div>
+      </div>
+    </div>
+    <div class="genres">
+      <h4>On the shelves</h4>
+      <div class="list">
+        <span class="g hot">Jazz</span>
+        <span class="g hot">Soul</span>
+        <span class="g">Funk</span>
+        <span class="g">Rock</span>
+        <span class="g">Blues</span>
+        <span class="g">Hip-Hop</span>
+        <span class="g">Reggae</span>
+        <span class="g">World</span>
+        <span class="g">Classical</span>
+        <span class="g">Bargain Bins</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY -->
+<section id="buy" class="buy">
+  <div class="wrap buy-grid">
+    <div class="buy-photo">
+      <img src="img/shop-interior.jpg" alt="Inside Dig Vinyl — crates and shelves lined with records" width="1600" height="1067" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow">Buy · Sell · Trade · Consign</span>
+      <h2>Got records to move?</h2>
+      <p>Dig Vinyl buys, sells, trades, and consigns. Whether it's a single crate or a whole collection, bring it by — or reach out first and we'll talk it through.</p>
+      <div class="steps">
+        <div class="step"><span class="n">1</span><div><b>Bring your records in</b><span>Stop by the shop during open hours with what you're looking to sell or trade.</span></div></div>
+        <div class="step"><span class="n">2</span><div><b>We take a look</b><span>Cash, store credit, or trade — we'll go through it and make a fair offer.</span></div></div>
+        <div class="step"><span class="n">3</span><div><b>Consignment welcome</b><span>Sitting on something special? We consign, too — ask about the details.</span></div></div>
+      </div>
+      <div class="hero-cta">
+        <a href="tel:+15037032408" class="btn">Call about a collection</a>
+        <a href="mailto:mingus22@hotmail.com?subject=Records%20to%20sell%20-%20Dig%20Vinyl" class="btn btn-ghost">Email us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/turntable.jpg" alt="A record spinning on a turntable at Dig Vinyl" width="1600" height="2400" loading="lazy"></div>
+      <span class="cap">The Deep Dig</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>Run by an ear you can trust.</h2>
+      <p>Dig Vinyl is a small square with high ceilings, tucked behind a coffee shop in Sellwood — the kind of room that feels like a secret club the moment you walk in.</p>
+      <p>It's run by Scott Thayer, the DJ behind KMHD's rare-vinyl show, <em>The Deep Dig</em>. The shop's jazz- and soul-focused inventory is curated with the same care as the show — which is why even the $5 bins feel hand-selected.</p>
+      <p>Scott and the crew are on hand to point you toward the treasure. Come dig.</p>
+      <div class="sig">— Scott &amp; the Dig Vinyl crew</div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come dig</span>
+      <h2>Find us in Sellwood.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>8235 SE 13th Ave, Suite 3</b> · Sellwood, Portland, OR 97202</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Open daily</b> · 12:00pm – 7:00pm</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15037032408"><b>(503) 703-2408</b></a> · call the shop</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M4 8h16"/><path d="M8 4v4"/></svg><div><a href="mailto:mingus22@hotmail.com"><b>mingus22@hotmail.com</b></a> · questions &amp; collections</div></div>
+      <div class="cta">
+        <a href="https://maps.google.com/?q=Dig+Vinyl+8235+SE+13th+Ave+Portland+OR+97202" target="_blank" rel="noopener" class="btn">Get Directions</a>
+        <a href="tel:+15037032408" class="btn btn-ghost">Call the shop</a>
+        <a href="https://www.discogs.com/user/digvinylportland" target="_blank" rel="noopener" class="btn btn-ghost">Shop on Discogs</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/shop-interior.jpg" alt="The record-lined interior of a used vinyl shop" width="1600" height="1067" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="vinyl disc" aria-hidden="true"></span>
+      <span class="bn">Dig Vinyl</span>
+    </a>
+    <p><b>Dig Vinyl</b> · 8235 SE 13th Ave, Suite 3, Sellwood, Portland OR 97202 · <a href="tel:+15037032408">(503) 703-2408</a><br>
+    Used records · jazz &amp; soul · open daily 12–7 · <a href="https://www.discogs.com/user/digvinylportland" target="_blank" rel="noopener">Discogs</a> · <a href="https://www.instagram.com/digvinylportland/" target="_blank" rel="noopener">Instagram</a></p>
+    <p class="note">✦ This is a free redesign concept created for Dig Vinyl by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
