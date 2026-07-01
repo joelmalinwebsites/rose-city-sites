@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carpenter Chiropractic Clinic — Gentle Chiropractic Care · Beaverton, OR</title>
+<meta name="description" content="Carpenter Chiropractic Clinic in Beaverton, OR — gentle, family-owned chiropractic care from Dr. Kereah Carpenter, DC. Neck & back pain, headaches, TMJ, auto injury & massage. Most insurance accepted. Call (503) 642-3423.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --linen:#f5f3ec; --paper:#fcfbf6; --ink:#20302c; --muted:#5f6f68;
+    --sage:#7ba694; --sage-deep:#4f7d6b; --pine:#274b40; --pine-deep:#1c3830;
+    --teal:#5f9ea3; --clay:#c98a63; --clay-deep:#a96c47; --line:#e2ddd0;
+    --serif:'Lora',Georgia,serif; --sans:'Work Sans',system-ui,sans-serif;
+    --sh:0 24px 54px -26px rgba(28,56,48,.42); --sh-sm:0 10px 26px -14px rgba(28,56,48,.32);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--linen);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.1;letter-spacing:-.3px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 26px}
+  .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--sage-deep);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--pine);color:#fff;padding:15px 27px;border-radius:44px;font-weight:600;font-size:15px;transition:.2s;border:2px solid var(--pine);cursor:pointer}
+  .btn:hover{background:var(--pine-deep);border-color:var(--pine-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-clay{background:var(--clay);border-color:var(--clay);color:#3a2415}
+  .btn-clay:hover{background:var(--clay-deep);border-color:var(--clay-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #cdc6b6}
+  .btn-ghost:hover{border-color:var(--sage-deep);color:var(--sage-deep);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  .topbar{background:var(--pine-deep);color:#dfeae4;font-size:13px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.3px}
+  .topbar a{color:#a7cbbd;font-weight:600}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(245,243,236,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand .mark{flex:0 0 auto}
+  .brand .bn{font-family:var(--serif);font-weight:600;font-size:20px;line-height:1.05;color:var(--pine)}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-deep);font-weight:600}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--ink);font-weight:500}
+  .nav-links a:hover{color:var(--sage-deep)}
+  .nav-cta{padding:11px 20px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:
+     radial-gradient(120% 90% at 88% 8%, rgba(123,166,148,.20), transparent 60%),
+     radial-gradient(90% 80% at 5% 100%, rgba(95,158,163,.12), transparent 55%)}
+  .hero-inner{padding-top:66px;padding-bottom:52px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center}
+  .hero h1{font-size:58px;margin:16px 0 14px}
+  .hero h1 em{font-style:italic;color:var(--sage-deep)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:460px;margin-bottom:14px}
+  .hero .slogan{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--pine);border-left:3px solid var(--sage);padding-left:14px;margin:0 0 26px;max-width:430px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-trust{display:flex;align-items:center;gap:16px;margin-top:26px;flex-wrap:wrap}
+  .hero-trust .pill{display:inline-flex;align-items:center;gap:8px;background:var(--paper);border:1px solid var(--line);border-radius:40px;padding:8px 15px;font-size:13.5px;font-weight:600;color:var(--pine);box-shadow:var(--sh-sm)}
+  .hero-trust .pill svg{width:16px;height:16px;color:var(--sage-deep)}
+  .hero-visual{position:relative;height:520px}
+  .hero-main{position:absolute;top:0;right:0;width:82%;height:100%;border-radius:130px 26px 26px 26px;overflow:hidden;box-shadow:var(--sh)}
+  .hero-main img{width:100%;height:100%;object-fit:cover}
+  .hero-card{position:absolute;bottom:12px;left:0;width:53%;background:var(--paper);padding:18px 20px;border-radius:18px;box-shadow:var(--sh);border:1px solid var(--line)}
+  .hero-card .k{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--pine);line-height:1}
+  .hero-card .l{font-size:12.5px;color:var(--muted);margin-top:4px;font-weight:500}
+  .hero-badge{position:absolute;top:-14px;right:-6px;width:104px;height:104px;border-radius:50%;background:var(--pine);color:#e9f2ec;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);border:2px solid var(--sage);padding:10px}
+  .hero-badge b{font-family:var(--serif);font-size:24px;line-height:1;font-weight:600;color:#fff}
+  .hero-badge small{font-size:8.5px;letter-spacing:1.4px;text-transform:uppercase;margin-top:4px;opacity:.9}
+
+  /* SPINE MOTIF DIVIDER */
+  .spine{display:flex;align-items:center;justify-content:center;gap:9px;padding:26px 0 4px}
+  .spine span{width:8px;height:8px;border-radius:50%;background:var(--sage);opacity:.5}
+  .spine span:nth-child(4){width:12px;height:12px;opacity:1;background:var(--sage-deep)}
+
+  section{padding:82px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+  .sec-head .eyebrow{display:block;margin-bottom:8px}
+  .sec-head h2{font-size:42px;margin:0 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* TRUST STRIP */
+  .trust{background:var(--pine);color:#dce8e1}
+  .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;text-align:center}
+  .trust-grid .ti{padding:6px 8px}
+  .trust-grid .ti .n{font-family:var(--serif);font-size:34px;font-weight:600;color:#fff;line-height:1}
+  .trust-grid .ti .d{font-size:13.5px;color:#a9cabc;margin-top:8px;font-weight:500;letter-spacing:.3px}
+  .trust-grid .ti svg{width:26px;height:26px;color:var(--sage);margin-bottom:8px}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:30px 26px;transition:.25s}
+  .svc:hover{transform:translateY(-5px);box-shadow:var(--sh);border-color:#d3cdbd}
+  .svc .ic{width:52px;height:52px;border-radius:14px;background:rgba(123,166,148,.16);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .svc .ic svg{width:26px;height:26px;color:var(--sage-deep)}
+  .svc h3{font-size:21px;margin-bottom:8px;color:var(--pine)}
+  .svc p{font-size:14.5px;color:var(--muted)}
+  .svc-note{text-align:center;margin-top:34px;font-size:15px;color:var(--muted)}
+  .svc-note b{color:var(--pine);font-family:var(--serif)}
+
+  /* DOCTOR / STORY */
+  .doc{background:var(--paper)}
+  .doc-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .doc-photo{position:relative}
+  .doc-photo .f{border-radius:22px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:540px}
+  .doc-photo .f img{width:100%;height:100%;object-fit:cover}
+  .doc-photo .cap{position:absolute;bottom:-16px;left:-10px;background:var(--sage-deep);color:#fff;font-family:var(--serif);font-style:italic;font-size:17px;padding:10px 20px;border-radius:44px;box-shadow:var(--sh-sm)}
+  .doc h2{font-size:40px;margin:8px 0 18px;color:var(--pine)}
+  .doc p{color:#4a5a53;font-size:16.5px;margin-bottom:16px}
+  .doc .cred{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px}
+  .doc .cred .c{background:var(--linen);border:1px solid var(--line);border-radius:12px;padding:12px 18px}
+  .doc .cred .c b{display:block;font-family:var(--serif);font-size:16px;color:var(--pine)}
+  .doc .cred .c span{font-size:12.5px;color:var(--muted)}
+
+  /* REVIEWS / TRUST */
+  .reviews{background:
+     radial-gradient(90% 80% at 90% 0%, rgba(95,158,163,.10), transparent 55%),
+     var(--linen)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:28px 26px;box-shadow:var(--sh-sm)}
+  .rcard .stars{color:var(--clay);letter-spacing:2px;font-size:15px;margin-bottom:12px}
+  .rcard p{font-family:var(--serif);font-style:italic;font-size:16px;line-height:1.55;margin-bottom:14px;color:var(--ink)}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:600}
+  .rbanner{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:40px}
+  .rbadge{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 26px;text-align:center;box-shadow:var(--sh-sm);max-width:320px}
+  .rbadge b{font-family:var(--serif);color:var(--pine);font-size:17px;display:block;margin-bottom:3px}
+  .rbadge span{font-size:13px;color:var(--muted)}
+
+  /* VISIT */
+  .visit{background:var(--pine);color:#dce8e1}
+  .visit .sec-head h2{color:#fff}
+  .visit .sec-head .eyebrow{color:var(--sage)}
+  .visit .sec-head p{color:#a9cabc}
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:stretch}
+  .visit-photo{border-radius:20px;overflow:hidden;box-shadow:var(--sh);min-height:340px}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:20px;padding:34px 32px}
+  .visit-card .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;font-size:16px}
+  .visit-card .row svg{width:22px;height:22px;color:var(--sage);flex:0 0 auto;margin-top:2px}
+  .visit-card .row b{font-family:var(--serif);font-weight:600;color:#fff}
+  .visit-card .row a{color:#dce8e1}
+  .visit-card .row a:hover{color:#fff;text-decoration:underline}
+  .visit-card .row .sub{font-size:13.5px;color:#a9cabc}
+  .visit-card .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+  .visit-card .cta .btn-clay{color:#3a2415}
+
+  footer{background:var(--pine-deep);color:#9fbaae;padding:52px 0 30px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand .bn{color:#eaf2ee}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#c3dacf}
+  footer .note{margin-top:20px;font-size:12.5px;color:#6f8a7e;border-top:1px solid #2a4a40;padding-top:20px}
+
+  @media(max-width:880px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.doc-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:39px}.hero-visual{height:400px}
+    .svc-grid,.rgrid{grid-template-columns:1fr}
+    .trust-grid{grid-template-columns:1fr 1fr;gap:28px 16px}
+    .sec-head h2{font-size:31px}section{padding:58px 0}
+    .brand .bn{font-size:18px}.nav-cta{padding:10px 16px;font-size:13px}
+    .svc:hover{transform:none}
+    .doc-photo .cap{left:8px}
+    .visit-photo{min-height:240px}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:33px}
+    .hero-card{width:60%}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Mon–Fri 9:00am–5:30pm · By appointment · 14355 SW Allen Blvd, Beaverton · <a href="tel:+15036423423">(503) 642-3423</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Carpenter Chiropractic Clinic home">
+        <svg class="mark" width="42" height="42" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+          <circle cx="21" cy="21" r="20" fill="#274b40"/>
+          <path d="M21 9c-2.6 0-3.4 2.2-3.4 4 0 1.5.9 2.4.9 4s-1.3 2.3-1.3 4.4 1.5 2.7 1.5 4.3-1 2-1 3.4c0 1.7 1.2 3.5 3.3 3.5" stroke="#7ba694" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M21 9c2.6 0 3.4 2.2 3.4 4 0 1.5-.9 2.4-.9 4s1.3 2.3 1.3 4.4-1.5 2.7-1.5 4.3 1 2 1 3.4c0 1.7-1.2 3.5-3.3 3.5" stroke="#7ba694" stroke-width="2.2" stroke-linecap="round"/>
+          <circle cx="21" cy="14" r="1.5" fill="#c98a63"/><circle cx="21" cy="21" r="1.5" fill="#c98a63"/><circle cx="21" cy="28" r="1.5" fill="#c98a63"/>
+        </svg>
+        <span class="bn">Carpenter Chiropractic<small>Beaverton · since 1993</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#doctor">Dr. Carpenter</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="tel:+15036423423" class="btn btn-clay nav-cta">Call to Book</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-inner hero-grid">
+    <div>
+      <span class="eyebrow">Family-owned chiropractic · Beaverton, OR</span>
+      <h1>Gentle care for a <em>body</em> back in balance.</h1>
+      <p class="tag">Safe, effective, hands-on chiropractic for neck &amp; back pain, headaches, TMJ, and auto or work injuries — from a clinic that's cared for Washington County since 1993.</p>
+      <p class="slogan">"The 5 most dangerous words: <em>maybe it will go away.</em>"</p>
+      <div class="hero-cta">
+        <a href="tel:+15036423423" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          Call to book · (503) 642-3423
+        </a>
+        <a href="mailto:carpenterchiro@yahoo.com?subject=Appointment%20Request" class="btn btn-ghost">Request an appointment</a>
+      </div>
+      <div class="hero-trust">
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>BBB A+ rated</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Most insurance accepted</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>30+ years caring for Beaverton</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main"><img src="img/treat-neck.jpg" alt="A chiropractor gently adjusting a patient's neck in a bright, calm treatment room" width="900" height="900"></div>
+      <div class="hero-card">
+        <div class="k">Gentle techniques</div>
+        <div class="l">Safe, effective, hands-on care tailored to you</div>
+      </div>
+      <div class="hero-badge">
+        <b>DC</b>
+        <small>Dr. Kereah Carpenter</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="spine" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+
+<!-- TRUST STRIP -->
+<section class="trust" style="padding:52px 0">
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="ti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        <div class="n">30+</div><div class="d">Years serving Washington County</div>
+      </div>
+      <div class="ti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="n">A+</div><div class="d">Better Business Bureau rating</div>
+      </div>
+      <div class="ti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        <div class="n">Most</div><div class="d">Health insurance plans accepted</div>
+      </div>
+      <div class="ti">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3 8 4-16 3 8h4"/></svg>
+        <div class="n">Gentle</div><div class="d">Safe, family-friendly techniques</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">How we can help</span>
+      <h2>Care for everyday aches and real injuries.</h2>
+      <p>Dr. Carpenter uses multiple safe, effective, and gentle techniques to relieve pain — matched to what your body needs.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3c0 1.3.8 2 .8 3.5S9 11 9 12.5s1 2 1 3.5-1 2-1 3.5a3 3 0 0 0 6 0c0-1.5-1-2-1-3.5s1-2 1-3.5-.8-2.5-.8-4S15 6.3 15 5a3 3 0 0 0-3-3z"/></svg></div>
+        <h3>Neck &amp; Back Pain</h3>
+        <p>Spinal adjustments for neck pain, back, hip, and leg pain — including sciatica relief and everyday stiffness.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M8.5 12c-1.5 3-2 6-1.5 9M15.5 12c1.5 3 2 6 1.5 9"/></svg></div>
+        <h3>Headaches &amp; Migraines</h3>
+        <p>Care for tension headaches and migraines rooted in the neck and upper spine, so you can think clearly again.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9a8 8 0 0 1 16 0v3a4 4 0 0 1-4 4h-1M4 9v4a3 3 0 0 0 3 3M8 20c1.5-1 2.5-2 3-4"/></svg></div>
+        <h3>TMJ &amp; Jaw Pain</h3>
+        <p>Diagnosis and treatment of TMJ and jaw pain — clicking, tension, and discomfort that make everyday life harder.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6l-3.5 3.5M3 21l6-6M21 3l-9 9M17 7l-2 2"/><circle cx="6.5" cy="17.5" r="2.5"/></svg></div>
+        <h3>Shoulder, Arm &amp; Carpal Tunnel</h3>
+        <p>Relief for shoulder, arm, and hand problems, including carpal tunnel — so you can work and rest comfortably.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-7 4 14 2-9 2 4h5"/></svg></div>
+        <h3>Auto &amp; Work Injury</h3>
+        <p>We readily accept auto accident cases and workers' compensation — whiplash and injury care, handled with your paperwork in mind.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21c4-3 7-6 7-10a5 5 0 0 0-9-3 5 5 0 0 0-9 3c0 4 3 7 7 10z"/></svg></div>
+        <h3>Massage Therapy</h3>
+        <p>Therapeutic massage to ease tight muscles and support your adjustments — relaxation with a purpose.</p>
+      </div>
+    </div>
+    <p class="svc-note">Not sure where your pain fits? <b>Just give us a call</b> — we'll help you figure out the right first step. <a href="tel:+15036423423" style="color:var(--clay-deep);font-weight:600">(503) 642-3423</a></p>
+  </div>
+</section>
+
+<!-- DOCTOR -->
+<section id="doctor" class="doc">
+  <div class="wrap doc-grid">
+    <div class="doc-photo">
+      <div class="f"><img src="img/treat-gentle.jpg" alt="A gentle, hands-on chiropractic neck treatment in a calm, bright clinic" width="700" height="875" loading="lazy"></div>
+      <span class="cap">gentle, hands-on care</span>
+    </div>
+    <div>
+      <span class="eyebrow">Meet your chiropractor</span>
+      <h2>Dr. Kereah Carpenter, DC</h2>
+      <p>Dr. Carpenter graduated from Western States Chiropractic College in Portland and has cared for patients in the Beaverton and Aloha area since 1992. The clinic is local, family-owned, and operated — and it shows in how patients are treated.</p>
+      <p>Her approach favors family-oriented, natural alternatives for pain relief, using multiple safe, effective, and gentle techniques matched to each person. The goal is simple: help your body get back in balance, and keep it there.</p>
+      <div class="cred">
+        <div class="c"><b>Western States</b><span>Chiropractic College, Portland</span></div>
+        <div class="c"><b>Since 1992</b><span>Serving Beaverton &amp; Aloha</span></div>
+        <div class="c"><b>Family-owned</b><span>Local &amp; independent</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS / TRUST -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Trusted by the neighborhood</span>
+      <h2>Care Beaverton has counted on for 30+ years.</h2>
+      <p>Carpenter Chiropractic Clinic is a long-standing, family-owned practice with an A+ rating from the Better Business Bureau.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars" aria-hidden="true">★★★★★</div>
+        <p>"92% of reviewers recommend Carpenter Chiropractic Clinic."</p>
+        <div class="src">— Facebook recommendations</div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-hidden="true">✦✦✦✦✦</div>
+        <p>"A+ rating — a long-standing local clinic in business for more than three decades."</p>
+        <div class="src">— Better Business Bureau profile</div>
+      </div>
+      <div class="rcard">
+        <div class="stars" aria-hidden="true">♦♦♦♦♦</div>
+        <p>"Local, family-owned and operated — we prefer family-oriented and natural alternatives for pain relief."</p>
+        <div class="src">— Carpenter Chiropractic Clinic</div>
+      </div>
+    </div>
+    <div class="rbanner">
+      <div class="rbadge"><b>Better Business Bureau</b><span>A+ rated · in business 30+ years</span></div>
+      <div class="rbadge"><b>Auto, work &amp; most insurance</b><span>Accident and workers' comp cases welcome</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Come see us</span>
+      <h2>You'll find us on SW Allen Blvd.</h2>
+      <p>Free parking on site. New patients welcome — same-week and urgent visits available.</p>
+    </div>
+    <div class="visit-grid">
+      <div class="visit-photo"><img src="img/building-front.png" alt="The Carpenter Chiropractic Clinic building at 14355 SW Allen Blvd in Beaverton" width="1160" height="655" loading="lazy"></div>
+      <div class="visit-card">
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <div><b>14355 SW Allen Blvd, Ste 100</b><br><span class="sub">Beaverton, OR 97005 · free parking on site</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+          <div><b>Mon–Fri · 9:00am – 5:30pm</b><br><span class="sub">By appointment · Sat–Sun closed · urgent services available</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          <div><a href="tel:+15036423423"><b>(503) 642-3423</b></a><br><span class="sub">Call to book or ask about your insurance</span></div>
+        </div>
+        <div class="row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v12H5.2L4 17.2V4z"/><path d="M8 8h8M8 12h5"/></svg>
+          <div><a href="mailto:carpenterchiro@yahoo.com"><b>carpenterchiro@yahoo.com</b></a><br><span class="sub">Email us your appointment request</span></div>
+        </div>
+        <div class="cta">
+          <a href="tel:+15036423423" class="btn btn-clay">Call to book</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Carpenter+Chiropractic+Clinic+14355+SW+Allen+Blvd+Beaverton+OR+97005" target="_blank" rel="noopener" class="btn btn-ghost" style="color:#dce8e1;border-color:rgba(255,255,255,.3)">Get directions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" style="justify-content:center">
+      <svg class="mark" width="38" height="38" viewBox="0 0 42 42" fill="none" aria-hidden="true">
+        <circle cx="21" cy="21" r="20" fill="#7ba694"/>
+        <path d="M21 9c-2.6 0-3.4 2.2-3.4 4 0 1.5.9 2.4.9 4s-1.3 2.3-1.3 4.4 1.5 2.7 1.5 4.3-1 2-1 3.4c0 1.7 1.2 3.5 3.3 3.5" stroke="#1c3830" stroke-width="2.2" stroke-linecap="round"/>
+        <path d="M21 9c2.6 0 3.4 2.2 3.4 4 0 1.5-.9 2.4-.9 4s1.3 2.3 1.3 4.4-1.5 2.7-1.5 4.3 1 2 1 3.4c0 1.7-1.2 3.5-3.3 3.5" stroke="#1c3830" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      <span class="bn">Carpenter Chiropractic<small style="color:#8fb0a3">Beaverton, OR</small></span>
+    </a>
+    <p><b>Carpenter Chiropractic Clinic</b> · 14355 SW Allen Blvd, Ste 100, Beaverton, OR 97005 · <a href="tel:+15036423423">(503) 642-3423</a> · <a href="mailto:carpenterchiro@yahoo.com">carpenterchiro@yahoo.com</a><br>Gentle, family-owned chiropractic care serving Washington County since 1993.</p>
+    <p class="note">✦ This is a free redesign concept created for Carpenter Chiropractic by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
