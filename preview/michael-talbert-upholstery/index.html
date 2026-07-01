@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Michael Talbert Upholstery — Reupholstery & Furniture Restoration · Portland Metro</title>
+<meta name="description" content="Michael Talbert Upholstery — expert furniture reupholstery, antique restoration, and custom work for the Portland, Beaverton & Hillsboro area since 1986. Thousands of fabrics. By appointment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#15233c; --navy-2:#1d3253; --ink:#182031;
+    --brass:#c1a163; --brass-2:#d3b981; --brass-deep:#9a7c40;
+    --cream:#f6efe2; --paper:#fffdf8; --linen:#eaddc8; --muted:#776f60; --line:#e4d7c1;
+    --serif:'Cormorant Garamond',Georgia,serif; --sans:'Jost',system-ui,sans-serif;
+    --sh:0 26px 56px -28px rgba(21,35,60,.55); --sh-sm:0 12px 28px -16px rgba(21,35,60,.4);
+    --pad:24px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.65;-webkit-font-smoothing:antialiased;overflow-x:hidden;font-weight:300}
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;line-height:1.06;letter-spacing:.2px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--sans);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--brass-deep);font-weight:600}
+  .rule{display:inline-block;width:52px;height:1.5px;background:var(--brass);vertical-align:middle;margin-right:12px}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;white-space:nowrap;background:var(--brass);color:#20170a;padding:15px 30px;border-radius:2px;font-family:var(--sans);font-weight:600;font-size:14px;letter-spacing:.5px;transition:.22s;border:1.5px solid var(--brass);cursor:pointer;text-transform:uppercase}
+  .btn:hover{background:var(--brass-deep);border-color:var(--brass-deep);color:#fff;transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+  .btn-ghost{background:transparent;color:var(--navy);border:1.5px solid #cbb58e}
+  .btn-ghost:hover{background:var(--navy);border-color:var(--navy);color:var(--brass-2)}
+  .btn-ghost-lt{background:transparent;color:#f0e6d4;border:1.5px solid rgba(210,185,129,.5)}
+  .btn-ghost-lt:hover{background:var(--brass);border-color:var(--brass);color:#20170a}
+  a:focus-visible,.btn:focus-visible{outline:2px solid var(--brass);outline-offset:3px}
+
+  .topbar{background:var(--navy);color:#e7d9bf;font-size:12.5px;font-weight:400;text-align:center;padding:9px 16px;letter-spacing:1.2px;text-transform:uppercase}
+  .topbar b{color:var(--brass-2);font-weight:600}
+  .topbar a{color:#fff}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(246,239,226,.95);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;flex-direction:column;min-width:0;line-height:1}
+  .brand .bn{font-family:var(--serif);font-weight:700;font-size:23px;color:var(--navy);letter-spacing:.3px}
+  .brand .bs{font-family:var(--sans);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;color:var(--brass-deep);margin-top:3px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a:not(.nav-cta){font-family:var(--sans);font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:var(--navy);font-weight:500}
+  .nav-links a:not(.nav-cta):hover{color:var(--brass-deep)}
+  .nav-cta{padding:11px 22px;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;background:var(--cream)}
+  .hero-grid{display:grid;grid-template-columns:1.02fr 1.05fr;gap:56px;align-items:center;padding-top:64px;padding-bottom:60px}
+  .hero h1{font-size:64px;color:var(--navy);margin:16px 0 14px}
+  .hero h1 em{font-style:italic;color:var(--brass-deep)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:440px;margin-bottom:12px;font-weight:300}
+  .hero-est{font-family:var(--serif);font-style:italic;font-size:19px;color:var(--navy-2);margin-bottom:26px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--brass-deep);font-size:16px;letter-spacing:2px}
+  .hero-rating span{font-size:13px;color:var(--muted);font-weight:400;letter-spacing:.3px}
+  .hero-rating b{color:var(--navy);font-weight:600}
+  .hero-visual{position:relative}
+  .hero-photo{border-radius:3px;overflow:hidden;box-shadow:var(--sh);border:1px solid var(--line);aspect-ratio:4/3.4}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-frame{position:absolute;inset:16px -16px -16px 16px;border:1.5px solid var(--brass);border-radius:3px;z-index:-1}
+  .hero-seal{position:absolute;bottom:-26px;left:-26px;width:112px;height:112px;border-radius:50%;background:var(--navy);color:var(--brass-2);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);border:1.5px solid var(--brass);z-index:3}
+  .hero-seal .s1{font-family:var(--sans);font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.85}
+  .hero-seal .s2{font-family:var(--serif);font-size:30px;font-weight:700;line-height:1;color:#fff}
+  .hero-seal .s3{font-family:var(--sans);font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;margin-top:2px;opacity:.85}
+
+  .stitch{height:0;border-top:1.5px dashed var(--brass);opacity:.5;max-width:1160px;margin:0 auto}
+
+  /* TRUST */
+  .trust{background:var(--navy);color:#e9ddc6}
+  .trust .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 46px;padding-top:22px;padding-bottom:22px}
+  .trust .it{display:flex;align-items:center;gap:11px;font-family:var(--sans);font-size:14px;letter-spacing:.5px}
+  .trust .it .dot{width:7px;height:7px;border-radius:50%;background:var(--brass);flex:0 0 auto}
+  .trust .it b{font-weight:500;color:#fff}
+
+  section{padding:88px 0}
+  .sec-head{text-align:center;max-width:660px;margin:0 auto 52px}
+  .sec-head .eyebrow{display:block;margin-bottom:12px}
+  .sec-head h2{font-size:44px;color:var(--navy)}
+  .sec-head p{color:var(--muted);font-size:17px;margin-top:12px;font-weight:300}
+
+  /* SERVICES */
+  .svc{background:var(--paper)}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .svc-cell{background:var(--paper);padding:34px 30px;transition:.25s}
+  .svc-cell:hover{background:var(--cream)}
+  .svc-cell .ic{width:40px;height:40px;color:var(--brass-deep);margin-bottom:16px}
+  .svc-cell .ic svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.4}
+  .svc-cell h3{font-size:25px;color:var(--navy);margin-bottom:8px}
+  .svc-cell p{font-size:14.5px;color:var(--muted);font-weight:300}
+
+  /* WORK / showcase */
+  .work{background:var(--cream)}
+  .work-grid{display:grid;grid-template-columns:2fr 1fr;grid-auto-rows:1fr;gap:20px}
+  .wcard{position:relative;overflow:hidden;border-radius:3px;box-shadow:var(--sh-sm);border:1px solid var(--line)}
+  .wcard img{width:100%;height:100%;object-fit:cover;transition:.5s}
+  .wcard:hover img{transform:scale(1.05)}
+  .wcard .cap{position:absolute;left:0;bottom:0;right:0;padding:26px 24px 18px;background:linear-gradient(transparent,rgba(21,35,60,.82));color:#fff}
+  .wcard .cap b{font-family:var(--serif);font-size:22px;font-weight:600;display:block}
+  .wcard .cap span{font-size:12.5px;letter-spacing:1px;text-transform:uppercase;color:var(--brass-2)}
+  .wcard.tall{grid-row:span 2}
+  .wcard.big{grid-column:span 1}
+
+  /* FABRIC / feature */
+  .fabric{background:var(--navy);color:#ece0c9}
+  .fabric-grid{display:grid;grid-template-columns:1fr 1.02fr;gap:56px;align-items:center}
+  .fabric-photo{border-radius:3px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;position:relative}
+  .fabric-photo img{width:100%;height:100%;object-fit:cover}
+  .fabric .eyebrow{color:var(--brass-2)}
+  .fabric h2{font-size:42px;color:#fff;margin:12px 0 16px}
+  .fabric p{color:#d7c8ac;font-size:16.5px;margin-bottom:16px;font-weight:300}
+  .fabric ul{list-style:none;display:grid;gap:11px;margin-top:22px}
+  .fabric li{display:flex;align-items:center;gap:12px;font-size:15px}
+  .fabric li .b{width:9px;height:9px;background:var(--brass);border-radius:50%;flex:0 0 auto}
+
+  /* REVIEWS */
+  .reviews{background:var(--paper)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .rcard{background:var(--cream);border:1px solid var(--line);border-radius:3px;padding:34px 30px;position:relative}
+  .rcard .q{font-family:var(--serif);font-size:60px;color:var(--brass);line-height:.6;height:26px}
+  .rcard .stars{color:var(--brass-deep);letter-spacing:2px;font-size:14px;margin-bottom:14px}
+  .rcard p{font-family:var(--serif);font-style:italic;font-size:19px;line-height:1.45;color:var(--navy);margin-bottom:16px}
+  .rcard .src{font-family:var(--sans);font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--muted);font-weight:500}
+
+  /* STORY */
+  .story{background:var(--cream)}
+  .story-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+  .story-photo{border-radius:3px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:5/4;border:1px solid var(--line)}
+  .story-photo img{width:100%;height:100%;object-fit:cover}
+  .story h2{font-size:42px;color:var(--navy);margin:12px 0 18px}
+  .story p{color:#5a5244;font-size:16.5px;margin-bottom:15px;font-weight:300}
+  .story .sig{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--brass-deep);margin-top:4px}
+
+  /* CONTACT */
+  .contact{background:var(--navy);color:#e9ddc6}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+  .contact .eyebrow{color:var(--brass-2)}
+  .contact h2{font-size:44px;color:#fff;margin:12px 0 8px}
+  .contact .sub{color:#cdbd9f;font-size:16.5px;margin-bottom:26px;font-weight:300}
+  .contact .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:15.5px}
+  .contact .row svg{width:21px;height:21px;color:var(--brass-2);flex:0 0 auto;margin-top:2px}
+  .contact .row b{font-family:var(--serif);font-size:18px;color:#fff;font-weight:600}
+  .contact .row a:hover{color:var(--brass-2)}
+  .contact .cta{display:flex;gap:13px;flex-wrap:wrap;margin-top:26px}
+  .contact-card{background:var(--navy-2);border:1px solid rgba(210,185,129,.28);border-radius:3px;padding:38px 34px}
+  .contact-card h3{font-family:var(--serif);font-size:26px;color:#fff;margin-bottom:6px}
+  .contact-card p{color:#cdbd9f;font-size:14.5px;font-weight:300;margin-bottom:22px}
+
+  footer{background:var(--ink);color:#a99e8c;padding:50px 0 30px;text-align:center}
+  footer .fn{font-family:var(--serif);font-size:24px;color:#fff;font-weight:700;margin-bottom:6px}
+  footer .fs{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--brass-2);margin-bottom:16px}
+  footer p{font-size:13.5px;line-height:1.9;font-weight:300}
+  footer a{color:#e0d3bd}
+  footer .note{margin-top:20px;font-size:12px;color:#7d7361;border-top:1px solid rgba(255,255,255,.1);padding-top:18px}
+
+  @media(max-width:900px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.fabric-grid,.story-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:44px}
+    .hero-visual{order:-1}
+    .hero-frame{inset:12px -10px -10px 10px}
+    .svc-grid,.rgrid{grid-template-columns:1fr}
+    .work-grid{grid-template-columns:1fr}
+    .wcard.tall{grid-row:span 1}
+    .wcard{aspect-ratio:16/10}
+    .sec-head h2{font-size:33px}section{padding:60px 0}
+    .brand .bn{font-size:20px}
+  }
+  @media(max-width:420px){ .hero h1{font-size:37px} .hero-seal{width:92px;height:92px;left:-12px} }
+</style>
+</head>
+<body>
+
+<div class="topbar">Serving Portland · Beaverton · Hillsboro · Vancouver since <b>1986</b> · By appointment · <a href="tel:+15032922053">(503) 292-2053</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <span class="bn">Michael Talbert</span>
+        <span class="bs">Upholstery &amp; Restoration</span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#work">Our Work</a>
+        <a href="#fabric">Fabrics</a>
+        <a href="#reviews">Reviews</a>
+        <a href="tel:+15032922053" class="btn nav-cta">Call for a Quote</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="rule"></span>Portland's upholstery workshop</span>
+      <h1>Bring your favorite furniture <em>back to life.</em></h1>
+      <p class="tag">Expert reupholstery, antique restoration, and custom work — hand-crafted in our Hillsboro shop.</p>
+      <p class="hero-est">"We bring a lifetime of experience into your home."</p>
+      <div class="hero-cta">
+        <a href="tel:+15032922053" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call for a Free Quote</a>
+        <a href="#work" class="btn btn-ghost">See our work</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.7</b> on Google · trusted for craftsmanship for nearly 40 years</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo"><img src="img/real-tufted-settee.jpg" alt="A Victorian tufted settee freshly reupholstered in Michael Talbert's Hillsboro workshop" width="700" height="595"></div>
+      <div class="hero-frame" aria-hidden="true"></div>
+      <div class="hero-seal"><span class="s1">Est.</span><span class="s2">1986</span><span class="s3">Portland</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="it"><span class="dot"></span><b>Reupholstery &amp; restoration</b></div>
+    <div class="it"><span class="dot"></span><b>Residential &amp; commercial</b></div>
+    <div class="it"><span class="dot"></span><b>Thousands of fabrics</b></div>
+    <div class="it"><span class="dot"></span><b>Free quotes</b></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="svc" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Craftsmanship for every piece</h2>
+      <p>From a beloved family heirloom to a full commercial lobby — we rebuild it right, by hand, to last another generation.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M4 11V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3"/><path d="M2 11h20v5a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2z"/><path d="M6 18v2M18 18v2"/></svg></div>
+        <h3>Reupholstery</h3>
+        <p>Sofas, chairs, sectionals, ottomans and dining seats — brought back to better-than-new with fresh foam, springs and fabric.</p>
+      </div>
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 21h18"/><path d="M5 21V9l7-5 7 5v12"/><path d="M9 21v-6h6v6"/></svg></div>
+        <h3>Antique Restoration</h3>
+        <p>Complete restoration of antique and heirloom furniture — frames, springs, finishes and fabric, with the care old pieces deserve.</p>
+      </div>
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="1.5"/><path d="M7 7V5a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Cushions &amp; Foam</h3>
+        <p>New foam, down and cushion inserts that bring back the comfort and shape your furniture had the day you bought it.</p>
+      </div>
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Custom &amp; Design Trade</h3>
+        <p>Custom furniture, headboards, benches and pillows built for homeowners and interior designers alike.</p>
+      </div>
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 1 0 5.6L7 19.6 3 20l.4-4 7.7-7.7a4 4 0 0 1 3.6-2z"/></svg></div>
+        <h3>Repairs</h3>
+        <p>Torn seams, broken legs, wobbly or cracked frames and worn springs — fixed properly so the piece is solid again.</p>
+      </div>
+      <div class="svc-cell">
+        <div class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg></div>
+        <h3>Fabric &amp; Leather</h3>
+        <p>Thousands of fabrics, leathers, vinyls and eco-friendly recycled options — plus decorative nails, trim and accessories.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stitch"></div>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our work</span>
+      <h2>Pieces from the shop</h2>
+      <p>Real projects, reupholstered and restored by hand in our Hillsboro workshop.</p>
+    </div>
+    <div class="work-grid">
+      <div class="wcard tall big"><img src="img/real-tufted-settee.jpg" alt="Antique Victorian settee reupholstered in a soft damask" loading="lazy" width="760" height="640"><div class="cap"><span>Antique restoration</span><b>A Victorian settee, reborn</b></div></div>
+      <div class="wcard"><img src="img/real-nike-lobby.jpg" alt="Commercial lobby bench seating upholstered for a Nike space" loading="lazy" width="440" height="320"><div class="cap"><span>Commercial</span><b>Lobby seating</b></div></div>
+      <div class="wcard"><img src="img/real-window-seat.jpg" alt="Cozy residential window-seat banquette with custom cushions and pillows" loading="lazy" width="440" height="320"><div class="cap"><span>Residential</span><b>Custom cushions &amp; pillows</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- FABRIC FEATURE -->
+<section class="fabric" id="fabric">
+  <div class="wrap fabric-grid">
+    <div class="fabric-photo"><img src="img/real-fabric-wall.jpg" alt="A wall of thousands of fabric, leather and vinyl samples in the Michael Talbert workshop" width="640" height="480"></div>
+    <div>
+      <span class="eyebrow">The fabric wall</span>
+      <h2>Thousands of fabrics, one perfect match.</h2>
+      <p>The hardest part is choosing. Come in and run your hands across the samples — we'll help you find the fabric, leather or vinyl that fits your piece, your room and how you actually live.</p>
+      <ul>
+        <li><span class="b"></span>Designer fabrics, leathers &amp; vinyls</li>
+        <li><span class="b"></span>Durable, pet- and kid-friendly options</li>
+        <li><span class="b"></span>Eco-friendly recycled fabrics</li>
+        <li><span class="b"></span>Decorative nails, trim &amp; accessories</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kind words</span>
+      <h2>Trusted across the metro</h2>
+      <p>4.7★ on Google — here's what a few longtime customers have said.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="q">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>Michael Talbert Upholstery is the best in the Portland metropolitan area. His craftsmanship, especially with leather, has always been up to the standards we expect.</p>
+        <div class="src">— Sam &amp; Kathy Griffith</div>
+      </div>
+      <div class="rcard">
+        <div class="q">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>Very professional in the way he makes his quotes and does his billing. You can expect delivery when he promises.</p>
+        <div class="src">— Evelyn Green</div>
+      </div>
+      <div class="rcard">
+        <div class="q">&ldquo;</div>
+        <div class="stars">★★★★★</div>
+        <p>By far the best quality job and an awesome selection of materials — with very comparable pricing.</p>
+        <div class="src">— via Angi</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo"><img src="img/stock-emerald-sofa.jpg" alt="An emerald velvet sofa, the kind of piece transformed by a full reupholstery" loading="lazy" width="600" height="480"></div>
+    <div>
+      <span class="eyebrow">Our approach</span>
+      <h2>Furniture worth keeping.</h2>
+      <p>Good furniture was built to last — solid frames, real joinery, pieces with history. Reupholstering what you already own is kinder to your wallet and to the planet than replacing it, and you end up with something far nicer than anything off a showroom floor.</p>
+      <p>We've been doing this in the Portland area since 1986. Every piece is measured, stripped, rebuilt and finished by hand, in fabric you choose, made to be lived on for years to come.</p>
+      <div class="sig">— Michael Talbert Upholstery</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div>
+      <span class="eyebrow">Get started</span>
+      <h2>Let's bring your piece back.</h2>
+      <p class="sub">Send us a photo of your furniture for a free, no-pressure quote — or stop by the shop by appointment.</p>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>2038 NE Aloclek Dr</b><br>Hillsboro, OR 97124 · by appointment</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15032922053"><b>(503) 292-2053</b></a></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg><div><a href="mailto:BeforeandAfterupholstery1@gmail.com"><b>Email the shop</b></a></div></div>
+      <div class="cta">
+        <a href="tel:+15032922053" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call the shop</a>
+        <a href="https://maps.google.com/?q=Michael+Talbert+Upholstery+2038+NE+Aloclek+Dr+Hillsboro+OR" target="_blank" rel="noopener" class="btn btn-ghost-lt">Get Directions</a>
+      </div>
+    </div>
+    <div class="contact-card">
+      <h3>Free quotes, honest work</h3>
+      <p>Bring us a chair or a whole living room. We'll give you a straight quote and a realistic timeline, and we don't start until you're happy with the plan.</p>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brass-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div>Residential &amp; commercial</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brass-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div>Antiques &amp; modern pieces</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="var(--brass-2)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div>Pickup &amp; delivery available</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fn">Michael Talbert Upholstery</div>
+    <div class="fs">Upholstery &amp; Restoration · Since 1986</div>
+    <p>2038 NE Aloclek Dr, Hillsboro, OR 97124 · <a href="tel:+15032922053">(503) 292-2053</a> · <a href="mailto:BeforeandAfterupholstery1@gmail.com">email</a><br>Serving Portland, Beaverton, Hillsboro &amp; Vancouver by appointment.</p>
+    <p class="note">✦ This is a free redesign concept created for Michael Talbert Upholstery by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

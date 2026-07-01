@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gresham Bicycle Center — Bike Sales & Repair · Gresham, OR · Since 1984</title>
+<meta name="description" content="Gresham Bicycle Center — family-run bike shop in Gresham, Oregon since 1984. Tune-ups, repairs, custom wheel builds, e-bike service, and new & used bikes. We build it, you ride it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0f2540; --navy-deep:#0a1a30; --ink:#12233a; --paper:#f7f4ec; --white:#fffdf8;
+    --muted:#5d6b7d; --yellow:#ffcc1f; --yellow-deep:#e0a500; --red:#d8412f;
+    --line:#e2ddcf; --line-navy:rgba(255,255,255,.14);
+    --disp:'Space Grotesk',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 26px 60px -28px rgba(15,37,64,.55); --sh-sm:0 12px 30px -16px rgba(15,37,64,.4);
+    --pad:24px;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:700;line-height:1.04;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--disp);font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--yellow-deep);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--yellow);color:#1c1608;padding:15px 26px;border-radius:8px;font-weight:700;font-size:15px;font-family:var(--disp);letter-spacing:.2px;transition:.18s;border:2px solid var(--yellow);cursor:pointer}
+  .btn:hover{background:var(--yellow-deep);border-color:var(--yellow-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-navy{background:var(--navy);border-color:var(--navy);color:#fff}
+  .btn-navy:hover{background:var(--navy-deep);border-color:var(--navy-deep);color:#fff}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #c9c2b0}
+  .btn-ghost:hover{border-color:var(--navy);color:var(--navy);transform:translateY(-2px)}
+  .btn-ghost-l{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35)}
+  .btn-ghost-l:hover{border-color:var(--yellow);color:var(--yellow);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--yellow-deep);outline-offset:3px}
+
+  /* WORDMARK */
+  .mark{display:flex;align-items:center;gap:11px;min-width:0}
+  .mark .cog{width:38px;height:38px;flex:0 0 auto}
+  .mark .wm{font-family:var(--disp);font-weight:700;font-size:18px;line-height:1;letter-spacing:-.4px;color:var(--ink)}
+  .mark .wm b{color:var(--navy)}
+  .mark .wm small{display:block;font-family:var(--disp);font-size:10px;letter-spacing:2.4px;text-transform:uppercase;color:var(--yellow-deep);font-weight:600;margin-top:4px}
+
+  .topbar{background:var(--navy-deep);color:#dfe7f2;font-size:13px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.2px}
+  .topbar b{color:#fff}
+  .topbar a{color:var(--yellow);font-weight:600}
+  .topbar .sep{opacity:.4;margin:0 10px}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(247,244,236,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:74px;gap:14px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--disp);font-size:15px;color:var(--ink);font-weight:500}
+  .nav-links a:hover{color:var(--navy)}
+  .nav-cta{padding:11px 20px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;background:var(--navy);color:#eaf0f8;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 78% 12%,rgba(255,204,31,.09),transparent 60%);pointer-events:none}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:52px;align-items:center;padding-top:66px;padding-bottom:66px;position:relative}
+  .hero .eyebrow{color:var(--yellow)}
+  .hero h1{font-size:62px;color:#fff;margin:16px 0 20px}
+  .hero h1 .y{color:var(--yellow)}
+  .hero .tag{font-size:19px;color:#c3cddb;max-width:470px;margin-bottom:26px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:28px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--yellow);font-size:17px;letter-spacing:2px}
+  .hero-rating span{font-size:14px;color:#aab7c9}
+  .hero-rating b{color:#fff}
+  .hero-visual{position:relative}
+  .hero-photo{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;border:1px solid rgba(255,255,255,.08)}
+  .hero-photo img{width:100%;height:100%;object-fit:cover}
+  .hero-badge{position:absolute;bottom:-20px;left:-18px;width:118px;height:118px;border-radius:50%;background:var(--yellow);color:#1c1608;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);border:3px solid var(--navy);transform:rotate(-7deg)}
+  .hero-badge b{font-family:var(--disp);font-size:15px;line-height:1;font-weight:700}
+  .hero-badge .yr{font-family:var(--disp);font-size:30px;font-weight:700;line-height:1;margin:3px 0}
+  .hero-badge small{font-size:8.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:600}
+
+  /* MARQUEE */
+  .marquee{background:var(--yellow);color:#1c1608;overflow:hidden;white-space:nowrap;padding:12px 0;font-family:var(--disp);font-size:15px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;border-top:3px solid var(--navy);border-bottom:3px solid var(--navy)}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 14px}
+  .marquee .track .dot{color:var(--red)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:44px;margin:8px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc-card{background:var(--white);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--sh-sm);transition:.22s;display:flex;flex-direction:column}
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .svc-card .ph{aspect-ratio:16/10;overflow:hidden}
+  .svc-card .ph img{width:100%;height:100%;object-fit:cover}
+  .svc-card .t{padding:22px 22px 26px}
+  .svc-card h3{font-size:22px;margin-bottom:7px}
+  .svc-card p{font-size:14.5px;color:var(--muted)}
+
+  /* TUNE-UP LADDER */
+  .tune{background:var(--navy);color:#eaf0f8}
+  .tune .sec-head h2{color:#fff}
+  .tune .sec-head p{color:#aab7c9}
+  .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;align-items:stretch}
+  .rung{background:rgba(255,255,255,.045);border:1px solid var(--line-navy);border-radius:14px;padding:30px 26px;position:relative;transition:.2s}
+  .rung:hover{border-color:rgba(255,204,31,.5);transform:translateY(-5px)}
+  .rung .step{font-family:var(--disp);font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--yellow);font-weight:600}
+  .rung h3{font-size:24px;color:#fff;margin:8px 0 14px}
+  .rung ul{list-style:none;margin-bottom:6px}
+  .rung li{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:#c3cddb;padding:6px 0;border-top:1px solid var(--line-navy)}
+  .rung li:first-child{border-top:none}
+  .rung li svg{width:16px;height:16px;color:var(--yellow);flex:0 0 auto;margin-top:3px}
+  .rung.feat{background:linear-gradient(180deg,rgba(255,204,31,.14),rgba(255,255,255,.04));border-color:rgba(255,204,31,.45)}
+  .rung .tagpill{position:absolute;top:-12px;right:20px;background:var(--yellow);color:#1c1608;font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:20px}
+  .tune-note{margin-top:34px;text-align:center;font-size:14.5px;color:#aab7c9}
+  .tune-note b{color:#fff}
+
+  /* SELL / BRANDS */
+  .sell-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:54px;align-items:center}
+  .sell h2{font-size:42px;margin:8px 0 16px}
+  .sell p{color:#4a586b;font-size:16.5px;margin-bottom:18px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+  .chip{display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:11px 16px;font-family:var(--disp);font-weight:500;font-size:14.5px;box-shadow:var(--sh-sm)}
+  .chip svg{width:17px;height:17px;color:var(--navy)}
+  .sell-photo{position:relative}
+  .sell-photo .f{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .sell-photo .f img{width:100%;height:100%;object-fit:cover}
+  .sell-photo .cap{position:absolute;bottom:-14px;right:-10px;background:var(--red);color:#fff;font-family:var(--disp);font-weight:600;font-size:14px;padding:9px 18px;border-radius:8px;box-shadow:var(--sh-sm);transform:rotate(-2deg)}
+
+  /* STORY */
+  .story{background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .story-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:54px;align-items:center}
+  .story-photo{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:3/4;max-height:540px}
+  .story-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(.15)}
+  .story h2{font-size:42px;margin:8px 0 18px}
+  .story p{color:#4a586b;font-size:16.5px;margin-bottom:16px}
+  .story .stats{display:flex;gap:34px;margin-top:26px;flex-wrap:wrap}
+  .story .stat b{font-family:var(--disp);font-size:34px;color:var(--navy);display:block;line-height:1}
+  .story .stat span{font-size:13px;color:var(--muted);font-family:var(--disp);letter-spacing:.5px}
+
+  /* REVIEWS */
+  .reviews{background:var(--navy-deep);color:#eaf0f8}
+  .reviews .sec-head h2{color:#fff}
+  .reviews .sec-head p{color:#aab7c9}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:var(--white);color:var(--ink);border-radius:14px;padding:28px 26px;box-shadow:var(--sh)}
+  .rcard:nth-child(2){transform:translateY(-12px)}
+  .rcard .stars{color:var(--yellow-deep);letter-spacing:2px;font-size:15px;margin-bottom:13px}
+  .rcard p{font-family:var(--disp);font-size:16px;font-weight:500;line-height:1.5;margin-bottom:16px;letter-spacing:-.2px}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:600}
+  .rating-bar{display:flex;align-items:center;justify-content:center;gap:14px;margin-top:40px;flex-wrap:wrap;text-align:center}
+  .rating-bar .big{font-family:var(--disp);font-size:42px;font-weight:700;color:var(--yellow)}
+  .rating-bar .meta{text-align:left}
+  .rating-bar .meta .s{color:var(--yellow);letter-spacing:2px;font-size:15px}
+  .rating-bar .meta span{display:block;font-size:13px;color:#aab7c9;margin-top:3px}
+
+  /* VISIT */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .visit h2{font-size:44px;margin:8px 0 22px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--navy);flex:0 0 auto;margin-top:2px}
+  .visit .row b{font-family:var(--disp);font-weight:600}
+  .visit .row a:hover{color:var(--navy)}
+  .visit .hours-tbl{font-size:15px;color:#4a586b}
+  .visit .hours-tbl div{display:flex;justify-content:space-between;max-width:230px;padding:2px 0}
+  .visit .hours-tbl .closed{color:var(--red);font-weight:600}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+  .visit-map{border-radius:16px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;border:1px solid var(--line)}
+  .visit-map iframe{width:100%;height:100%;border:0;display:block}
+
+  footer{background:var(--navy-deep);color:#9fb0c6;padding:56px 0 30px;text-align:center}
+  footer .mark{justify-content:center;margin-bottom:16px}
+  footer .mark .wm,footer .mark .wm b{color:#fff}
+  footer p{font-size:14px;line-height:1.85}
+  footer a{color:#dfe7f2}
+  footer a:hover{color:var(--yellow)}
+  footer .note{margin-top:20px;font-size:12.5px;color:#6b7d95;border-top:1px solid rgba(255,255,255,.1);padding-top:20px}
+
+  @media(max-width:900px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.sell-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:40px}
+    .hero h1{font-size:40px}
+    .svc-grid,.ladder,.rgrid,.chips{grid-template-columns:1fr}
+    .rcard{transform:none!important}
+    .sec-head h2{font-size:31px}
+    .sec-head{margin-bottom:38px}
+    section{padding:60px 0}
+    .story-photo{max-height:none;aspect-ratio:4/3}
+    .hero-badge{width:96px;height:96px;left:auto;right:14px;bottom:-16px}
+    .visit .cta .btn{flex:1 1 auto;justify-content:center}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:34px}
+    .sec-head h2{font-size:27px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <b>Tue–Sat 10am–5pm</b> · 567 NE 8th St, Gresham<span class="sep">|</span><a href="tel:+15036612453">(503) 661-2453</a>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="mark" href="#top" aria-label="Gresham Bicycle Center home">
+        <svg class="cog" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="21" fill="#0f2540"/>
+          <g fill="#ffcc1f">
+            <circle cx="24" cy="24" r="6.5"/>
+            <rect x="22" y="1.5" width="4" height="7" rx="1"/><rect x="22" y="39.5" width="4" height="7" rx="1"/>
+            <rect x="39.5" y="22" width="7" height="4" rx="1"/><rect x="1.5" y="22" width="7" height="4" rx="1"/>
+            <rect x="35.4" y="8.9" width="4" height="7" rx="1" transform="rotate(45 37.4 12.4)"/>
+            <rect x="8.6" y="32.1" width="4" height="7" rx="1" transform="rotate(45 10.6 35.6)"/>
+            <rect x="8.6" y="8.9" width="4" height="7" rx="1" transform="rotate(-45 10.6 12.4)"/>
+            <rect x="35.4" y="32.1" width="4" height="7" rx="1" transform="rotate(-45 37.4 35.6)"/>
+          </g>
+          <circle cx="24" cy="24" r="2.6" fill="#0f2540"/>
+        </svg>
+        <span class="wm">Gresham <b>Bicycle</b> Center<small>Since 1984</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Service</a>
+        <a href="#tuneups">Tune-Ups</a>
+        <a href="#shop">Shop</a>
+        <a href="#story">Our Story</a>
+        <a href="tel:+15036612453" class="btn nav-cta">Call the Shop</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Gresham's neighborhood bike shop</span>
+      <h1>We build it.<br><span class="y">You ride it.</span></h1>
+      <p class="tag">Bike sales, tune-ups, and honest repairs from a family-run shop that's kept Gresham rolling since 1984.</p>
+      <div class="hero-cta">
+        <a href="tel:+15036612453" class="btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+          Call (503) 661-2453
+        </a>
+        <a href="#services" class="btn btn-ghost-l">See our services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★☆</span>
+        <span><b>4.1</b> from <b>229</b> Google reviews · trusted by riders across East County</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-photo">
+        <img src="img/hero-shop.jpg" alt="A shop window at Gresham Bicycle Center with new bikes, including a Specialized mountain bike, on display" width="1600" height="2000">
+      </div>
+      <div class="hero-badge">
+        <b>EST.</b>
+        <span class="yr">1984</span>
+        <small>Gresham, OR</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Tune-Ups</span><span class="dot">◆</span><span>Repairs</span><span class="dot">◆</span><span>Custom Wheel Builds</span><span class="dot">◆</span><span>E-Bike Service</span><span class="dot">◆</span><span>New &amp; Used Bikes</span><span class="dot">◆</span><span>BMX</span><span class="dot">◆</span><span>Trade-Ins</span><span class="dot">◆</span>
+    <span>Tune-Ups</span><span class="dot">◆</span><span>Repairs</span><span class="dot">◆</span><span>Custom Wheel Builds</span><span class="dot">◆</span><span>E-Bike Service</span><span class="dot">◆</span><span>New &amp; Used Bikes</span><span class="dot">◆</span><span>BMX</span><span class="dot">◆</span><span>Trade-Ins</span><span class="dot">◆</span>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">The service floor</span>
+      <h2>Whatever you ride, we'll keep it rolling</h2>
+      <p>Four decades of wrenching, one bench at a time. Prompt turnaround, fair prices, and no upsell — just the work your bike actually needs.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-card">
+        <div class="ph"><img src="img/repair-shop.jpg" alt="A mechanic at Gresham Bicycle Center working at a bench lined with tools" width="1600" height="1067" loading="lazy"></div>
+        <div class="t">
+          <h3>Repairs &amp; Maintenance</h3>
+          <p>Flat fixes, brake &amp; shifting adjustments, hydraulic brake service, drivetrain overhauls — done right and on time.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="ph"><img src="img/drivetrain.jpg" alt="A Shimano crankset and bike tools laid out on the workbench at Gresham Bicycle Center" width="1600" height="990" loading="lazy"></div>
+        <div class="t">
+          <h3>Tune-Ups &amp; Fittings</h3>
+          <p>Single-speed and multi-speed tune-ups plus custom fitting, so your bike runs smooth and fits you right.</p>
+        </div>
+      </div>
+      <div class="svc-card">
+        <div class="ph"><img src="img/repair-mechanic.jpg" alt="Close-up of a mechanic's hands servicing a bicycle frame at Gresham Bicycle Center" width="1600" height="1067" loading="lazy"></div>
+        <div class="t">
+          <h3>Custom &amp; Wheel Builds</h3>
+          <p>Hand-built wheels and custom bike builds — plus e-bike service and expertise for the whole quiver.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TUNE-UP LADDER -->
+<section id="tuneups" class="tune">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--yellow)">Tune-up service</span>
+      <h2>Two tune-ups, dialed to your ride</h2>
+      <p>Bring it in and we'll get it road- or trail-ready. Not sure which one you need? Call the shop and we'll talk it through.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung">
+        <span class="step">Level 01</span>
+        <h3>Single-Speed Tune-Up</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full safety inspection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cables checked &amp; adjusted</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Chain serviced</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wheels trued</li>
+        </ul>
+      </div>
+      <div class="rung feat">
+        <span class="tagpill">Most Popular</span>
+        <span class="step">Level 02</span>
+        <h3>Multi-Speed Tune-Up</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Full safety inspection</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Cables checked &amp; adjusted</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Derailleurs dialed in</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Chain serviced</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Wheels trued</li>
+        </ul>
+      </div>
+      <div class="rung">
+        <span class="step">Add-ons</span>
+        <h3>Beyond the Tune-Up</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Hydraulic brake service</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom wheel building</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>E-bike service</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Custom fitting &amp; builds</li>
+        </ul>
+      </div>
+    </div>
+    <p class="tune-note">Pricing depends on your bike and what it needs — <b>call (503) 661-2453</b> for a straight-up quote before any work begins.</p>
+  </div>
+</section>
+
+<!-- SHOP / WHAT WE SELL -->
+<section id="shop" class="sell">
+  <div class="wrap sell-grid">
+    <div>
+      <span class="eyebrow">On the sales floor</span>
+      <h2>New rides, used finds, and everything in between</h2>
+      <p>From a kid's first bike to a commuter, mountain bike, or e-bike, we help you find the right ride — and we take trade-ins and offer lay-away to make it work.</p>
+      <div class="chips">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="16.5" r="4.5"/><circle cx="17.5" cy="16.5" r="4.5"/><path d="M6.5 16.5 12 6h4M9 6h5l3.5 10.5"/></svg>Mountain Bikes</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="16.5" r="4.5"/><circle cx="17.5" cy="16.5" r="4.5"/><path d="M6.5 16.5 12 6h4M9 6h5l3.5 10.5"/></svg>Commuter Bikes</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>E-Bikes</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="16.5" r="4.5"/><circle cx="17.5" cy="16.5" r="4.5"/><path d="M6.5 16.5 12 6h4M9 6h5l3.5 10.5"/></svg>BMX</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18v13H3z"/><path d="M3 10h18M8 6V3h8v3"/></svg>Parts &amp; Accessories</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3H7a2 2 0 0 0-2 2v16l7-4 7 4V5a2 2 0 0 0-2-2z"/></svg>Trade-Ins &amp; Lay-Away</span>
+      </div>
+    </div>
+    <div class="sell-photo">
+      <div class="f"><img src="img/trail-ride.jpg" alt="A mountain biker riding hard through a forest trail" width="1600" height="1066" loading="lazy"></div>
+      <span class="cap">Built for the trail</span>
+    </div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <img src="img/bikes-hanging.jpg" alt="Bikes hanging from the ceiling and lining the walls of a well-loved neighborhood bike shop" width="1600" height="2405" loading="lazy">
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>A Gresham fixture since 1984</h2>
+      <p>For four decades, Gresham Bicycle Center has been the shop East County riders come back to — the kind of place where the folks behind the counter actually know bikes, and take the time to explain what yours needs.</p>
+      <p>Owner Ken Whitney and the crew are known for prompt, honest service at fair prices, without pushing parts you don't need. There's even a little BMX museum inside — a nod to the cycling history this shop has been part of since day one.</p>
+      <p>Freedom, excitement, and endless possibilities. We build it, you ride it.</p>
+      <div class="stats">
+        <div class="stat"><b>1984</b><span>SERVING GRESHAM</span></div>
+        <div class="stat"><b>40+</b><span>YEARS ON 8TH ST</span></div>
+        <div class="stat"><b>4.1★</b><span>229 GOOGLE REVIEWS</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow" style="color:var(--yellow)">From the community</span>
+      <h2>Riders keep coming back</h2>
+      <p>A real 4.1★ across 229 Google reviews — here's what East County cyclists say.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Best in Gresham, 100% if you want great service at the fairest price in town, come here."</p>
+        <div class="src">— Síobhàn K. · via Google</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Everyone was so helpful with information and the part I needed."</p>
+        <div class="src">— Reviewer · via Google</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"Friendly, courteous and prompt — the tune-up price was half that of a nearby shop, and it was done on time as described."</p>
+        <div class="src">— Customer review</div>
+      </div>
+    </div>
+    <div class="rating-bar">
+      <span class="big">4.1★</span>
+      <div class="meta">
+        <span class="s">★★★★☆</span>
+        <span>229 reviews on Google</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Roll into the shop</h2>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+        <div><b>567 NE 8th St</b> · Gresham, OR 97030</div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <div class="hours-tbl">
+          <b style="font-family:var(--disp)">Hours</b>
+          <div><span>Mon</span><span class="closed">Closed</span></div>
+          <div><span>Tue – Sat</span><span>10:00am – 5:00pm</span></div>
+          <div><span>Sun</span><span class="closed">Closed</span></div>
+        </div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
+        <div><a href="tel:+15036612453"><b>(503) 661-2453</b></a> · call for a repair quote</div>
+      </div>
+      <div class="row">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 7 8 5 8-5"/></svg>
+        <div><a href="mailto:greshambike@comcast.net"><b>greshambike@comcast.net</b></a></div>
+      </div>
+      <div class="cta">
+        <a href="tel:+15036612453" class="btn">Call the Shop</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Gresham+Bicycle+Center+567+NE+8th+St+Gresham+OR+97030" target="_blank" rel="noopener" class="btn btn-navy">Get Directions</a>
+        <a href="mailto:greshambike@comcast.net" class="btn btn-ghost">Email Us</a>
+      </div>
+    </div>
+    <div class="visit-map">
+      <iframe
+        title="Map to Gresham Bicycle Center, 567 NE 8th St, Gresham, OR"
+        src="https://www.google.com/maps?q=567+NE+8th+St+Gresham+OR+97030&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="Gresham Bicycle Center home">
+      <svg class="cog" viewBox="0 0 48 48" fill="none" aria-hidden="true">
+        <circle cx="24" cy="24" r="21" fill="#12233a" stroke="#2c4160" stroke-width="1"/>
+        <g fill="#ffcc1f">
+          <circle cx="24" cy="24" r="6.5"/>
+          <rect x="22" y="1.5" width="4" height="7" rx="1"/><rect x="22" y="39.5" width="4" height="7" rx="1"/>
+          <rect x="39.5" y="22" width="7" height="4" rx="1"/><rect x="1.5" y="22" width="7" height="4" rx="1"/>
+          <rect x="35.4" y="8.9" width="4" height="7" rx="1" transform="rotate(45 37.4 12.4)"/>
+          <rect x="8.6" y="32.1" width="4" height="7" rx="1" transform="rotate(45 10.6 35.6)"/>
+          <rect x="8.6" y="8.9" width="4" height="7" rx="1" transform="rotate(-45 10.6 12.4)"/>
+          <rect x="35.4" y="32.1" width="4" height="7" rx="1" transform="rotate(-45 37.4 35.6)"/>
+        </g>
+        <circle cx="24" cy="24" r="2.6" fill="#12233a"/>
+      </svg>
+      <span class="wm">Gresham <b>Bicycle</b> Center<small>Since 1984</small></span>
+    </a>
+    <p><b>Gresham Bicycle Center</b> · 567 NE 8th St, Gresham, OR 97030 · <a href="tel:+15036612453">(503) 661-2453</a><br>
+    Bike sales, tune-ups &amp; honest repairs since 1984 — we build it, you ride it.</p>
+    <p class="note">✦ This is a free redesign concept created for Gresham Bicycle Center by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>

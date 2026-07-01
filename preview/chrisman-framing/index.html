@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chrisman Framing — Portland's Custom Frame Shop · Family Owned Since 1972</title>
+<meta name="description" content="Chrisman Framing — Portland's finest custom frame shop, family owned since 1972. Custom picture framing, conservation & archival framing, shadowboxes, matting and more, at four neighborhood shops in Sellwood, Lake Oswego, East Burnside & Cedar Mill.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bone:#f4f0e7; --paper:#fcfbf7; --ink:#1e1c1a; --ink-soft:#332f2b;
+    --stone:#726a5f; --oxblood:#7a2a2a; --oxblood-deep:#5f1f1f;
+    --brass:#a8843f; --brass-deep:#8a6a2e; --line:#e2dacb; --line-soft:#ece5d7;
+    --serif:'Newsreader',Georgia,serif; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 26px 60px -30px rgba(30,28,26,.5); --sh-sm:0 12px 30px -18px rgba(30,28,26,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--bone);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.08;letter-spacing:-.3px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  :root{--pad:30px}
+  .eyebrow{font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:var(--oxblood);font-weight:600}
+  .brass-rule{display:inline-block;width:44px;height:1px;background:var(--brass);vertical-align:middle;margin-right:12px}
+
+  /* Mat-board framed image motif */
+  .mat{background:var(--paper);padding:14px;border:1px solid var(--line);box-shadow:var(--sh-sm)}
+  .mat .in{border:1px solid var(--line);overflow:hidden;position:relative}
+  .mat.tight{padding:9px}
+
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--oxblood);color:#fbf6ee;padding:14px 26px;font-weight:600;font-size:14.5px;letter-spacing:.2px;transition:.2s;border:1px solid var(--oxblood);cursor:pointer;border-radius:1px}
+  .btn:hover{background:var(--oxblood-deep);border-color:var(--oxblood-deep);transform:translateY(-2px)}
+  .btn svg{width:16px;height:16px}
+  .btn-ghost{background:transparent;color:var(--ink);border:1px solid #cbc0ab}
+  .btn-ghost:hover{border-color:var(--oxblood);color:var(--oxblood);background:transparent;transform:translateY(-2px)}
+  .btn-brass{background:var(--brass);border-color:var(--brass);color:#241a08}
+  .btn-brass:hover{background:var(--brass-deep);border-color:var(--brass-deep);color:#fff}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
+
+  .topbar{background:var(--ink);color:#d9cfbf;font-size:12.5px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.4px}
+  .topbar b{color:#f4ead6}
+  .topbar a{color:var(--brass);font-weight:600}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(244,240,231,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;flex-direction:column;line-height:1;min-width:0}
+  .brand .nm{font-family:var(--serif);font-weight:600;font-size:23px;letter-spacing:.5px;color:var(--ink)}
+  .brand .sub{font-size:9.5px;letter-spacing:3.5px;text-transform:uppercase;color:var(--oxblood);font-weight:600;margin-top:5px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-size:14px;color:var(--ink-soft);font-weight:500}
+  .nav-links a:hover{color:var(--oxblood)}
+  .nav-cta{padding:10px 20px;font-size:13.5px}
+
+  /* HERO */
+  .hero{position:relative;padding-top:64px;padding-bottom:40px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:center}
+  .hero h1{font-size:62px;margin:20px 0 20px;font-weight:500}
+  .hero h1 em{font-style:italic;color:var(--oxblood)}
+  .hero .tag{font-size:18.5px;color:var(--stone);max-width:460px;margin-bottom:28px}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:30px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--brass);font-size:16px;letter-spacing:2px}
+  .hero-rating span{font-size:13.5px;color:var(--stone);font-weight:500}
+  .hero-rating b{color:var(--ink);font-weight:600}
+  .hero-visual{position:relative}
+  .hero-visual .mat{transform:rotate(-1deg)}
+  .hero-visual .in{aspect-ratio:4/5}
+  .hero-visual .in img{width:100%;height:100%;object-fit:cover}
+  .hero-cap{position:absolute;bottom:-16px;left:-14px;background:var(--ink);color:#f2e7d4;font-family:var(--serif);font-style:italic;font-size:16px;padding:9px 20px;box-shadow:var(--sh-sm)}
+  .hero-badge{position:absolute;top:-18px;right:-8px;width:104px;height:104px;border-radius:50%;background:var(--oxblood);color:#f4e6d3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(6deg);box-shadow:var(--sh-sm);border:1px solid var(--brass);padding:8px}
+  .hero-badge .est{font-size:9px;letter-spacing:2px;text-transform:uppercase;opacity:.85}
+  .hero-badge .yr{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1;margin:2px 0}
+  .hero-badge .fam{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;opacity:.85}
+
+  /* marquee strip */
+  .strip{background:var(--ink);color:#cabfaf;overflow:hidden;white-space:nowrap;padding:14px 0;font-family:var(--serif);font-size:17px;font-style:italic;border-top:1px solid var(--brass);border-bottom:1px solid var(--brass)}
+  .strip .track{display:inline-block;animation:scroll 34s linear infinite}
+  .strip .track span{margin:0 24px}
+  .strip .track .dot{color:var(--brass);font-style:normal}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.strip .track{animation:none}}
+
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center}
+  .sec-head h2{font-size:44px;margin:12px 0 14px;font-weight:500}
+  .sec-head p{color:var(--stone);font-size:16.5px}
+
+  /* GALLERY / WHAT WE FRAME */
+  .gallery{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .g-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:26px}
+  .g-col{display:grid;gap:26px}
+  .g-col.two{grid-template-columns:1fr 1fr}
+  .g-item .in{overflow:hidden}
+  .g-item .in img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .g-item:hover .in img{transform:scale(1.04)}
+  .g-item .cap{font-size:12.5px;letter-spacing:.4px;color:var(--stone);margin-top:10px;text-align:center;font-style:italic;font-family:var(--serif)}
+  .g-tall .in{aspect-ratio:3/4}
+  .g-wide .in{aspect-ratio:16/10}
+  .g-sq .in{aspect-ratio:1/1}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .svc{background:var(--paper);border:1px solid var(--line);padding:30px 28px 32px;transition:.25s;position:relative}
+  .svc:hover{transform:translateY(-5px);box-shadow:var(--sh-sm);border-color:#d6cbb4}
+  .svc .ic{width:40px;height:40px;color:var(--oxblood);margin-bottom:16px}
+  .svc .ic svg{width:100%;height:100%}
+  .svc h3{font-size:22px;margin-bottom:8px;font-weight:600}
+  .svc p{font-size:14.5px;color:var(--stone)}
+  .svc-note{text-align:center;margin-top:40px;font-size:15px;color:var(--ink-soft)}
+  .svc-note b{font-family:var(--serif);font-style:italic;color:var(--oxblood);font-weight:500}
+
+  /* STORY */
+  .story{background:var(--ink);color:#e7ddce}
+  .story-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center}
+  .story .eyebrow{color:var(--brass)}
+  .story h2{font-size:42px;margin:14px 0 20px;color:#faf3e6;font-weight:500}
+  .story p{color:#cdc2b2;font-size:16px;margin-bottom:16px}
+  .story .sig{font-family:var(--serif);font-style:italic;font-size:20px;color:var(--brass);margin-top:8px}
+  .story-photos{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .story-photos .mat{background:#f0e8d8;padding:10px;border-color:#3a352e}
+  .story-photos .mat .in{border-color:#d8ccb7}
+  .story-photos .in{aspect-ratio:1/1;overflow:hidden}
+  .story-photos .in img{width:100%;height:100%;object-fit:cover}
+  .story-photos .lg{grid-column:1 / -1}
+  .story-photos .lg .in{aspect-ratio:16/9}
+
+  /* REVIEWS */
+  .reviews{background:var(--bone)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:var(--paper);border:1px solid var(--line);padding:30px 28px;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+  .rcard .stars{color:var(--brass);letter-spacing:2px;font-size:15px;margin-bottom:14px}
+  .rcard p{font-family:var(--serif);font-size:17px;line-height:1.55;color:var(--ink-soft);margin-bottom:18px}
+  .rcard .src{font-size:12.5px;color:var(--stone);font-weight:600;margin-top:auto;letter-spacing:.3px}
+  .rate-bar{display:flex;gap:36px;justify-content:center;flex-wrap:wrap;margin-top:46px;padding-top:36px;border-top:1px solid var(--line)}
+  .rate{text-align:center}
+  .rate b{font-family:var(--serif);font-size:30px;color:var(--oxblood);display:block;font-weight:600}
+  .rate span{font-size:12.5px;color:var(--stone);letter-spacing:.5px}
+
+  /* LOCATIONS */
+  .visit{background:var(--paper);border-top:1px solid var(--line)}
+  .loc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-bottom:40px}
+  .loc{border:1px solid var(--line);background:var(--bone);padding:28px 28px 26px;position:relative;transition:.2s}
+  .loc:hover{border-color:#d0c4ad;box-shadow:var(--sh-sm)}
+  .loc .flag{font-size:10.5px;letter-spacing:2.5px;text-transform:uppercase;color:var(--brass-deep);font-weight:700;display:flex;align-items:center;gap:8px}
+  .loc .flag.primary::after{content:'Main Shop';font-size:9px;letter-spacing:1.5px;background:var(--oxblood);color:#f4e6d3;padding:2px 8px;border-radius:1px}
+  .loc h3{font-size:24px;margin:8px 0 12px;font-weight:600}
+  .loc .row{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;color:var(--ink-soft);margin-bottom:9px}
+  .loc .row svg{width:17px;height:17px;color:var(--oxblood);flex:0 0 auto;margin-top:3px}
+  .loc .row a:hover{color:var(--oxblood)}
+  .loc .acts{display:flex;gap:9px;flex-wrap:wrap;margin-top:18px}
+  .loc .acts a{font-size:12.5px;padding:9px 15px}
+  .visit-foot{text-align:center}
+  .visit-foot .row{display:inline-flex;gap:10px;align-items:center;font-size:15.5px;color:var(--ink-soft);margin:0 16px 10px}
+  .visit-foot .row svg{width:18px;height:18px;color:var(--oxblood)}
+  .visit-foot a:hover{color:var(--oxblood)}
+
+  footer{background:var(--ink);color:#b6ab9b;padding:56px 0 30px;text-align:center}
+  footer .nm{font-family:var(--serif);font-size:26px;color:#f4ead6;letter-spacing:.5px;font-weight:600}
+  footer .sub{font-size:9.5px;letter-spacing:3.5px;text-transform:uppercase;color:var(--brass);font-weight:600;margin:8px 0 20px}
+  footer p{font-size:13.5px;line-height:1.85}
+  footer a{color:#ddd0be}
+  footer a:hover{color:var(--brass)}
+  footer .note{margin-top:22px;font-size:12px;color:#7c7264;border-top:1px solid #3a342c;padding-top:20px}
+
+  @media(max-width:900px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.story-grid{grid-template-columns:1fr;gap:44px}
+    .hero h1{font-size:40px}
+    .g-grid{grid-template-columns:1fr}
+    .svc-grid,.rgrid,.loc-grid{grid-template-columns:1fr}
+    .sec-head h2{font-size:31px}section{padding:60px 0}
+    .brand .nm{font-size:20px}
+    .hero-visual{max-width:420px;margin:0 auto}
+    .hero-badge{width:88px;height:88px}
+    .visit-foot .row{display:flex;justify-content:center;margin:0 0 10px}
+  }
+  @media(max-width:420px){
+    .hero h1{font-size:33px}
+    .nav-cta{padding:9px 15px;font-size:12.5px}
+    .btn{padding:13px 20px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Family owned in Portland since <b>1972</b> · Four neighborhood shops · Sellwood <a href="tel:+15032353287">(503) 235-3287</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top">
+        <span class="nm">Chrisman Framing</span>
+        <span class="sub">Custom Picture Framing · Est. 1972</span>
+      </a>
+      <div class="nav-links">
+        <a href="#gallery">Our Work</a>
+        <a href="#services">Services</a>
+        <a href="#story">Since 1972</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit" class="btn btn-ghost nav-cta">Visit a Shop</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow"><span class="brass-rule"></span>Portland's finest custom frame shop</span>
+      <h1>The right frame makes it <em>worth</em> keeping.</h1>
+      <p class="tag">Custom picture framing done by hand in Portland — family owned since 1972. From a child's drawing to a museum-quality piece, we help you frame what matters.</p>
+      <div class="hero-cta">
+        <a href="#visit" class="btn">Find Your Shop</a>
+        <a href="#gallery" class="btn btn-ghost">See Our Work</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>5.0</b> rating on Angi · half a century of Portland framing</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="mat">
+        <div class="in"><img src="img/sellwood-shop.webp" alt="Inside the Chrisman Framing shop in Sellwood — walls of frame moulding samples, a gallery wall of framed pieces, and an oriental rug" width="1187" height="789"></div>
+      </div>
+      <div class="hero-cap">Our Sellwood shop</div>
+      <div class="hero-badge">
+        <span class="est">Est.</span>
+        <span class="yr">1972</span>
+        <span class="fam">Family Owned</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="track">
+    <span>Custom Framing</span><span class="dot">✦</span><span>Conservation &amp; Archival</span><span class="dot">✦</span><span>Custom Matting</span><span class="dot">✦</span><span>Shadowboxes</span><span class="dot">✦</span><span>Fine Art &amp; Photographs</span><span class="dot">✦</span><span>Museum-Quality Materials</span><span class="dot">✦</span>
+    <span>Custom Framing</span><span class="dot">✦</span><span>Conservation &amp; Archival</span><span class="dot">✦</span><span>Custom Matting</span><span class="dot">✦</span><span>Shadowboxes</span><span class="dot">✦</span><span>Fine Art &amp; Photographs</span><span class="dot">✦</span><span>Museum-Quality Materials</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- GALLERY -->
+<section id="gallery" class="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">A framer's eye</span>
+      <h2>What we frame</h2>
+      <p>Fine art, photographs, prints, posters, needlework, memorabilia and mirrors — each one designed with the right frame, mat and glazing to suit the piece and the room.</p>
+    </div>
+    <div class="g-grid">
+      <div class="g-col">
+        <div class="g-item g-wide">
+          <div class="mat"><div class="in"><img src="img/gallery-hall.jpg" alt="A salon-style gallery wall of gold-framed paintings against deep red walls" width="1400" height="933" loading="lazy"></div></div>
+          <p class="cap">Fine art, arranged and framed to fill a wall</p>
+        </div>
+        <div class="g-col two">
+          <div class="g-item g-sq">
+            <div class="mat"><div class="in"><img src="img/gilt-frames.jpg" alt="Ornate gilt frames and a framed seascape leaning against a wall" width="1400" height="1050" loading="lazy"></div></div>
+            <p class="cap">Restoration &amp; ornate gilt frames</p>
+          </div>
+          <div class="g-item g-sq">
+            <div class="mat"><div class="in"><img src="img/salon-room.jpg" alt="A gallery room with dozens of framed paintings hung salon-style above a bench" width="1400" height="875" loading="lazy"></div></div>
+            <p class="cap">Whole-room installation &amp; hanging</p>
+          </div>
+        </div>
+      </div>
+      <div class="g-col">
+        <div class="g-item g-tall">
+          <div class="mat"><div class="in"><img src="img/poster.jpg" alt="A framed black-and-white typographic poster with a wide white mat" width="1000" height="1330" loading="lazy"></div></div>
+          <p class="cap">Posters &amp; prints, matted with care</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Our craft</span>
+      <h2>Framing services</h2>
+      <p>Personalized custom framing with museum-quality materials and an impressive selection of frames — plus everything from a single mat to a full commercial installation.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><rect x="7" y="7" width="10" height="10" rx="1"/></svg></div>
+        <h3>Custom Picture Framing</h3>
+        <p>Fine art, photographs, prints and posters — designed by hand with a frame, mat and glazing chosen to suit the piece and the room.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 4.5v9L12 21l-8-4.5v-9L12 3z"/><path d="M12 8v8M8 10v4M16 10v4"/></svg></div>
+        <h3>Conservation &amp; Archival</h3>
+        <p>Acid-free, museum-quality materials and conservation framing to protect and preserve artwork, documents and heirlooms for the long term.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="1"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M3 3l5 5M21 3l-5 5M3 21l5-5M21 21l-5-5"/></svg></div>
+        <h3>Custom Matting</h3>
+        <p>Single, double and specialty mats cut to order — the finishing detail that gives your framed art or memorabilia a character all its own.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8l8-4 8 4v8l-8 4-8-4V8z"/><path d="M4 8l8 4 8-4M12 12v8"/></svg></div>
+        <h3>Shadowboxes &amp; 3-D Objects</h3>
+        <p>Depth framing for jerseys, medals, keepsakes and dimensional memorabilia — built to display three-dimensional pieces beautifully and safely.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21v-4l11-11 4 4L7 21H3z"/><path d="M13 6l4 4"/><path d="M15 3l1.5 1.5"/></svg></div>
+        <h3>Photo Wall Design</h3>
+        <p>Advice and layout for gallery walls, plus quick turnaround and home pick-up &amp; delivery to make the whole project easy.</p>
+      </div>
+      <div class="svc">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M6 21V8h12v13M9 8V5h6v3"/><path d="M9 12h6M9 15h6"/></svg></div>
+        <h3>Commercial &amp; Corporate</h3>
+        <p>Commercial framing and corporate &amp; office artwork — from a single boardroom piece to framing a whole workplace, delivered and installed.</p>
+      </div>
+    </div>
+    <p class="svc-note">Not sure where to start? <b>Bring the piece in</b> — every project begins with a friendly, no-pressure design consultation. Sign up for our newsletter in shop and we'll share a framing coupon.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photos">
+      <div class="mat lg"><div class="in"><img src="img/hist-1972.webp" alt="The founders standing outside the original Chrisman storefront in 1972 with an Opening February sign in the window" width="928" height="639" loading="lazy"></div></div>
+      <div class="mat"><div class="in"><img src="img/hist-1978.webp" alt="An early Chrisman framer at the workbench, walls lined with frame corner samples" width="1000" height="704" loading="lazy"></div></div>
+      <div class="mat"><div class="in"><img src="img/hist-2001.webp" alt="The Chrisman family outside the Sellwood shop under the Chrisman Picture Frame Gallery sign" width="659" height="659" loading="lazy"></div></div>
+    </div>
+    <div>
+      <span class="eyebrow"><span class="brass-rule"></span>Since 1972</span>
+      <h2>Half a century of framing Portland.</h2>
+      <p>Chrisman Framing opened its doors in 1972 and has been helping Portlanders frame their photos and artwork ever since. Over more than fifty years, the shop has built a reputation for high-quality work and genuinely personal service.</p>
+      <p>It is still locally owned and operated by the Chrisman family, and still grounded in the same idea: the right frame doesn't just protect a piece — it gives your art or memorabilia a unique character all its own.</p>
+      <p>Today that care lives on across four neighborhood shops around the Portland area, each with the same museum-quality materials and the same eye for detail.</p>
+      <div class="sig">— The Chrisman Family</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Kind words</span>
+      <h2>What customers say</h2>
+      <p>Fifty years of framing has earned Chrisman a loyal Portland following — and a 5.0-star rating on Angi.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"They work with us to get us happy!"</p>
+        <div class="src">— Customer review via Angi</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"When we weren't completely satisfied with our framing, they made adjustments at no additional cost."</p>
+        <div class="src">— Customer review via Angi</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"High-quality work and exceptional customer service — museum-quality materials and an impressive selection of frames."</p>
+        <div class="src">— Reputation summarized from customer reviews</div>
+      </div>
+    </div>
+    <div class="rate-bar">
+      <div class="rate"><b>5.0★</b><span>RATING ON ANGI</span></div>
+      <div class="rate"><b>Since 1972</b><span>FAMILY OWNED &amp; OPERATED</span></div>
+      <div class="rate"><b>4 Shops</b><span>ACROSS THE PORTLAND AREA</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section id="visit" class="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Come see us</span>
+      <h2>Four neighborhood shops</h2>
+      <p>Serving Sellwood, Lake Oswego &amp; West Linn, East Burnside &amp; Laurelhurst, and Cedar Mill &amp; Hillsboro. Stop in and bring your piece — we'll take it from there.</p>
+    </div>
+    <div class="loc-grid">
+
+      <div class="loc">
+        <div class="flag primary">Sellwood</div>
+        <h3>Sellwood-Moreland</h3>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>8002 SE 13th Ave, Portland, OR 97202</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Tue–Fri 10am–6pm · Sat 10am–5pm</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15032353287">(503) 235-3287</a></div></div>
+        <div class="acts">
+          <a href="tel:+15032353287" class="btn">Call Shop</a>
+          <a href="https://maps.google.com/?q=Chrisman+Framing+8002+SE+13th+Ave+Portland+OR+97202" target="_blank" rel="noopener" class="btn btn-ghost">Directions</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <div class="flag">Lake Oswego</div>
+        <h3>Lake Oswego / West Linn</h3>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>480 2nd St, Lake Oswego, OR 97034</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Tue–Sat 10am–6pm</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15036355326">(503) 635-5326</a></div></div>
+        <div class="acts">
+          <a href="tel:+15036355326" class="btn">Call Shop</a>
+          <a href="https://maps.google.com/?q=Chrisman+Framing+480+2nd+St+Lake+Oswego+OR+97034" target="_blank" rel="noopener" class="btn btn-ghost">Directions</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <div class="flag">East Burnside</div>
+        <h3>East Burnside / Laurelhurst</h3>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>2912 E Burnside St, Portland, OR 97214</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Tue–Sat 10am–6pm</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15032317462">(503) 231-7462</a></div></div>
+        <div class="acts">
+          <a href="tel:+15032317462" class="btn">Call Shop</a>
+          <a href="https://maps.google.com/?q=Chrisman+Framing+2912+E+Burnside+St+Portland+OR+97214" target="_blank" rel="noopener" class="btn btn-ghost">Directions</a>
+        </div>
+      </div>
+
+      <div class="loc">
+        <div class="flag">Cedar Mill</div>
+        <h3>Cedar Mill / Hillsboro</h3>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div>12843 NW Cornell Rd, Portland, OR 97229</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div>Tue–Sat 10am–6pm</div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15036464286">(503) 646-4286</a></div></div>
+        <div class="acts">
+          <a href="tel:+15036464286" class="btn">Call Shop</a>
+          <a href="https://maps.google.com/?q=Chrisman+Framing+12843+NW+Cornell+Rd+Portland+OR+97229" target="_blank" rel="noopener" class="btn btn-ghost">Directions</a>
+        </div>
+      </div>
+
+    </div>
+    <div class="visit-foot">
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:chrismanframing@gmail.com"><b>chrismanframing@gmail.com</b></a></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Questions about a project? Email us or call your nearest shop.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="nm">Chrisman Framing</div>
+    <div class="sub">Custom Picture Framing · Est. 1972</div>
+    <p>Sellwood · Lake Oswego · East Burnside · Cedar Mill<br>
+    Sellwood: <a href="tel:+15032353287">(503) 235-3287</a> · <a href="mailto:chrismanframing@gmail.com">chrismanframing@gmail.com</a><br>
+    Portland's family-owned custom frame shop since 1972.</p>
+    <p class="note">✦ This is a free redesign concept created for Chrisman Framing by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
