@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Bonita — Family-Owned Mexican Restaurant · Portland, OR</title>
+<meta name="description" content="La Bonita — family-owned Mexican restaurant with three Portland locations (Alberta, N Killingsworth, SE Division). Tacos, burritos, chilaquiles & more. Food for the People.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;600;700;800;900&family=Pacifico&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#fff6e6; --cream2:#fffdf7; --ink:#3a1f16; --charcoal:#2b1610; --muted:#8a6f5f;
+    --red:#d83a2f; --red-deep:#b62d24; --yellow:#f5b731; --yellow-deep:#e0a017;
+    --teal:#199e91; --teal-deep:#137a70; --green:#4a9a4f; --pink:#e8567f; --line:#f0dcc0;
+    --display:'Rubik',system-ui,sans-serif; --script:'Pacifico',cursive; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 24px 50px -26px rgba(58,31,22,.5); --sh-sm:0 12px 26px -14px rgba(58,31,22,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased}
+  h1,h2,h3{font-family:var(--display);font-weight:800;line-height:1.04;letter-spacing:-.5px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+  .script{font-family:var(--script);font-weight:400}
+  .eyebrow{font-family:var(--display);font-size:12.5px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--display);font-weight:700;font-size:15px;letter-spacing:.3px;
+    background:var(--red);color:#fff;padding:15px 28px;border-radius:50px;border:0;cursor:pointer;transition:.18s;box-shadow:var(--sh-sm)}
+  .btn:hover{background:var(--red-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-yellow{background:var(--yellow);color:var(--ink)}
+  .btn-yellow:hover{background:var(--yellow-deep)}
+  .btn-out{background:transparent;color:var(--ink);border:2px solid #e2c9a6;box-shadow:none;padding:13px 26px}
+  .btn-out:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  /* papel picado */
+  .papel{display:flex;overflow:hidden;height:34px;background:var(--red)}
+  .papel .f{flex:1 0 6.66%;position:relative;clip-path:polygon(0 0,100% 0,100% 62%,50% 100%,0 62%)}
+  .papel .f::after{content:"";position:absolute;left:50%;top:9px;transform:translateX(-50%);width:9px;height:9px;border-radius:50%;background:rgba(255,255,255,.5)}
+  .papel .f:nth-child(4n+1){background:var(--yellow)}
+  .papel .f:nth-child(4n+2){background:var(--teal)}
+  .papel .f:nth-child(4n+3){background:var(--pink)}
+  .papel .f:nth-child(4n){background:var(--green)}
+
+  .topbar{background:var(--charcoal);color:#f4dcc3;font-size:13px;font-weight:500}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px 24px;align-items:center}
+  .topbar b{color:var(--yellow)}
+
+  header{position:sticky;top:0;z-index:60;background:rgba(255,246,230,.94);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:14px}
+  .brand{display:flex;flex-direction:column;line-height:.9}
+  .brand .n{font-family:var(--display);font-weight:900;font-size:27px;color:var(--red);letter-spacing:-1px}
+  .brand .t{font-family:var(--script);font-size:14px;color:var(--teal);margin-top:2px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--display);font-size:15px;color:var(--ink);font-weight:600}
+  .nav-links a:hover{color:var(--red)}
+  .nav-cta{padding:11px 22px;font-size:14px;color:var(--ink)}
+
+  /* HERO */
+  .hero{position:relative;overflow:hidden;background:
+    radial-gradient(circle at 88% 15%,#ffe9b8,transparent 42%),
+    radial-gradient(circle at 6% 92%,#d3f0ec,transparent 40%),var(--cream)}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:46px;align-items:center;padding-top:58px;padding-bottom:74px}
+  .hero h1{font-size:74px;font-weight:900;margin:8px 0 6px;letter-spacing:-2px}
+  .hero h1 .r{color:var(--red)}
+  .hero .tag{font-family:var(--script);font-size:38px;color:var(--teal);margin-bottom:20px;line-height:1}
+  .hero .lede{font-size:18px;color:var(--muted);max-width:440px;margin-bottom:28px}
+  .hero-cta{display:flex;gap:13px;flex-wrap:wrap}
+  .hero-press{display:flex;gap:10px 20px;flex-wrap:wrap;margin-top:30px;padding-top:24px;border-top:2px dashed var(--line);font-size:13px;color:var(--muted);font-weight:600}
+  .hero-press b{font-family:var(--display);color:var(--ink)}
+  .hero-visual{position:relative}
+  .hero-visual .main{border-radius:24px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;border:6px solid #fff;transform:rotate(2deg)}
+  .hero-visual .main img{width:100%;height:100%;object-fit:cover}
+  .hero-visual .badge{position:absolute;bottom:-18px;left:-18px;background:var(--yellow);color:var(--ink);width:118px;height:118px;border-radius:50%;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;box-shadow:var(--sh-sm);transform:rotate(-9deg);border:3px solid #fff}
+  .hero-visual .badge .s{font-family:var(--script);font-size:17px;color:var(--red)}
+  .hero-visual .badge b{font-family:var(--display);font-weight:900;font-size:23px;line-height:.95}
+  .hero-visual .badge small{font-size:8.5px;letter-spacing:1px;text-transform:uppercase;margin-top:2px}
+
+  section{padding:80px 0;position:relative}
+  .sec-head{text-align:center;max-width:600px;margin:0 auto 48px}
+  .sec-head .script{font-size:30px;color:var(--teal);display:block;line-height:1}
+  .sec-head h2{font-size:46px;margin:2px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* MENU */
+  .menu{background:var(--cream2)}
+  .menu-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:36px}
+  .mcard{background:#fff;border-radius:18px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s;border-bottom:5px solid var(--yellow)}
+  .mcard:nth-child(2){border-bottom-color:var(--teal)}.mcard:nth-child(3){border-bottom-color:var(--green)}
+  .mcard:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .mcard .ph{aspect-ratio:3/2;overflow:hidden}
+  .mcard .ph img{width:100%;height:100%;object-fit:cover}
+  .mcard .t{padding:20px 22px 24px}
+  .mcard h3{font-size:23px;margin-bottom:5px}
+  .mcard p{font-size:14px;color:var(--muted)}
+  .menu-list{background:#fff;border:2px solid var(--line);border-radius:18px;padding:32px 34px;display:flex;flex-wrap:wrap;gap:10px 12px;justify-content:center;align-items:center}
+  .menu-list span{font-family:var(--display);font-weight:600;font-size:16px;color:var(--ink);background:var(--cream);padding:8px 16px;border-radius:50px}
+  .menu-list .star{background:var(--red);color:#fff}
+  .menu-cta{text-align:center;margin-top:30px}
+
+  /* STORY BAND */
+  .band{position:relative;overflow:hidden;color:#fff;min-height:440px;display:flex;align-items:center}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(43,22,16,.92) 0 40%,rgba(43,22,16,.6) 72%,rgba(43,22,16,.4))}
+  .band .inner{position:relative;z-index:2;max-width:560px}
+  .band h2{font-size:44px;color:#fff;margin-bottom:14px}
+  .band .script{font-family:var(--script);font-size:30px;color:var(--yellow);display:block;margin-bottom:6px}
+  .band p{font-size:18px;color:#f4e6d5}
+
+  /* LOCATIONS */
+  .loc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .loc{background:var(--cream2);border:2px solid var(--line);border-radius:18px;padding:28px 26px;transition:.2s}
+  .loc:hover{border-color:var(--red);transform:translateY(-4px);box-shadow:var(--sh-sm)}
+  .loc .pin{width:44px;height:44px;border-radius:12px;background:var(--red);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+  .loc .pin svg{width:22px;height:22px;color:#fff}
+  .loc h3{font-size:22px;margin-bottom:4px}
+  .loc .addr{font-size:14.5px;color:var(--muted);margin-bottom:14px}
+  .loc .row{display:flex;gap:10px;flex-wrap:wrap}
+  .loc .row a{font-family:var(--display);font-weight:600;font-size:13.5px;padding:9px 16px;border-radius:50px}
+  .loc .row .order{background:var(--red);color:#fff}
+  .loc .row .call{background:var(--cream);color:var(--ink);border:1px solid var(--line)}
+
+  /* REVIEWS */
+  .reviews{background:var(--teal)}
+  .reviews .sec-head h2,.reviews .sec-head .script{color:#fff}
+  .reviews .sec-head p{color:#d3f0ec}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .rcard{background:#fff;border-radius:18px;padding:28px 26px;box-shadow:var(--sh)}
+  .rcard:nth-child(2){transform:translateY(-12px)}
+  .rcard .stars{color:var(--yellow);letter-spacing:2px;font-size:17px;margin-bottom:12px;-webkit-text-stroke:.5px var(--yellow-deep)}
+  .rcard p{font-size:16.5px;line-height:1.5;margin-bottom:16px;font-weight:500}
+  .rcard .src{font-family:var(--display);font-weight:700;font-size:13px;color:var(--red)}
+
+  /* CTA */
+  .cta{background:var(--red);color:#fff;text-align:center;padding:70px 24px}
+  .cta h2{font-size:46px;color:#fff;margin-bottom:8px}
+  .cta .script{font-family:var(--script);font-size:30px;color:var(--yellow);display:block;margin-bottom:16px}
+  .cta p{font-size:18px;color:#ffe3d8;margin-bottom:26px}
+  .cta .btn{background:#fff;color:var(--red)}
+  .cta .btn:hover{background:var(--yellow);color:var(--ink)}
+
+  footer{background:var(--charcoal);color:#cdb09c;padding:52px 0 28px;text-align:center}
+  footer .n{font-family:var(--display);font-weight:900;font-size:28px;color:var(--red)}
+  footer .t{font-family:var(--script);font-size:16px;color:var(--yellow);margin-bottom:14px}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#f0d2bd}
+  footer .note{margin-top:18px;font-size:12.5px;color:#8f7565;border-top:1px solid #43261c;padding-top:18px}
+
+  @media(max-width:880px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid{grid-template-columns:1fr;gap:34px}
+    .hero h1{font-size:48px}.hero .tag{font-size:30px}
+    .menu-grid,.rgrid,.loc-grid{grid-template-columns:1fr}
+    .rcard{transform:none!important}
+    .sec-head h2{font-size:33px}section{padding:56px 0}
+    .band{min-height:360px}.band h2{font-size:31px}.band::after{background:linear-gradient(90deg,rgba(43,22,16,.93),rgba(43,22,16,.75))}
+    .cta h2{font-size:32px}
+    .hero-visual .badge{left:auto;right:12px}
+  }
+</style>
+</head>
+<body>
+
+<div class="papel" aria-hidden="true"><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span><span class="f"></span></div>
+
+<div class="topbar">
+  <div class="wrap">
+    <span>Family-owned · <b>3 Portland locations</b> · Open daily 11am–9pm</span>
+    <span>Dine in · Takeout · Delivery</span>
+  </div>
+</div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#"><span class="n">La Bonita</span><span class="t">Food for the People</span></a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#locations">Locations</a>
+        <a href="#reviews">Reviews</a>
+        <a href="https://labonitaalberta.mobilebytes.com" target="_blank" rel="noopener" class="btn btn-yellow nav-cta">Order Online</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Family-owned Mexican · NE Portland</span>
+      <h1>Real Mexican, <span class="r">real Portland.</span></h1>
+      <div class="tag">Food for the People</div>
+      <p class="lede">Three neighborhood taquerias serving the tacos, burritos, and chilaquiles Portland's loved for years — made by our family, for yours.</p>
+      <div class="hero-cta">
+        <a href="https://labonitaalberta.mobilebytes.com" target="_blank" rel="noopener" class="btn">Order Online
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#menu" class="btn btn-out">See the menu</a>
+      </div>
+      <div class="hero-press">
+        <span><b>The Oregonian</b> · 25 Best Mexican Restaurants</span>
+        <span><b>Eater PDX</b> · Knockout Tacos</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="main"><img src="img/food-3.jpg" alt="Street tacos with lime and salsa at La Bonita" width="700" height="875"></div>
+      <div class="badge"><span class="s">voted</span><b>25 Best</b><small>Mexican · PDX</small></div>
+    </div>
+  </div>
+</section>
+
+<!-- MENU -->
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">buen provecho</span>
+      <h2>What's on the table</h2>
+      <p>Everything made fresh, the way it should be. Here's a taste — the full menu's online.</p>
+    </div>
+    <div class="menu-grid">
+      <div class="mcard"><div class="ph"><img src="img/food-4.jpg" alt="Carne asada street tacos" width="600" height="400" loading="lazy"></div><div class="t"><h3>The Tacos</h3><p>Fish, carne asada, al pastor &amp; more — the ones people cross town for.</p></div></div>
+      <div class="mcard"><div class="ph"><img src="img/interior-1.jpg" alt="A full spread of La Bonita plates" width="600" height="400" loading="lazy"></div><div class="t"><h3>Plates &amp; Burritos</h3><p>Burritos, chilaquiles, pozole, tortas &amp; classic combo plates.</p></div></div>
+      <div class="mcard"><div class="ph"><img src="img/food-1.jpg" alt="Fresh tacos with lime" width="600" height="400" loading="lazy"></div><div class="t"><h3>Shareables</h3><p>Award-winning nachos, guac, tamales &amp; more to pass around.</p></div></div>
+    </div>
+    <div class="menu-list">
+      <span class="star">★ Famous Fish Tacos</span><span>Carne Asada</span><span>Al Pastor</span><span>Burritos</span><span>Chilaquiles</span><span>Pozole</span><span>Tamales</span><span>Tortas</span><span>Award-Winning Nachos</span><span>Vegetarian Options</span>
+    </div>
+    <div class="menu-cta"><a href="https://labonitaalberta.mobilebytes.com" target="_blank" rel="noopener" class="btn">See full menu &amp; order online</a></div>
+  </div>
+</section>
+
+<!-- STORY BAND -->
+<div class="band" id="story">
+  <img src="img/interior-1.jpg" alt="A table full of La Bonita food" width="1400" height="500" loading="lazy">
+  <div class="wrap"><div class="inner">
+    <span class="script">nuestra familia</span>
+    <h2>Food for the people.</h2>
+    <p>Our family feeds yours, your family feeds ours — day by day, plate by plate. That's been the deal since day one, across all three of our Portland neighborhoods.</p>
+  </div></div>
+</div>
+
+<!-- LOCATIONS -->
+<section id="locations">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">come find us</span>
+      <h2>Three neighborhoods</h2>
+      <p>Open daily, 11am–9pm. Order online for pickup or delivery from any location.</p>
+    </div>
+    <div class="loc-grid">
+      <div class="loc">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>Alberta</h3>
+        <div class="addr">2839 NE Alberta St<br>Portland, OR 97211</div>
+        <div class="row"><a class="order" href="https://labonitaalberta.mobilebytes.com" target="_blank" rel="noopener">Order Online</a><a class="call" href="tel:+15032813662">(503) 281-3662</a></div>
+      </div>
+      <div class="loc">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>N Killingsworth</h3>
+        <div class="addr">2710 N Killingsworth St<br>Portland, OR 97217</div>
+        <div class="row"><a class="order" href="https://labonitakillingsworth.mobilebytes.com" target="_blank" rel="noopener">Order Online</a><a class="call" href="tel:+15032783050">(503) 278-3050</a></div>
+      </div>
+      <div class="loc">
+        <div class="pin"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></div>
+        <h3>SE Division</h3>
+        <div class="addr">2138 SE Division St<br>Portland, OR 97202</div>
+        <div class="row"><a class="order" href="https://labonitasoutheast.mobilebytes.com" target="_blank" rel="noopener">Order Online</a><a class="call" href="tel:+15037194598">(503) 719-4598</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="script">Portland agrees</span>
+      <h2>What folks say</h2>
+      <p>487+ reviews and two decades of loyal regulars.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard"><div class="stars">★★★★★</div><p>"I travel across town for the fish tacos and steak tortas. They're my all-time favorite."</p><div class="src">— via Yelp</div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Straightforward, honest Mexican food that's a magnet for locals — one of Portland's 25 best."</p><div class="src">— The Oregonian</div></div>
+      <div class="rcard"><div class="stars">★★★★★</div><p>"Knockout tacos for takeout and delivery. A Portland staple, plain and simple."</p><div class="src">— Eater Portland</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <span class="script">hungry yet?</span>
+  <h2>Come eat with us.</h2>
+  <p>Order online for pickup or delivery — from all three Portland locations.</p>
+  <a href="https://labonitaalberta.mobilebytes.com" target="_blank" rel="noopener" class="btn">Order Online</a>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="n">La Bonita</div>
+    <div class="t">Food for the People</div>
+    <p>Family-owned Mexican · Alberta · N Killingsworth · SE Division · Portland, OR<br>Open daily 11am–9pm · Dine in · Takeout · Delivery</p>
+    <p class="note">✦ This is a free redesign concept created for La Bonita by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
