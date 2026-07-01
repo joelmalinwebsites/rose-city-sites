@@ -3,160 +3,183 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jay's Garage — Honest Auto Repair in SE Portland Since 1981</title>
-<meta name="description" content="Jay's Garage — family-owned auto repair & gas station on the corner of SE 7th & Morrison in Portland since 1981. ASE Master-certified techs, honest pricing, all makes & models.">
+<title>Jay's Garage — Auto Repair in SE Portland Since 1981</title>
+<meta name="description" content="Jay's Garage — family-owned auto repair & gas station on the corner of SE 7th & Morrison in Portland since 1981. ASE Master-certified techs, all makes & models.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Oswald:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --green:#1f4a44; --green-deep:#153230; --green2:#296159; --cream:#f4ebd6; --cream2:#faf5e6;
-    --red:#c0392b; --red-deep:#a12e22; --brass:#cc9f4f; --brass-deep:#a87d33;
-    --ink:#211d19; --charcoal:#292520; --muted:#726757; --line:#e4d8bd;
-    --display:'Oswald',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
-    --sh:0 24px 50px -26px rgba(21,50,48,.6); --sh-sm:0 10px 24px -14px rgba(21,50,48,.45);
+    --cream:#f4ebd7; --cream2:#fbf4e3; --ink:#1c1a15; --charcoal:#26211a; --charcoal2:#302a20;
+    --red:#c3352a; --red-deep:#9f2a20; --brass:#cf9f4a; --brass-deep:#a87d33;
+    --muted:#7c7060; --muted-d:#b7ac98; --line:#e3d5b8;
+    --display:'Abril Fatface',Georgia,serif; --cond:'Oswald',system-ui,sans-serif; --sans:'Inter',system-ui,sans-serif;
+    --sh:0 26px 54px -28px rgba(28,26,21,.65); --sh-sm:0 12px 26px -14px rgba(28,26,21,.5);
+    --pad:26px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased}
-  h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.03;text-transform:uppercase;letter-spacing:.5px}
+  h1,h2,h3{line-height:1.02}
   img{display:block;max-width:100%}
   a{color:inherit;text-decoration:none}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 26px}
-  .eyebrow{font-family:var(--display);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--brass);font-weight:600}
-  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--display);font-weight:600;font-size:15px;letter-spacing:1px;text-transform:uppercase;
-    background:var(--red);color:#fff;padding:15px 28px;border-radius:4px;border:0;cursor:pointer;transition:.18s;box-shadow:var(--sh-sm)}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 var(--pad)}
+  .disp{font-family:var(--display);font-weight:400;letter-spacing:.3px}
+  .eyebrow{font-family:var(--cond);font-size:13px;letter-spacing:3.5px;text-transform:uppercase;color:var(--red);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;font-family:var(--cond);font-weight:600;font-size:15px;letter-spacing:1.2px;text-transform:uppercase;
+    background:var(--red);color:#fff;padding:15px 28px;border-radius:3px;border:0;cursor:pointer;transition:.18s;box-shadow:var(--sh-sm)}
   .btn:hover{background:var(--red-deep);transform:translateY(-2px)}
   .btn svg{width:18px;height:18px}
-  .btn-out{background:transparent;color:var(--cream);border:2px solid rgba(244,235,214,.4);box-shadow:none;padding:13px 26px}
-  .btn-out:hover{border-color:var(--cream);background:rgba(244,235,214,.08);transform:translateY(-2px)}
-  .btn-out-d{background:transparent;color:var(--ink);border:2px solid var(--line);box-shadow:none;padding:13px 26px}
-  .btn-out-d:hover{border-color:var(--red);color:var(--red);transform:translateY(-2px)}
+  .btn-out{background:transparent;color:var(--cream);border:2px solid rgba(244,235,215,.45);box-shadow:none;padding:13px 26px}
+  .btn-out:hover{border-color:var(--brass);color:var(--brass);background:rgba(0,0,0,.15);transform:translateY(-2px)}
+  .btn-dark{background:var(--ink);color:var(--cream)}
+  .btn-dark:hover{background:#000}
   a:focus-visible,.btn:focus-visible{outline:3px solid var(--brass);outline-offset:3px}
 
-  /* emblem */
-  .emblem{width:44px;height:44px;border-radius:50%;background:var(--green);border:2px solid var(--brass);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+  .emblem{width:46px;height:46px;border-radius:50%;background:var(--ink);border:2px solid var(--brass);display:flex;align-items:center;justify-content:center;flex:0 0 auto}
   .emblem svg{width:24px;height:24px;color:var(--brass)}
   .brand{display:flex;align-items:center;gap:12px}
-  .brand .bn{font-family:var(--display);font-weight:700;font-size:23px;letter-spacing:1px;color:var(--ink);line-height:1}
-  .brand .bn small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:3px}
+  .brand .bn{font-family:var(--display);font-size:24px;color:var(--ink);line-height:.95;letter-spacing:.3px}
+  .brand .bn small{display:block;font-family:var(--cond);font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:3px}
 
-  .topbar{background:var(--green-deep);color:#cfe0da;font-size:13px}
-  .topbar .wrap{display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;padding:9px 26px;align-items:center}
-  .topbar b{color:#fff}
+  .topbar{background:var(--ink);color:var(--muted-d);font-size:13px;font-family:var(--cond);letter-spacing:.5px}
+  .topbar .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:9px var(--pad);align-items:center}
+  .topbar b{color:var(--cream)}
   .topbar a{color:var(--brass);font-weight:600}
 
-  header{position:sticky;top:0;z-index:60;background:var(--cream);border-bottom:3px solid var(--green);box-shadow:0 2px 10px -6px rgba(0,0,0,.25)}
-  nav{display:flex;align-items:center;justify-content:space-between;height:82px;gap:14px}
-  .nav-links{display:flex;gap:30px;align-items:center}
-  .nav-links a{font-family:var(--display);font-size:15px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);font-weight:500}
+  header{position:sticky;top:0;z-index:60;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 2px 12px -8px rgba(0,0,0,.3)}
+  header::before{content:"";display:block;height:4px;background:linear-gradient(90deg,var(--red) 0 33%,var(--ink) 33% 66%,var(--brass) 66% 100%)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:80px;gap:14px}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-family:var(--cond);font-size:15px;letter-spacing:1px;text-transform:uppercase;color:var(--ink);font-weight:500}
   .nav-links a:hover{color:var(--red)}
-  .nav-cta{padding:12px 22px;font-size:14px}
+  .nav-cta{padding:12px 20px;font-size:13.5px}
 
   /* HERO */
-  .hero{background:linear-gradient(150deg,var(--green-deep),var(--green) 60%,var(--green2));color:var(--cream);position:relative;overflow:hidden}
-  .hero::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent,transparent 24px,rgba(255,255,255,.02) 24px,rgba(255,255,255,.02) 48px);pointer-events:none}
-  .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;padding:70px 0 78px;position:relative;z-index:2}
-  .hero h1{font-size:66px;color:#fff;margin:16px 0 20px}
-  .hero h1 .r{color:var(--brass)}
-  .hero .lede{font-size:19px;color:#d8e2dc;max-width:490px;margin-bottom:30px}
+  .hero{background:var(--charcoal);color:var(--cream);position:relative;overflow:hidden}
+  .hero::before{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at 78% 30%,rgba(195,53,42,.22),transparent 45%),
+    repeating-linear-gradient(135deg,transparent,transparent 30px,rgba(255,255,255,.018) 30px,rgba(255,255,255,.018) 60px)}
+  .hero-grid{display:grid;grid-template-columns:1.06fr .94fr;gap:50px;align-items:center;padding-top:66px;padding-bottom:74px;position:relative;z-index:2}
+  .hero h1{font-family:var(--display);font-size:78px;color:#fff;margin:16px 0 8px;line-height:.98;letter-spacing:.5px}
+  .hero .est{font-family:var(--display);font-size:26px;color:var(--brass);margin-bottom:22px}
+  .hero .est b{color:#fff}
+  .hero .lede{font-size:18px;color:var(--muted-d);max-width:480px;margin-bottom:30px}
   .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
-  .hero-badges{display:flex;gap:24px;flex-wrap:wrap;margin-top:34px;padding-top:26px;border-top:1px solid rgba(255,255,255,.16)}
-  .hero-badges .hb{font-size:13px;color:#bcd0c9}
-  .hero-badges .hb b{display:block;font-family:var(--display);font-size:17px;color:#fff;font-weight:600;letter-spacing:.5px}
+  .hero-badges{display:flex;gap:14px 30px;flex-wrap:wrap;margin-top:34px;padding-top:24px;border-top:1px solid rgba(255,255,255,.14)}
+  .hero-badges .hb{font-family:var(--cond);font-size:13px;letter-spacing:.5px;color:var(--muted-d);text-transform:uppercase}
+  .hero-badges .hb b{display:block;font-family:var(--display);font-size:19px;color:#fff;letter-spacing:.5px;text-transform:none}
   .hero-badges .hb .stars{color:var(--brass);font-size:15px}
   .hero-visual{position:relative}
-  .hero-visual .frame{border-radius:8px;overflow:hidden;box-shadow:var(--sh);border:5px solid rgba(244,235,214,.12);aspect-ratio:4/5}
+  .hero-visual .frame{border-radius:5px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;border:5px solid rgba(244,235,215,.1)}
   .hero-visual .frame img{width:100%;height:100%;object-fit:cover}
-  .stamp{position:absolute;bottom:-26px;left:-26px;width:132px;height:132px;border-radius:50%;background:var(--red);
-    border:3px solid var(--cream);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);transform:rotate(-8deg);text-align:center}
-  .stamp .t{font-family:var(--display);font-size:12px;letter-spacing:2px;font-weight:600}
-  .stamp .y{font-family:var(--display);font-size:40px;font-weight:700;line-height:.9;color:#fff}
-  .stamp .b{font-family:var(--display);font-size:10px;letter-spacing:2px}
-  .stamp::before{content:"";position:absolute;inset:8px;border:1px dashed rgba(244,235,214,.5);border-radius:50%}
+  .stamp{position:absolute;bottom:-24px;left:-24px;width:136px;height:136px;border-radius:50%;background:var(--red);
+    border:3px solid var(--cream);box-shadow:var(--sh);display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cream);transform:rotate(-9deg);text-align:center;z-index:3}
+  .stamp .t{font-family:var(--cond);font-size:11px;letter-spacing:2.5px;font-weight:600}
+  .stamp .y{font-family:var(--display);font-size:44px;line-height:.85;color:#fff}
+  .stamp .b{font-family:var(--cond);font-size:9.5px;letter-spacing:2px}
+  .stamp::before{content:"";position:absolute;inset:8px;border:1px dashed rgba(244,235,215,.55);border-radius:50%}
 
-  /* TRUST STRIP */
-  .trust{background:var(--red)}
-  .trust .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;padding:20px 26px}
-  .trust .t{display:flex;align-items:center;gap:11px;color:#fff;font-size:13px;font-weight:600;line-height:1.25}
-  .trust .t svg{width:26px;height:26px;color:#ffd9b0;flex:0 0 auto}
+  /* TICKER */
+  .ticker{background:var(--red);color:#fff;overflow:hidden;white-space:nowrap;padding:12px 0;border-top:3px solid var(--ink);border-bottom:3px solid var(--ink)}
+  .ticker .t{display:inline-block;animation:scroll 30s linear infinite;font-family:var(--display);font-size:19px;letter-spacing:1px}
+  .ticker .t span{margin:0 20px}
+  .ticker .t .d{color:var(--brass)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.ticker .t{animation:none}}
 
-  section{padding:88px 0}
-  .sec-head{max-width:640px;margin:0 auto 52px;text-align:center}
-  .sec-head h2{font-size:46px;margin:12px 0 12px;color:var(--green-deep)}
-  .sec-head p{color:var(--muted);font-size:17px;text-transform:none;font-family:var(--sans)}
+  section{padding:86px 0;position:relative}
+  .sec-head{max-width:640px;margin:0 auto 50px;text-align:center}
+  .sec-head h2{font-family:var(--display);font-size:50px;margin:10px 0 12px;color:var(--ink);letter-spacing:.4px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* TRUST */
+  .trust{background:var(--cream2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .trust .wrap{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;padding:26px var(--pad)}
+  .trust .t{display:flex;align-items:center;gap:11px;font-family:var(--cond);font-size:13.5px;font-weight:500;line-height:1.2;text-transform:uppercase;letter-spacing:.4px;color:var(--ink)}
+  .trust .t svg{width:28px;height:28px;color:var(--red);flex:0 0 auto}
 
   /* SERVICES */
-  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
-  .svc{background:var(--cream2);border:1px solid var(--line);border-radius:8px;padding:28px 24px;transition:.2s}
-  .svc:hover{transform:translateY(-5px);box-shadow:var(--sh-sm);border-color:var(--brass)}
-  .svc .ic{width:50px;height:50px;border-radius:8px;background:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-  .svc .ic svg{width:25px;height:25px;color:var(--brass)}
-  .svc h3{font-size:19px;color:var(--ink);margin-bottom:6px;letter-spacing:.4px}
-  .svc p{color:var(--muted);font-size:14px}
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .svc{background:var(--cream2);border:1px solid var(--line);border-radius:5px;padding:26px 22px;transition:.2s;border-top:3px solid var(--brass)}
+  .svc:hover{transform:translateY(-5px);box-shadow:var(--sh-sm);border-top-color:var(--red)}
+  .svc .ic{width:48px;height:48px;border-radius:6px;background:var(--ink);display:flex;align-items:center;justify-content:center;margin-bottom:15px}
+  .svc .ic svg{width:24px;height:24px;color:var(--brass)}
+  .svc h3{font-family:var(--cond);font-weight:600;font-size:18px;text-transform:uppercase;letter-spacing:.5px;color:var(--ink);margin-bottom:5px}
+  .svc p{color:var(--muted);font-size:13.5px}
+
+  /* CAR BAND */
+  .band{position:relative;min-height:420px;display:flex;align-items:center;color:var(--cream);overflow:hidden}
+  .band img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .band::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(28,26,21,.9) 0 42%,rgba(28,26,21,.55) 70%,rgba(28,26,21,.35))}
+  .band .inner{position:relative;z-index:2;max-width:560px}
+  .band h2{font-family:var(--display);font-size:46px;color:#fff;margin-bottom:14px;line-height:1.02}
+  .band h2 em{font-style:normal;color:var(--brass)}
+  .band p{font-size:17px;color:#e8ddc9}
 
   /* WHY */
-  .why{background:var(--green-deep);color:var(--cream)}
-  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
-  .why-photo{border-radius:8px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;border:5px solid rgba(244,235,214,.1)}
+  .why{background:var(--ink);color:var(--cream)}
+  .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+  .why-photo{border-radius:5px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3;border:5px solid rgba(244,235,215,.1)}
   .why-photo img{width:100%;height:100%;object-fit:cover}
-  .why h2{font-size:44px;color:#fff;margin:12px 0 10px}
-  .why .sub{color:#c8d6d0;font-size:16px;margin-bottom:26px;font-family:var(--sans)}
+  .why h2{font-family:var(--display);font-size:46px;color:#fff;margin:10px 0 12px;letter-spacing:.4px}
+  .why .sub{color:var(--muted-d);font-size:16px;margin-bottom:26px}
   .why-list{display:grid;gap:15px}
   .why-item{display:flex;gap:14px;align-items:flex-start}
-  .why-item .ic{width:38px;height:38px;border-radius:8px;background:var(--red);flex:0 0 auto;display:flex;align-items:center;justify-content:center}
+  .why-item .ic{width:38px;height:38px;border-radius:6px;background:var(--red);flex:0 0 auto;display:flex;align-items:center;justify-content:center}
   .why-item .ic svg{width:19px;height:19px;color:#fff}
-  .why-item b{font-family:var(--display);font-size:17px;font-weight:600;letter-spacing:.5px;display:block;margin-bottom:2px}
-  .why-item p{color:#c2d0ca;font-size:14.5px;font-family:var(--sans)}
+  .why-item b{font-family:var(--cond);font-size:16px;font-weight:600;text-transform:uppercase;letter-spacing:.5px;display:block;margin-bottom:2px}
+  .why-item p{color:var(--muted-d);font-size:14.5px}
 
   /* MAKES */
   .makes{background:var(--cream2)}
   .makes .wrap{text-align:center}
-  .makes h3{font-size:15px;letter-spacing:3px;color:var(--muted);margin-bottom:22px}
-  .makes-row{display:flex;flex-wrap:wrap;gap:12px 14px;justify-content:center}
-  .makes-row span{font-family:var(--display);font-weight:500;font-size:16px;letter-spacing:1px;color:var(--green-deep);background:#fff;border:1px solid var(--line);padding:9px 18px;border-radius:4px}
+  .makes h3{font-family:var(--cond);font-size:14px;letter-spacing:3px;color:var(--muted);margin-bottom:22px;text-transform:uppercase}
+  .makes-row{display:flex;flex-wrap:wrap;gap:11px 12px;justify-content:center}
+  .makes-row span{font-family:var(--cond);font-weight:500;font-size:15px;letter-spacing:.5px;text-transform:uppercase;color:var(--ink);background:#fff;border:1px solid var(--line);padding:9px 16px;border-radius:3px}
 
   /* REVIEWS */
   .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-  .rcard{background:var(--cream2);border:1px solid var(--line);border-radius:8px;padding:30px 28px;position:relative}
-  .rcard .stars{color:var(--brass);letter-spacing:2px;font-size:16px;margin-bottom:14px}
-  .rcard p{font-size:16.5px;line-height:1.5;margin-bottom:18px;font-weight:500;color:var(--ink)}
+  .rcard{background:var(--cream2);border:1px solid var(--line);border-radius:6px;padding:30px 28px;border-left:4px solid var(--brass)}
+  .rcard .stars{color:var(--brass);letter-spacing:2px;font-size:17px;margin-bottom:13px}
+  .rcard p{font-size:17px;line-height:1.5;margin-bottom:18px;color:var(--ink)}
   .rcard .who{display:flex;align-items:center;gap:12px}
-  .rcard .av{width:42px;height:42px;border-radius:50%;background:var(--green);color:var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:17px}
-  .rcard .who b{font-family:var(--display);font-size:14px;letter-spacing:.5px;display:block}
+  .rcard .av{width:42px;height:42px;border-radius:50%;background:var(--ink);color:var(--brass);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-size:19px}
+  .rcard .who b{font-family:var(--cond);font-size:14px;letter-spacing:.5px;text-transform:uppercase;display:block}
   .rcard .who span{font-size:12.5px;color:var(--muted)}
 
   /* CTA */
-  .cta-band{background:var(--red);color:#fff;text-align:center;padding:70px 26px}
-  .cta-band h2{font-size:46px;color:#fff;margin-bottom:12px}
-  .cta-band p{font-size:18px;color:#ffe0da;margin-bottom:26px;text-transform:none;font-family:var(--sans)}
-  .cta-band .phone{font-family:var(--display);font-weight:700;font-size:42px;color:#fff;letter-spacing:1px}
-  .cta-band .sub{font-size:14px;color:#ffd2cb;margin-top:6px}
+  .cta-band{background:var(--red);color:#fff;text-align:center;padding:72px var(--pad)}
+  .cta-band h2{font-family:var(--display);font-size:48px;color:#fff;margin-bottom:12px;letter-spacing:.4px}
+  .cta-band p{font-size:18px;color:#ffe0da;margin-bottom:24px}
+  .cta-band .phone{font-family:var(--display);font-size:46px;color:#fff;letter-spacing:.5px}
+  .cta-band .sub{font-family:var(--cond);font-size:14px;letter-spacing:1px;text-transform:uppercase;color:#ffd2cb;margin-top:8px}
 
-  footer{background:var(--green-deep);color:#a9bdb6;padding:56px 0 28px}
-  .foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid #24443f}
+  footer{background:var(--ink);color:var(--muted-d);padding:56px 0 28px}
+  .foot-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:40px;padding-bottom:34px;border-bottom:1px solid #362f24}
   footer .brand .bn{color:#fff}
-  footer .brand .bn small{color:#8ba49c}
-  footer .emblem{background:var(--green2)}
-  footer p{font-size:14px;line-height:1.85;font-family:var(--sans)}
-  footer h4{font-family:var(--display);color:#fff;font-size:13px;letter-spacing:2px;margin-bottom:14px;font-weight:600}
-  footer a{color:#cfe0da}
-  footer a:hover{color:var(--brass)}
-  .foot-bot{padding-top:22px;text-align:center;font-size:13px;color:#7a938c;font-family:var(--sans)}
+  footer p{font-size:14px;line-height:1.85}
+  footer h4{font-family:var(--cond);color:#fff;font-size:13px;letter-spacing:2px;margin-bottom:14px;font-weight:600;text-transform:uppercase}
+  footer a{color:var(--brass)}
+  .foot-bot{padding-top:22px;text-align:center;font-family:var(--cond);font-size:12.5px;letter-spacing:1px;color:#8a7d68;text-transform:uppercase}
 
   @media(max-width:900px){
+    :root{--pad:20px}
     .nav-links a:not(.nav-cta){display:none}
-    .hero-grid,.why-grid{grid-template-columns:1fr;gap:38px}
-    .hero h1{font-size:44px}
-    .trust .wrap{grid-template-columns:1fr 1fr}
+    .hero-grid,.why-grid{grid-template-columns:1fr;gap:36px}
+    .hero h1{font-size:48px}
+    .trust .wrap{grid-template-columns:1fr 1fr;gap:18px 14px}
     .svc-grid{grid-template-columns:1fr 1fr}
     .rgrid{grid-template-columns:1fr}
-    .sec-head h2{font-size:32px}section{padding:60px 0}
+    .sec-head h2{font-size:34px}section{padding:58px 0}
+    .band{min-height:340px}.band h2{font-size:32px}.band::after{background:linear-gradient(90deg,rgba(28,26,21,.92),rgba(28,26,21,.72))}
     .foot-grid{grid-template-columns:1fr;gap:26px}
-    .cta-band h2{font-size:30px}.cta-band .phone{font-size:32px}
-    .stamp{left:auto;right:16px;bottom:-20px;width:104px;height:104px}
+    .cta-band h2{font-size:32px}.cta-band .phone{font-size:34px}
+    .stamp{left:auto;right:14px;bottom:-18px;width:100px;height:100px}
     .topbar .wrap{justify-content:center;text-align:center}
+    .hero-cta .btn{flex:0 0 auto}
   }
+  @media(max-width:420px){ .hero h1{font-size:40px} .sec-head h2{font-size:29px} }
 </style>
 </head>
 <body>
@@ -173,7 +196,7 @@
     <nav>
       <a class="brand" href="#">
         <span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5a3.5 3.5 0 0 0-4.9 4.2l-6 6a1.5 1.5 0 0 0 2.1 2.1l6-6a3.5 3.5 0 0 0 4.2-4.9l-2.3 2.3-2.1-.6-.6-2.1z"/></svg></span>
-        <span class="bn">JAY'S GARAGE<small>Auto Repair · Est. 1981</small></span>
+        <span class="bn">Jay's Garage<small>Auto Repair · Est. 1981</small></span>
       </a>
       <div class="nav-links">
         <a href="#services">Services</a>
@@ -191,36 +214,42 @@
   <div class="wrap hero-grid">
     <div>
       <span class="eyebrow">Central Eastside · SE 7th &amp; Morrison</span>
-      <h1>Portland's honest mechanic <span class="r">since 1981.</span></h1>
-      <p class="lede">Family-owned, ASE Master-certified, and straight with you every time — we'll even show you the old parts. Cars, trucks, vans &amp; SUVs, all makes and models.</p>
+      <h1>Portland's neighborhood garage.</h1>
+      <div class="est">Same family. Same corner. <b>Since 1981.</b></div>
+      <p class="lede">Family-owned auto repair for every make and model — cars, trucks, vans &amp; SUVs — by ASE Master-certified techs who've been doing this a long time.</p>
       <div class="hero-cta">
-        <a href="tel:+15032395167" class="btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>
-          Call for an appointment</a>
+        <a href="tel:+15032395167" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg>Call for an appointment</a>
         <a href="https://maps.google.com/?q=Jays+Garage+734+SE+7th+Ave+Portland+OR" target="_blank" rel="noopener" class="btn btn-out">Get directions</a>
       </div>
       <div class="hero-badges">
-        <div class="hb"><span class="stars">★★★★½</span><b>Trusted</b>on Yelp &amp; Google</div>
-        <div class="hb"><b>ASE Master</b>Certified techs</div>
-        <div class="hb"><b>43 Years</b>Family-owned</div>
-        <div class="hb"><b>All Makes</b>Import &amp; domestic</div>
+        <div class="hb"><span class="stars">★★★★½</span> Loved on Yelp &amp; Google</div>
+        <div class="hb"><b>ASE Master</b> Certified techs</div>
+        <div class="hb"><b>All Makes</b> Import &amp; domestic</div>
       </div>
     </div>
     <div class="hero-visual">
-      <div class="frame"><img src="img/mech-1.jpg" alt="An ASE-certified technician working under the hood at Jay's Garage" width="800" height="1000"></div>
+      <div class="frame"><img src="img/mech-1.jpg" alt="An ASE-certified technician working under the hood at Jay's Garage" width="760" height="950"></div>
       <div class="stamp"><span class="t">★ EST ★</span><span class="y">1981</span><span class="b">PORTLAND OR</span></div>
     </div>
   </div>
 </section>
 
+<!-- TICKER -->
+<div class="ticker" aria-hidden="true">
+  <div class="t">
+    <span>Since 1981</span><span class="d">◆</span><span>SE 7th &amp; Morrison</span><span class="d">◆</span><span>ASE Master Certified</span><span class="d">◆</span><span>All Makes &amp; Models</span><span class="d">◆</span><span>Family Owned</span><span class="d">◆</span>
+    <span>Since 1981</span><span class="d">◆</span><span>SE 7th &amp; Morrison</span><span class="d">◆</span><span>ASE Master Certified</span><span class="d">◆</span><span>All Makes &amp; Models</span><span class="d">◆</span><span>Family Owned</span><span class="d">◆</span>
+  </div>
+</div>
+
 <!-- TRUST -->
 <div class="trust">
   <div class="wrap">
-    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>ASE Master<br>Certified Techs</div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg>ASE Master<br>Certified</div>
     <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M10 21v-5h4v5"/></svg>Family-Owned<br>Since 1981</div>
-    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>Honest Pricing<br>We show you the parts</div>
-    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1-5a3 3 0 0 1 3-2h4a3 3 0 0 1 3 2l1 5"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>All Makes<br>Import &amp; Domestic</div>
-    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Often Same-Day<br>Fast turnaround</div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9 12l2 2 4-4"/></svg>We Show You<br>The Old Parts</div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1-5a3 3 0 0 1 3-2h4a3 3 0 0 1 3 2l1 5"/><circle cx="8" cy="17" r="2"/><circle cx="16" cy="17" r="2"/></svg>All Makes<br>&amp; Models</div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>Often<br>Same-Day</div>
   </div>
 </div>
 
@@ -229,7 +258,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">What we fix</span>
-      <h2>Full-service auto repair</h2>
+      <h2>Full-Service Auto Repair</h2>
       <p>From an oil change to an engine overhaul — for every make and model on the road.</p>
     </div>
     <div class="svc-grid">
@@ -245,6 +274,16 @@
   </div>
 </section>
 
+<!-- CAR BAND -->
+<div class="band">
+  <img src="img/car-1.jpg" alt="A classic car parked outside — the kind Jay's Garage has kept running for decades" width="1400" height="500" loading="lazy">
+  <div class="wrap"><div class="inner">
+    <span class="eyebrow" style="color:var(--brass)">Daily drivers to classics</span>
+    <h2>From your commuter to a <em>'65 Riviera</em>.</h2>
+    <p>Whatever you drive, we treat it like it's our own — the same way we have on this corner for over 40 years.</p>
+  </div></div>
+</div>
+
 <!-- WHY -->
 <section id="why" class="why">
   <div class="wrap why-grid">
@@ -252,12 +291,12 @@
     <div>
       <span class="eyebrow">Why Jay's</span>
       <h2>43 years on the same corner.</h2>
-      <p class="sub">Since 1981, families across Portland's east side have trusted us with their cars — some for twenty years and counting. We keep it simple: do great work, charge fairly, and never talk down to anyone.</p>
+      <p class="sub">Since 1981, families across Portland's east side have trusted us with their cars — some of them for twenty years and counting. We keep it simple: do great work, charge fairly, and treat everybody square.</p>
       <div class="why-list">
-        <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>We show you the old parts</b><p>So you know exactly what you paid for — and that you weren't oversold.</p></div></div>
+        <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><div><b>We show you the old parts</b><p>So you can see exactly what you paid for — no guesswork, no upsell.</p></div></div>
         <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/></svg></span><div><b>ASE Master-certified techs</b><p>Every mechanic is certified by the National Institute for Automotive Service Excellence.</p></div></div>
         <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><b>Often done the same day</b><p>We respect your time and get you back on the road fast.</p></div></div>
-        <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></span><div><b>Full-service &amp; a gas station too</b><p>Fill up right here — regular, biodiesel &amp; E85, from a name you already trust.</p></div></div>
+        <div class="why-item"><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V8l7-4 7 4v13M9 21v-6h6v6"/></svg></span><div><b>Full-service &amp; a gas station too</b><p>Fill up right here — regular, biodiesel &amp; E85 — from a name you already know.</p></div></div>
       </div>
     </div>
   </div>
@@ -266,7 +305,7 @@
 <!-- MAKES -->
 <section class="makes">
   <div class="wrap">
-    <h3>WE SERVICE ALL MAKES &amp; MODELS</h3>
+    <h3>We Service All Makes &amp; Models</h3>
     <div class="makes-row">
       <span>Subaru</span><span>Toyota</span><span>Honda</span><span>Volkswagen</span><span>Mazda</span><span>Mercedes-Benz</span><span>Audi</span><span>Nissan</span><span>Jeep</span><span>Ford</span><span>+ more</span>
     </div>
@@ -278,7 +317,7 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="eyebrow">Portland's verdict</span>
-      <h2>Neighbors for decades</h2>
+      <h2>Neighbors for Decades</h2>
       <p>Real reviews from real customers on Yelp &amp; Google.</p>
     </div>
     <div class="rgrid">
@@ -291,17 +330,17 @@
 
 <!-- CTA -->
 <section class="cta-band" id="visit">
-  <h2>Trouble with your car? Call Jay's.</h2>
-  <p>Honest, certified auto repair on the corner of SE 7th &amp; Morrison since 1981.</p>
+  <h2>Trouble With Your Car?</h2>
+  <p>Certified auto repair on the corner of SE 7th &amp; Morrison since 1981.</p>
   <a href="tel:+15032395167" class="phone">(503) 239-5167</a>
-  <div class="sub">734 SE 7th Ave, Portland, OR 97214 · Mon–Fri 7am–4pm</div>
+  <div class="sub">734 SE 7th Ave, Portland OR · Mon–Fri 7am–4pm</div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="foot-grid">
       <div>
-        <a class="brand" href="#"><span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5a3.5 3.5 0 0 0-4.9 4.2l-6 6a1.5 1.5 0 0 0 2.1 2.1l6-6a3.5 3.5 0 0 0 4.2-4.9l-2.3 2.3-2.1-.6-.6-2.1z"/></svg></span><span class="bn" style="color:#fff">JAY'S GARAGE<small>Auto Repair · Est. 1981</small></span></a>
+        <a class="brand" href="#"><span class="emblem"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 5.5a3.5 3.5 0 0 0-4.9 4.2l-6 6a1.5 1.5 0 0 0 2.1 2.1l6-6a3.5 3.5 0 0 0 4.2-4.9l-2.3 2.3-2.1-.6-.6-2.1z"/></svg></span><span class="bn" style="color:#fff">Jay's Garage<small style="color:#8a7d68">Auto Repair · Est. 1981</small></span></a>
         <p style="margin-top:14px">Family-owned auto repair &amp; gas station in Portland's central eastside since 1981.</p>
       </div>
       <div>
