@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bison Coffeehouse — Portland's Only Native-Owned Coffeehouse · Cully, NE Portland</title>
+<meta name="description" content="Bison Coffeehouse in the Cully neighborhood of NE Portland — Portland's only Native-owned coffeehouse. Native & local roasters, scratch-baked goods, and a community founded by Loretta Guzman in 2014.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Kalam:wght@400;700&family=Karla:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#f6ece0; --paper:#fdf7ef; --sand:#efe1cf;
+    --ink:#2a1c14; --muted:#7a6553;
+    --espresso:#3b271b; --espresso-deep:#2a1a11;
+    --rust:#7a2e12; --rust-2:#98421d; --terra:#c05a28;
+    --teal:#1f7a72; --teal-deep:#155b55;
+    --gold:#d69a3f; --line:#e3d2ba;
+    --slab:'Zilla Slab',Georgia,serif; --hand:'Kalam',cursive; --sans:'Karla',system-ui,sans-serif;
+    --pad:26px;
+    --sh:0 24px 54px -26px rgba(42,26,17,.5); --sh-sm:0 10px 26px -14px rgba(42,26,17,.4);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.62;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  h1,h2,h3,h4{font-family:var(--slab);font-weight:600;line-height:1.06;letter-spacing:-.3px}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1150px;margin:0 auto;padding:0 var(--pad)}
+  .hand{font-family:var(--hand);font-weight:700}
+  .eyebrow{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:var(--rust-2);font-weight:700}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--rust);color:#fff;padding:15px 27px;border-radius:44px;font-weight:700;font-size:15px;transition:.2s;border:2px solid var(--rust);cursor:pointer}
+  .btn:hover{background:var(--rust-2);border-color:var(--rust-2);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-teal{background:var(--teal);border-color:var(--teal)}
+  .btn-teal:hover{background:var(--teal-deep);border-color:var(--teal-deep)}
+  .btn-ghost{background:transparent;color:var(--ink);border:2px solid #d3bd9c}
+  .btn-ghost:hover{border-color:var(--rust);color:var(--rust);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+
+  .topbar{background:var(--espresso-deep);color:#eddcc4;font-size:13px;font-weight:600;text-align:center;padding:8px 16px;letter-spacing:.3px}
+  .topbar a{color:var(--gold)}
+  .topbar b{color:#fff}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(246,236,224,.93);backdrop-filter:blur(10px);border-bottom:2px solid var(--line)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand img{height:50px}
+  .brand .bn{font-family:var(--slab);font-weight:700;font-size:20px;line-height:1.02;letter-spacing:.5px}
+  .brand .bn small{display:block;font-family:var(--sans);font-size:10.5px;letter-spacing:2px;text-transform:uppercase;color:var(--teal);font-weight:700}
+  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links a{font-size:15px;color:var(--ink);font-weight:600}
+  .nav-links a:hover{color:var(--rust)}
+  .nav-cta{padding:10px 20px;font-size:14px}
+
+  /* HERO */
+  .hero{position:relative;padding-top:64px;padding-bottom:40px;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}
+  .hero h1{font-size:63px;margin:15px 0 18px}
+  .hero h1 .r{color:var(--rust)}
+  .hero h1 em{font-style:italic;color:var(--teal)}
+  .hero .tag{font-size:19px;color:var(--muted);max-width:460px;margin-bottom:12px}
+  .hero .note{font-family:var(--hand);font-size:22px;color:var(--teal);margin-bottom:26px;display:inline-block;transform:rotate(-1.5deg)}
+  .hero-cta{display:flex;gap:12px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:10px;margin-top:26px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--gold);font-size:17px;letter-spacing:1px}
+  .hero-rating span{font-size:14px;color:var(--muted);font-weight:600}
+  .hero-rating b{color:var(--ink)}
+  .hero-visual{position:relative;height:530px}
+  .hero-main{position:absolute;top:0;right:0;width:82%;height:100%;border-radius:26px 26px 26px 110px;overflow:hidden;box-shadow:var(--sh)}
+  .hero-main img{width:100%;height:100%;object-fit:cover}
+  .polaroid{position:absolute;bottom:2px;left:0;width:46%;background:#fff;padding:9px 9px 12px;border-radius:6px;box-shadow:var(--sh);transform:rotate(-4deg)}
+  .polaroid img{width:100%;height:120px;object-fit:cover;border-radius:3px}
+  .polaroid p{font-family:var(--hand);font-size:16px;text-align:center;color:var(--ink);margin-top:5px}
+  .badge{position:absolute;top:-14px;right:-8px;width:120px;height:120px;border-radius:50%;background:var(--teal);color:#eafaf7;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:rotate(7deg);box-shadow:var(--sh-sm);border:2px dashed #7fc4bd;padding:12px}
+  .badge b{font-family:var(--slab);font-size:15px;line-height:1.05;font-weight:600}
+  .badge small{font-size:8.5px;letter-spacing:1.5px;text-transform:uppercase;margin-top:4px;opacity:.9}
+  .badge .yr{font-family:var(--hand);font-size:18px;color:#fce9c6}
+
+  /* zigzag divider (subtle geometric nod, not sacred imagery) */
+  .zig{height:22px;background:var(--rust);
+    -webkit-mask:conic-gradient(from -45deg at 50% 0,#000 90deg,transparent 0) 50%/26px 100% repeat-x;
+    mask:conic-gradient(from -45deg at 50% 0,#000 90deg,transparent 0) 50%/26px 100% repeat-x}
+  .marquee{background:var(--espresso);color:#eddcc4;overflow:hidden;white-space:nowrap;padding:13px 0;font-family:var(--slab);font-size:19px;font-weight:500;font-style:italic}
+  .marquee .track{display:inline-block;animation:scroll 30s linear infinite}
+  .marquee .track span{margin:0 22px}
+  .marquee .track .dot{color:var(--gold)}
+  @keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+  @media(prefers-reduced-motion:reduce){.marquee .track{animation:none}}
+
+  section{padding:82px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px}
+  .sec-head .hand{font-size:24px;color:var(--rust);display:block;transform:rotate(-1.5deg)}
+  .sec-head h2{font-size:44px;margin:4px 0 12px}
+  .sec-head p{color:var(--muted);font-size:17px}
+
+  /* MENU */
+  .menu-hi{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-bottom:52px}
+  .hi-card{background:#fff;border-radius:16px;overflow:hidden;box-shadow:var(--sh-sm);transition:.25s}
+  .hi-card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .hi-card .ph{aspect-ratio:3/2;overflow:hidden}
+  .hi-card .ph img{width:100%;height:100%;object-fit:cover}
+  .hi-card .t{padding:19px 22px 23px}
+  .hi-card h3{font-size:24px;margin-bottom:5px}
+  .hi-card p{font-size:14px;color:var(--muted)}
+  .board{background:var(--paper);border:2px solid var(--line);border-radius:22px;padding:46px 44px;box-shadow:var(--sh-sm)}
+  .board-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+  .board h4{font-family:var(--slab);font-size:14px;letter-spacing:2px;text-transform:uppercase;color:var(--rust);border-bottom:2px solid var(--line);padding-bottom:10px;margin-bottom:12px}
+  .board ul{list-style:none}
+  .board li{padding:7px 0;font-size:16px;display:flex;align-items:baseline;justify-content:space-between;gap:12px;border-bottom:1px dotted var(--line)}
+  .board li:last-child{border-bottom:none}
+  .board li .nm{display:flex;align-items:center;gap:7px}
+  .board li .pr{font-family:var(--slab);font-weight:600;color:var(--rust-2);white-space:nowrap}
+  .board li .star{color:var(--gold);font-weight:700}
+  .board-note{margin-top:28px;padding-top:22px;border-top:2px dashed var(--line);display:flex;gap:22px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+  .board-note p{font-size:14.5px;color:var(--muted);max-width:600px}
+  .board-note .hand{font-size:20px;color:var(--rust)}
+  .also{text-align:center;margin-top:28px;font-size:16px;color:var(--ink)}
+  .also b{font-family:var(--slab)}
+
+  /* STORY */
+  .story{background:var(--sand)}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:18px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/5;max-height:540px}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;right:-10px;background:var(--teal);color:#fff;font-family:var(--hand);font-size:18px;padding:8px 18px;border-radius:44px;box-shadow:var(--sh-sm);transform:rotate(-2deg)}
+  .story h2{font-size:42px;margin:8px 0 18px}
+  .story p{color:#54443a;font-size:16.5px;margin-bottom:15px}
+  .story .pull{font-family:var(--slab);font-style:italic;font-size:22px;color:var(--rust);line-height:1.3;border-left:4px solid var(--gold);padding-left:18px;margin:22px 0}
+  .story .sig{font-family:var(--hand);font-size:23px;color:var(--teal-deep);margin-top:6px}
+
+  /* REVIEWS */
+  .reviews{background:var(--espresso);color:#efdfca}
+  .reviews .sec-head h2{color:#fff}
+  .reviews .sec-head .hand{color:var(--gold)}
+  .reviews .sec-head p{color:#d9c3a6}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:#fdf3e4;color:var(--ink);border-radius:14px;padding:28px 26px;box-shadow:var(--sh)}
+  .rcard:nth-child(2){transform:translateY(-12px)}
+  .rcard .stars{color:var(--gold);letter-spacing:2px;font-size:15px;margin-bottom:12px}
+  .rcard p{font-family:var(--slab);font-style:italic;font-size:16.5px;line-height:1.5;margin-bottom:16px}
+  .rcard .src{font-size:13px;color:var(--muted);font-weight:700}
+  .press{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:44px}
+  .press .p{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:18px 26px;text-align:center;max-width:330px}
+  .press .p b{font-family:var(--slab);color:#fff;font-size:16px;display:block;margin-bottom:4px}
+  .press .p span{font-size:13.5px;color:#d9c3a6}
+
+  /* VISIT */
+  .visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .visit-photo{border-radius:20px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .visit-photo img{width:100%;height:100%;object-fit:cover}
+  .visit h2{font-size:44px;margin:8px 0 22px}
+  .visit .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;font-size:16px}
+  .visit .row svg{width:22px;height:22px;color:var(--rust);flex:0 0 auto;margin-top:3px}
+  .visit .row b{font-family:var(--slab);font-weight:600}
+  .visit .row a{color:var(--ink)}
+  .visit .row a:hover{color:var(--rust)}
+  .hours-tbl{font-size:15.5px;line-height:1.9}
+  .visit .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+
+  footer{background:var(--espresso-deep);color:#c7b39c;padding:52px 0 28px;text-align:center}
+  footer .brand{justify-content:center;margin-bottom:14px}
+  footer .brand img{height:64px}
+  footer p{font-size:14px;line-height:1.8}
+  footer a{color:#e6d2bf}
+  footer .note{margin-top:18px;font-size:12.5px;color:#8a7460;border-top:1px solid #3d2a1d;padding-top:18px}
+
+  @media(max-width:880px){
+    :root{--pad:20px}
+    .nav-links a:not(.nav-cta){display:none}
+    .hero-grid,.story-grid,.visit-grid{grid-template-columns:1fr;gap:38px}
+    .hero h1{font-size:41px}.hero-visual{height:420px}
+    .menu-hi,.rgrid,.board-grid{grid-template-columns:1fr}
+    .hi-card,.rcard{transform:none!important}
+    .sec-head h2{font-size:31px}section{padding:58px 0}
+    .board{padding:30px 22px}.story-photo .cap{right:8px}
+    .brand .bn{font-size:17px}.nav-cta{padding:9px 15px;font-size:13px}
+    .story .pull{font-size:19px}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">Portland's only <b>Native-owned</b> coffeehouse · 3941 NE Cully Blvd · <a href="tel:+15032883941">(503) 288-3941</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Bison Coffeehouse home">
+        <img src="img/logo.png" alt="Bison Coffeehouse bison-head logo">
+        <span class="bn">Bison Coffeehouse<small>Cully · NE Portland</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our Story</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#visit">Visit</a>
+        <a href="https://www.doordash.com/store/bison-coffee-house-portland-265893/" target="_blank" rel="noopener" class="btn btn-teal nav-cta">Order on DoorDash</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Cully neighborhood · est. 2014</span>
+      <h1>Portland's only <span class="r">Native-owned</span> <em>coffeehouse.</em></h1>
+      <p class="tag">Native &amp; local roasters, locally-sourced drinks, and scratch-baked goods — in a warm room built for community.</p>
+      <p class="note">"a place where they can come in and be proud"</p>
+      <div class="hero-cta">
+        <a href="https://www.doordash.com/store/bison-coffee-house-portland-265893/" target="_blank" rel="noopener" class="btn">Order on DoorDash</a>
+        <a href="#menu" class="btn btn-ghost">See the menu</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>4.6★</b> from 686 Google reviews · loved by the neighborhood</span>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-main"><img src="img/storefront.jpg" alt="Bison Coffeehouse storefront on NE Cully Blvd with hand-lettered windows" width="640" height="484"></div>
+      <div class="polaroid">
+        <img src="img/real-latte.png" alt="A latte with rosetta art in a black cup at Bison Coffeehouse" width="309" height="240">
+        <p>made with care</p>
+      </div>
+      <div class="badge">
+        <b>Native-Owned</b>
+        <small>Shoshone-Bannock</small>
+        <span class="yr">since 2014</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="zig" aria-hidden="true"></div>
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Native &amp; local roasters</span><span class="dot">✦</span><span>Scratch-baked daily</span><span class="dot">✦</span><span>Espresso &amp; lattes</span><span class="dot">✦</span><span>Chai &amp; tea</span><span class="dot">✦</span><span>Community-rooted</span><span class="dot">✦</span><span>Cully, NE Portland</span><span class="dot">✦</span>
+    <span>Native &amp; local roasters</span><span class="dot">✦</span><span>Scratch-baked daily</span><span class="dot">✦</span><span>Espresso &amp; lattes</span><span class="dot">✦</span><span>Chai &amp; tea</span><span class="dot">✦</span><span>Community-rooted</span><span class="dot">✦</span><span>Cully, NE Portland</span><span class="dot">✦</span>
+  </div>
+</div>
+
+<!-- MENU -->
+<section id="menu" class="menu">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="hand">poured &amp; baked on Cully Blvd</span>
+      <h2>The menu</h2>
+      <p>Espresso pulled to order, drinks from Native and local roasters, and baked goods made in-house every morning.</p>
+    </div>
+    <div class="menu-hi">
+      <div class="hi-card">
+        <div class="ph"><img src="img/latte-topdown.jpg" alt="A latte with feather rosetta art viewed from above" width="600" height="400" loading="lazy"></div>
+        <div class="t"><h3>Lattes &amp; Mochas</h3><p>Silky steamed milk over house espresso — the vanilla latte and mocha are neighborhood favorites.</p></div>
+      </div>
+      <div class="hi-card">
+        <div class="ph"><img src="img/real-espresso.png" alt="A fresh double shot of espresso pouring into a glass" width="600" height="400" loading="lazy"></div>
+        <div class="t"><h3>Espresso Bar</h3><p>Americanos, cappuccinos, macchiatos and straight shots — from Native &amp; local roasters.</p></div>
+      </div>
+      <div class="hi-card">
+        <div class="ph"><img src="img/food-biscuits.jpg" alt="Fresh scratch-baked savory herb and cheese biscuits on a plate" width="600" height="400" loading="lazy"></div>
+        <div class="t"><h3>Baked Fresh</h3><p>Scones, muffins, biscuits and Bowery bagels — lovingly made on premises each day.</p></div>
+      </div>
+    </div>
+
+    <div class="board">
+      <div class="board-grid">
+        <div>
+          <h4>Espresso</h4>
+          <ul>
+            <li><span class="nm">Espresso · 2 shots</span><span class="pr">$3.25</span></li>
+            <li><span class="nm">Americano · 2 shots</span><span class="pr">$3.25</span></li>
+            <li><span class="nm">Macchiato</span><span class="pr">$3.75</span></li>
+            <li><span class="nm">Cappuccino</span><span class="pr">$4.00</span></li>
+            <li><span class="nm"><span class="star">★</span> Latte</span><span class="pr">$4.00</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>The Bar</h4>
+          <ul>
+            <li><span class="nm"><span class="star">★</span> Mocha</span><span class="pr">$4.75</span></li>
+            <li><span class="nm">Breve</span><span class="pr">$5.25</span></li>
+            <li><span class="nm">Chai</span><span class="pr">$4.50</span></li>
+            <li><span class="nm">Hot Chocolate</span><span class="pr">$3.00</span></li>
+            <li><span class="nm">Iced Coffee</span><span class="pr">$3.00</span></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Brew &amp; Bites</h4>
+          <ul>
+            <li><span class="nm">House Mug</span><span class="pr">$2.50</span></li>
+            <li><span class="nm">House · to go</span><span class="pr">$2.25</span></li>
+            <li><span class="nm">Tea</span><span class="pr">$3.00</span></li>
+            <li><span class="nm">Bowery Bagel</span><span class="pr">$3.50</span></li>
+            <li><span class="nm">Scones · Muffins</span><span class="pr">daily</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="board-note">
+        <span class="hand">grab a seat &amp; stay a while →</span>
+        <p>Prices shown are from Bison's published menu and may change — call ahead for today's baked goods and rotating roasters. Free Wi-Fi &amp; a comfortable room for working.</p>
+      </div>
+    </div>
+    <p class="also">Serving a rotating roster of <b>Native &amp; local roasters</b>, seasonal drinks, and scratch-baked pastries — open early, Monday through Sunday.</p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section id="story" class="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/bison-sign.jpg" alt="The rusted metal bison-head sign mounted on the Bison Coffeehouse building" width="600" height="750" loading="lazy"></div>
+      <span class="cap">the bison that started it</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>A dream of a bison — and a place to belong.</h2>
+      <p>Bison Coffeehouse was founded by <b>Loretta Guzman</b>, a native Portlander and member of the Shoshone-Bannock Tribes of Fort Hall, Idaho. While recovering from stage 4b cancer, she dreamed of a bison approaching her — a sign her family understood as her grandfather's spirit, and the beginning of both her healing and this shop.</p>
+      <p>She raised the funds over two years through traditional beadwork, then rehabbed a 1926 building her late father, Gary Guzman, once used for his custom motorcycle shop next door. The doors opened in November 2014. It remains a family enterprise — with family serving as baristas, accountants and managers.</p>
+      <p class="pull">"I wanted a place for Natives to come… a positive environment, something they identify with, a place where they can come in and be proud."</p>
+      <div class="sig">— Loretta Guzman, founder</div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews" class="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="hand">the neighborhood agrees</span>
+      <h2>What folks are saying</h2>
+      <p>4.6★ across 686 Google reviews — beloved for the coffee, the baked goods, and the welcome.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"My standby is the dark roast brewed coffee and it is the best I have tasted in Portland."</p>
+        <div class="src">— Skylark205, via Tripadvisor</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"They bake a variety of goods fresh daily. The inside of this building is warm, welcoming and comfortable."</p>
+        <div class="src">— RyanPeggy, via Tripadvisor</div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>"This was one of those great finds that you don't forget. Terrific coffee and even better service."</p>
+        <div class="src">— KeithMac, via Tripadvisor</div>
+      </div>
+    </div>
+    <div class="press">
+      <div class="p"><b>Portland Monthly</b><span>"Welcome to Bison Coffeehouse, Portland's only Native American–owned coffee shop."</span></div>
+      <div class="p"><b>Atlas Obscura · Travel Oregon</b><span>Recognized as a landmark of Portland's Native community.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section id="visit" class="visit">
+  <div class="wrap visit-grid">
+    <div>
+      <span class="eyebrow">Come see us</span>
+      <h2>Find us on Cully Blvd.</h2>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>3941 NE Cully Blvd</b> · Cully, Portland, OR 97213</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div class="hours-tbl"><b>Hours</b><br>Mon–Fri · 6:00am – 2:00pm<br>Sat–Sun · 8:00am – 2:00pm</div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><a href="tel:+15032883941"><b>(503) 288-3941</b></a></div></div>
+      <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16v16H4z"/><path d="m4 6 8 6 8-6"/></svg><div><a href="mailto:bisoncoffeehouse@yahoo.com"><b>bisoncoffeehouse@yahoo.com</b></a></div></div>
+      <div class="cta">
+        <a href="https://www.doordash.com/store/bison-coffee-house-portland-265893/" target="_blank" rel="noopener" class="btn btn-teal">Order on DoorDash</a>
+        <a href="tel:+15032883941" class="btn btn-ghost">Call the shop</a>
+        <a href="https://www.google.com/maps/dir/?api=1&destination=Bison+Coffeehouse+3941+NE+Cully+Blvd+Portland+OR+97213" target="_blank" rel="noopener" class="btn btn-ghost">Get Directions</a>
+      </div>
+    </div>
+    <div class="visit-photo"><img src="img/bison-eye.jpg" alt="Close-up of the mounted bison at Bison Coffeehouse — a symbol of resilience" width="900" height="675" loading="lazy"></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Bison Coffeehouse"><img src="img/logo-full.png" alt="Bison Coffeehouse logo"></a>
+    <p><b>Bison Coffeehouse</b> · 3941 NE Cully Blvd, Portland OR 97213 · <a href="tel:+15032883941">(503) 288-3941</a><br>Portland's only Native-owned coffeehouse — founded by Loretta Guzman, 2014.</p>
+    <p class="note">✦ This is a free redesign concept created for Bison Coffeehouse by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
