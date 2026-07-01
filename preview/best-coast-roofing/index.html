@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Coast Roofing — Roof Replacement & Repair · Portland, OR</title>
+<meta name="description" content="Best Coast Roofing — a family-owned Portland roofing company. Composition, metal, wood shake & flat roofs, roof repair, and gutters. Licensed CCB #217148. Free estimates. Roofing done the right way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --slate:#161b21;        /* near-black storm slate */
+    --slate-2:#1f272f;
+    --steel:#2f4a5c;        /* weatherproof steel blue */
+    --steel-deep:#213645;
+    --steel-light:#5b7d92;
+    --copper:#c1662f;       /* warm safety copper */
+    --copper-deep:#a3521f;
+    --amber:#e0a63a;
+    --paper:#f4f1ec;        /* warm off-white */
+    --paper-2:#ffffff;
+    --fog:#e6e2da;
+    --ink:#1a1f24;
+    --muted:#5c6670;
+    --line:#dcd6cc;
+    --line-dark:#33414c;
+    --disp:'Oswald',Impact,sans-serif;
+    --alt:'Barlow',system-ui,sans-serif;
+    --sans:'Inter',system-ui,sans-serif;
+    --pad:26px;
+    --sh:0 26px 60px -28px rgba(15,20,25,.6);
+    --sh-sm:0 12px 28px -14px rgba(15,20,25,.45);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.65;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:var(--disp);font-weight:600;line-height:1.02;letter-spacing:.5px;text-transform:uppercase}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 var(--pad)}
+  .eyebrow{font-family:var(--disp);font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--copper);font-weight:600}
+  .btn{display:inline-flex;align-items:center;gap:9px;white-space:nowrap;background:var(--copper);color:#fff;padding:15px 28px;border-radius:4px;font-family:var(--disp);font-weight:600;font-size:15px;letter-spacing:1.2px;text-transform:uppercase;transition:.2s;border:2px solid var(--copper);cursor:pointer}
+  .btn:hover{background:var(--copper-deep);border-color:var(--copper-deep);transform:translateY(-2px)}
+  .btn svg{width:17px;height:17px}
+  .btn-steel{background:var(--steel);border-color:var(--steel)}
+  .btn-steel:hover{background:var(--steel-deep);border-color:var(--steel-deep)}
+  .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.4)}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-2px)}
+  .btn-ghost-dark{background:transparent;color:var(--ink);border:2px solid #c7c0b4}
+  .btn-ghost-dark:hover{border-color:var(--steel);color:var(--steel);transform:translateY(-2px)}
+  a:focus-visible,.btn:focus-visible{outline:3px solid var(--amber);outline-offset:3px}
+
+  /* roofline / zigzag motif */
+  .roofline{height:22px;background-image:linear-gradient(135deg,var(--copper) 25%,transparent 25%),linear-gradient(225deg,var(--copper) 25%,transparent 25%);background-size:22px 22px;background-position:0 0;background-repeat:repeat-x}
+
+  .topbar{background:var(--slate);color:#c9cfd6;font-family:var(--alt);font-size:13.5px;font-weight:500;text-align:center;padding:9px 16px;letter-spacing:.3px}
+  .topbar b{color:#fff}
+  .topbar a{color:var(--amber);font-weight:600}
+
+  header{position:sticky;top:0;z-index:50;background:rgba(22,27,33,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-dark)}
+  nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:14px}
+  .brand{display:flex;align-items:center;gap:13px;min-width:0}
+  .brand img{height:52px;width:52px;object-fit:contain;background:#fff;border-radius:50%;padding:2px}
+  .brand .bn{font-family:var(--disp);font-weight:600;font-size:20px;line-height:1;color:#fff;letter-spacing:1px}
+  .brand .bn small{display:block;font-family:var(--alt);font-size:11.5px;color:var(--steel-light);font-weight:500;letter-spacing:2.5px;text-transform:uppercase;margin-top:4px}
+  .nav-links{display:flex;gap:30px;align-items:center}
+  .nav-links a{font-family:var(--disp);font-size:14.5px;color:#d5dae0;font-weight:500;letter-spacing:1px;text-transform:uppercase}
+  .nav-links a:hover{color:var(--amber)}
+  .nav-cta{padding:11px 20px;font-size:13.5px;color:#fff}
+  .nav-cta:hover{color:#fff}
+
+  /* HERO */
+  .hero{position:relative;background:var(--slate);color:#eef1f4;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;z-index:0}
+  .hero-bg img{width:100%;height:100%;object-fit:cover;opacity:.32}
+  .hero-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(105deg,rgba(15,20,25,.96) 0%,rgba(15,20,25,.8) 46%,rgba(33,54,69,.5) 100%)}
+  .hero .wrap{position:relative;z-index:2;padding-top:78px;padding-bottom:86px}
+  .hero-inner{max-width:680px}
+  .hero .badge-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:22px}
+  .chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--alt);font-size:13px;font-weight:600;letter-spacing:.4px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.16);color:#dde3e8;padding:7px 14px;border-radius:40px}
+  .chip svg{width:14px;height:14px;color:var(--amber)}
+  .hero h1{font-size:70px;font-weight:700;letter-spacing:.5px;margin:8px 0 20px;color:#fff}
+  .hero h1 .c{color:var(--copper)}
+  .hero .tag{font-family:var(--alt);font-size:20px;color:#c3cbd2;max-width:540px;margin-bottom:30px;line-height:1.5}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-rating{display:flex;align-items:center;gap:11px;margin-top:30px;flex-wrap:wrap}
+  .hero-rating .stars{color:var(--amber);font-size:18px;letter-spacing:2px}
+  .hero-rating span{font-family:var(--alt);font-size:14.5px;color:#b8c0c8;font-weight:500}
+  .hero-rating b{color:#fff}
+
+  /* TRUST STRIP */
+  .trust{background:var(--steel-deep);color:#eaf0f3}
+  .trust .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:34px var(--pad)}
+  .trust .t{display:flex;align-items:center;gap:14px}
+  .trust .t svg{width:30px;height:30px;color:var(--amber);flex:0 0 auto}
+  .trust .t b{display:block;font-family:var(--disp);font-size:20px;font-weight:600;color:#fff;letter-spacing:.5px}
+  .trust .t span{font-family:var(--alt);font-size:13px;color:#a9bcc7;letter-spacing:.3px}
+
+  section{padding:88px 0}
+  .sec-head{max-width:640px;margin:0 auto 54px;text-align:center}
+  .sec-head h2{font-size:46px;font-weight:700;margin:8px 0 14px;color:var(--slate)}
+  .sec-head p{font-family:var(--alt);color:var(--muted);font-size:17.5px}
+
+  /* SERVICES */
+  .services{background:var(--paper)}
+  .svc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .svc{position:relative;background:var(--paper-2);border-radius:10px;overflow:hidden;box-shadow:var(--sh-sm);border:1px solid var(--line);transition:.25s;display:flex;flex-direction:column}
+  .svc:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .svc .ph{aspect-ratio:16/10;overflow:hidden}
+  .svc .ph img{width:100%;height:100%;object-fit:cover;transition:.4s}
+  .svc:hover .ph img{transform:scale(1.05)}
+  .svc .body{padding:26px 28px 30px}
+  .svc h3{font-size:25px;font-weight:600;color:var(--slate);margin-bottom:9px;letter-spacing:.5px}
+  .svc p{font-family:var(--alt);font-size:15px;color:var(--muted);line-height:1.6}
+  .svc .tags{margin-top:16px;display:flex;flex-wrap:wrap;gap:7px}
+  .svc .tags span{font-family:var(--alt);font-size:12px;font-weight:600;letter-spacing:.4px;color:var(--steel);background:#eef2f4;border:1px solid #dbe4e9;border-radius:30px;padding:3px 11px}
+  .svc-note{text-align:center;margin-top:36px;font-family:var(--alt);font-size:15.5px;color:var(--muted)}
+  .svc-note b{color:var(--slate);font-weight:700}
+
+  /* WHY */
+  .why{background:var(--slate);color:#e9edf1;position:relative}
+  .why .sec-head h2{color:#fff}
+  .why .sec-head p{color:#aab4bd}
+  .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .why-card{background:var(--slate-2);border:1px solid var(--line-dark);border-radius:10px;padding:32px 28px}
+  .why-card .ico{width:52px;height:52px;border-radius:9px;background:var(--steel-deep);display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .why-card .ico svg{width:26px;height:26px;color:var(--amber)}
+  .why-card h3{font-size:21px;font-weight:600;color:#fff;margin-bottom:10px;letter-spacing:.5px}
+  .why-card p{font-family:var(--alt);font-size:14.5px;color:#a9b4bd;line-height:1.6}
+
+  /* SHOWCASE band */
+  .showcase{background:var(--steel-deep)}
+  .showcase .wrap{padding:0 var(--pad)}
+  .showcase-inner{display:grid;grid-template-columns:1.15fr .85fr;gap:0;align-items:stretch}
+  .showcase-photo{min-height:440px}
+  .showcase-photo img{width:100%;height:100%;object-fit:cover}
+  .showcase-copy{padding:70px 8% 70px 6%;color:#eaf0f3;display:flex;flex-direction:column;justify-content:center}
+  .showcase-copy .eyebrow{color:var(--amber)}
+  .showcase-copy h2{font-size:40px;font-weight:700;color:#fff;margin:10px 0 18px;line-height:1.05}
+  .showcase-copy p{font-family:var(--alt);font-size:16px;color:#bcccd5;margin-bottom:16px;line-height:1.6}
+  .showcase-copy .cta{margin-top:12px}
+
+  /* REVIEWS */
+  .reviews{background:var(--paper)}
+  .rgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .rcard{background:var(--paper-2);border:1px solid var(--line);border-radius:10px;padding:30px 28px;box-shadow:var(--sh-sm);display:flex;flex-direction:column}
+  .rcard .stars{color:var(--amber);letter-spacing:2px;font-size:15px;margin-bottom:14px}
+  .rcard p{font-family:var(--alt);font-size:16px;line-height:1.55;color:#2c353d;margin-bottom:18px;flex:1}
+  .rcard .who{font-family:var(--disp);font-size:15px;font-weight:600;letter-spacing:.6px;color:var(--slate);text-transform:uppercase}
+  .rcard .who span{display:block;font-family:var(--alt);font-size:12.5px;font-weight:500;letter-spacing:.3px;color:var(--muted);text-transform:none;margin-top:2px}
+  .review-foot{text-align:center;margin-top:38px;font-family:var(--alt);font-size:15px;color:var(--muted)}
+  .review-foot a{color:var(--steel);font-weight:600;border-bottom:1px solid var(--steel-light)}
+
+  /* STORY */
+  .story{background:var(--slate-2)}
+  .story-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:56px;align-items:center}
+  .story-photo{position:relative}
+  .story-photo .f{border-radius:12px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:4/3}
+  .story-photo .f img{width:100%;height:100%;object-fit:cover}
+  .story-photo .cap{position:absolute;bottom:-16px;left:-10px;background:var(--copper);color:#fff;font-family:var(--disp);font-size:14px;font-weight:600;letter-spacing:1px;text-transform:uppercase;padding:11px 20px;border-radius:5px;box-shadow:var(--sh-sm)}
+  .story .eyebrow{color:var(--amber)}
+  .story h2{font-size:44px;font-weight:700;color:#fff;margin:8px 0 18px}
+  .story p{font-family:var(--alt);color:#c0cad2;font-size:16.5px;margin-bottom:16px;line-height:1.65}
+  .story .sig{font-family:var(--disp);font-size:19px;font-weight:600;letter-spacing:1px;color:var(--amber);margin-top:8px;text-transform:uppercase}
+
+  /* CONTACT */
+  .contact{background:var(--paper);position:relative}
+  .contact-card{background:var(--slate);border-radius:16px;overflow:hidden;box-shadow:var(--sh);display:grid;grid-template-columns:1fr 1fr}
+  .contact-info{padding:56px 48px;color:#e9edf1}
+  .contact-info .eyebrow{color:var(--amber)}
+  .contact-info h2{font-size:42px;font-weight:700;color:#fff;margin:8px 0 12px;line-height:1.05}
+  .contact-info .lead{font-family:var(--alt);font-size:16px;color:#b6c0c9;margin-bottom:28px}
+  .contact-info .row{display:flex;gap:14px;align-items:flex-start;margin-bottom:18px;font-family:var(--alt);font-size:16px;color:#dce2e7}
+  .contact-info .row svg{width:22px;height:22px;color:var(--amber);flex:0 0 auto;margin-top:3px}
+  .contact-info .row b{font-family:var(--disp);font-weight:600;letter-spacing:.5px;color:#fff;display:block;font-size:16px}
+  .contact-info .row a:hover{color:var(--amber)}
+  .contact-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .contact-photo{position:relative;min-height:420px}
+  .contact-photo img{width:100%;height:100%;object-fit:cover}
+  .contact-photo .ov{position:absolute;left:0;bottom:0;right:0;padding:26px 28px;background:linear-gradient(0deg,rgba(15,20,25,.9),transparent);color:#fff;font-family:var(--disp);font-size:16px;letter-spacing:1px;text-transform:uppercase}
+  .contact-photo .ov span{display:block;font-family:var(--alt);font-size:13px;font-weight:500;letter-spacing:.3px;text-transform:none;color:#c9d2d9;margin-top:3px}
+
+  footer{background:var(--slate);color:#93a0aa;padding:56px 0 30px;text-align:center;border-top:3px solid var(--copper)}
+  footer .brand{justify-content:center;margin-bottom:16px}
+  footer .fn{font-family:var(--disp);font-size:24px;font-weight:600;letter-spacing:1.5px;color:#fff}
+  footer p{font-family:var(--alt);font-size:14px;line-height:1.9}
+  footer a{color:#cfd7dd}
+  footer .lic{font-family:var(--alt);font-size:13px;color:#7a8790;margin-top:8px;letter-spacing:.5px}
+  footer .note{margin-top:22px;font-size:12.5px;color:#67737c;border-top:1px solid var(--line-dark);padding-top:20px;font-family:var(--alt)}
+
+  @media(max-width:900px){
+    .nav-links a:not(.nav-cta){display:none}
+    .hero h1{font-size:44px}
+    .hero .wrap{padding-top:56px;padding-bottom:60px}
+    .trust .wrap{grid-template-columns:repeat(2,1fr);gap:24px 18px}
+    .svc-grid{grid-template-columns:1fr}
+    .why-grid,.rgrid{grid-template-columns:1fr}
+    .showcase-inner{grid-template-columns:1fr}
+    .showcase-photo{min-height:280px}
+    .showcase-copy{padding:48px var(--pad)}
+    .story-grid{grid-template-columns:1fr;gap:40px}
+    .contact-card{grid-template-columns:1fr}
+    .contact-info{padding:44px 28px}
+    .contact-photo{min-height:300px}
+    .sec-head h2{font-size:32px}section{padding:62px 0}
+    .story h2,.contact-info h2,.showcase-copy h2{font-size:32px}
+    .brand .bn{font-size:17px}
+  }
+  @media(max-width:400px){
+    .hero h1{font-size:37px}
+    .brand img{height:44px;width:44px}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="topbar">Family-owned in Portland · Licensed <b>CCB #217148</b> · Free estimates · <a href="tel:+19718042207">(971) 804-2207</a></div>
+
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Best Coast Roofing home">
+        <img src="img/logo.png" alt="Best Coast Roofing logo">
+        <span class="bn">Best Coast Roofing<small>Portland, Oregon</small></span>
+      </a>
+      <div class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why">Why Us</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#story">Our Story</a>
+        <a href="tel:+19718042207" class="btn nav-cta">Free Estimate</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg"><img src="img/troutdale-reroof.jpg" alt="Aerial view of a freshly installed architectural shingle roof on a Portland-area home"></div>
+  <div class="wrap">
+    <div class="hero-inner">
+      <div class="badge-row">
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg> Licensed · Bonded · Insured</span>
+        <span class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M2 12h20"/></svg> Family-Owned</span>
+      </div>
+      <span class="eyebrow">Portland Metro Roof Replacement &amp; Repair</span>
+      <h1>Roofing done<br>the <span class="c">right way.</span></h1>
+      <p class="tag">A family-owned Portland roofing company with 20 years of combined roofing and construction experience — and a real passion for customer service.</p>
+      <div class="hero-cta">
+        <a href="tel:+19718042207" class="btn"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg> Get a Free Estimate</a>
+        <a href="#services" class="btn btn-ghost">See Our Services</a>
+      </div>
+      <div class="hero-rating">
+        <span class="stars">★★★★★</span>
+        <span><b>5.0</b> on Yelp · &ldquo;a roofer you can count on&rdquo;</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="roofline" aria-hidden="true"></div>
+
+<!-- TRUST STRIP -->
+<div class="trust">
+  <div class="wrap">
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg><div><b>CCB #217148</b><span>Licensed · Bonded · Insured</span></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>20 Years</b><span>Combined experience</span></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg><div><b>Family-Owned</b><span>Local to Portland, OR</span></div></div>
+    <div class="t"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><div><b>Free Estimates</b><span>No-obligation quotes</span></div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What we do</span>
+      <h2>Roofing built for PNW weather</h2>
+      <p>From full replacements to quick repairs and custom gutters — we handle every kind of roof the Portland climate throws at us.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc">
+        <div class="ph"><img src="img/replace-options.jpg" alt="Standing-seam metal roof installed on a grey Portland home with a deck" loading="lazy" width="800" height="500"></div>
+        <div class="body">
+          <h3>Roof Replacement</h3>
+          <p>A new roof, done right. We install composition shingle, standing-seam metal, wood shake, and flat roofing systems — and walk you through the options that fit your home and budget.</p>
+          <div class="tags"><span>Composition Shingle</span><span>Metal</span><span>Wood Shake</span><span>Flat Roof</span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/repair.jpg" alt="Aerial view of a Portland bungalow mid roof-repair with a ladder in place" loading="lazy" width="800" height="500"></div>
+        <div class="body">
+          <h3>Roof Repair</h3>
+          <p>We catch small issues before they turn into large, expensive ones — leaks, damaged shingles, flashing, and chimney work. Emergency roof tarping is available to protect your home in the meantime.</p>
+          <div class="tags"><span>Leak Repair</span><span>Flashing</span><span>Emergency Tarping</span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/gutter-repair.jpg" alt="Best Coast Roofing crew replacing the fascia and gutter line on a Portland home" loading="lazy" width="800" height="500"></div>
+        <div class="body">
+          <h3>Gutter Installation</h3>
+          <p>Custom gutters sized and installed to move Oregon rain off your roof and away from your foundation — the finishing touch on a watertight home.</p>
+          <div class="tags"><span>Custom Gutters</span><span>Downspouts</span></div>
+        </div>
+      </div>
+      <div class="svc">
+        <div class="ph"><img src="img/shingle-imig.jpg" alt="Home with a crisp new black composition shingle roof installed by Best Coast Roofing" loading="lazy" width="800" height="500"></div>
+        <div class="body">
+          <h3>Skylights &amp; More</h3>
+          <p>Skylight installation and replacement, chimney caps, and re-roofs for garages, sheds, and additions. If it keeps the rain out, we do it — and we do it right.</p>
+          <div class="tags"><span>Skylights</span><span>Chimney Caps</span><span>Garage &amp; Shed Roofs</span></div>
+        </div>
+      </div>
+    </div>
+    <p class="svc-note">Serving <b>Portland, Gresham, Troutdale, Fairview, Milwaukie, Happy Valley, Oregon City, Lake Oswego, Clackamas, Beaverton, Tigard, Tualatin, Sherwood &amp; Newberg.</b></p>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="why" id="why">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Why homeowners choose us</span>
+      <h2>A roofer you can count on</h2>
+      <p>Best Coast Roofing is small, local, and hands-on — and it shows in every job.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V9l7-5 7 5v12M9 21v-6h6v6"/></svg></div>
+        <h3>Family-Owned &amp; Local</h3>
+        <p>Owner Cody Garrett runs the company alongside his wife Camille — Portland neighbors serving Portland neighbors, not a faceless franchise.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 6v6c0 5 3.4 8.6 8 10 4.6-1.4 8-5 8-10V6z"/><path d="m9 12 2 2 4-4"/></svg></div>
+        <h3>Licensed &amp; Insured</h3>
+        <p>Fully licensed, bonded, and insured under Oregon CCB #217148 — so you&rsquo;re protected from the first estimate to the final nail.</p>
+      </div>
+      <div class="why-card">
+        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="m9 15 2 2 4-4"/></svg></div>
+        <h3>Fair, Honest Quotes</h3>
+        <p>Customers tell us the quote was &ldquo;very fair for what needed to be done.&rdquo; We&rsquo;ll even give you a little roofing 101 so you know exactly what you&rsquo;re paying for.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase" style="padding:0" id="work">
+  <div class="showcase-inner">
+    <div class="showcase-photo"><img src="img/gresham-reroof.jpg" alt="Freshly shingled roof ridge with vents against a Pacific Northwest forest backdrop in Gresham" loading="lazy"></div>
+    <div class="showcase-copy">
+      <span class="eyebrow">Quality install, every time</span>
+      <h2>Attention to detail you can see from the street</h2>
+      <p>&ldquo;If you&rsquo;re after a quality install, great guys, and attention to details — then get them to do your roof!&rdquo; That&rsquo;s the standard we hold on every job, from a single ridge cap to a full tear-off.</p>
+      <p>Clean job sites, prompt crews, and workmanship that looks fantastic when we&rsquo;re done. Ready to see what your roof could look like?</p>
+      <div class="cta"><a href="tel:+19718042207" class="btn">Book Your Free Estimate</a></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">What the neighborhood says</span>
+      <h2>Rated 5.0 by Portland homeowners</h2>
+      <p>Real reviews from real customers across Portland, Gresham &amp; Troutdale.</p>
+    </div>
+    <div class="rgrid">
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;They did an amazing job. We also had them re-roof our shed and put new siding on it. All of the work is very professionally done and looks fantastic.&rdquo;</p>
+        <div class="who">Cheryl<span>Roof Replacement &amp; Gutters, Portland · via Best Coast Roofing</span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;They were so respectful, clean, prompt and efficient… I could not recommend this company more.&rdquo;</p>
+        <div class="who">Katherine<span>Roof Replacement, Troutdale · via Best Coast Roofing</span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Cody and his crew did an amazing job repairing our roof and even gave my husband and I a little roofing 101.&rdquo;</p>
+        <div class="who">Bobbi<span>Roof Repair, Gresham · via Best Coast Roofing</span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;Very professional and quick! I felt like the quote was very fair for what needed to be done.&rdquo;</p>
+        <div class="who">Michael<span>Roof Repair, Portland · via Best Coast Roofing</span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;A friend recommended Cody and I am incredibly happy with the results!&rdquo;</p>
+        <div class="who">Matthew<span>Roof Repair &amp; Gutters, NE Portland · via Best Coast Roofing</span></div>
+      </div>
+      <div class="rcard">
+        <div class="stars">★★★★★</div>
+        <p>&ldquo;If you&rsquo;re after a quality install, great guys and attention to details — then get them to do your roof!&rdquo;</p>
+        <div class="who">Simon<span>Shingle Re-roof, Gresham · via Best Coast Roofing</span></div>
+      </div>
+    </div>
+    <p class="review-foot">5.0★ rating on <a href="https://www.yelp.com/biz/best-coast-roofing-portland" target="_blank" rel="noopener">Yelp</a> · more testimonials at <a href="https://www.bestcoastroofing.com/roofing-reviews" target="_blank" rel="noopener">bestcoastroofing.com</a></p>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-photo">
+      <div class="f"><img src="img/about.jpg" alt="Cody and Camille Garrett with their daughter Ames, the family behind Best Coast Roofing" loading="lazy" width="800" height="600"></div>
+      <span class="cap">The Garrett Family</span>
+    </div>
+    <div>
+      <span class="eyebrow">Our story</span>
+      <h2>The family behind the roof</h2>
+      <p>Best Coast Roofing is owned and run by Cody Garrett, alongside his wife Camille and their daughter Ames. It&rsquo;s a genuinely local, family operation built on 20 years of combined experience in roofing and construction.</p>
+      <p>Cody started the company with one goal: roofing done the right way, backed by a real passion for customer service. That means honest quotes, clean job sites, and treating every home like it&rsquo;s in the family.</p>
+      <p>It&rsquo;s the kind of roofer neighbors recommend to neighbors — and the only one they&rsquo;d call again.</p>
+      <div class="sig">— Cody Garrett, Owner</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="contact-card">
+      <div class="contact-info">
+        <span class="eyebrow">Get in touch</span>
+        <h2>Get a free roofing estimate</h2>
+        <p class="lead">Tell us what your roof needs — we&rsquo;ll give you an honest, no-obligation quote.</p>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.5-1.1a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2z"/></svg><div><b>Call or text</b><a href="tel:+19718042207">(971) 804-2207</a></div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg><div><b>Email</b><a href="mailto:cody@bestcoastroofing.com">cody@bestcoastroofing.com</a></div></div>
+        <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6 7-11a7 7 0 0 0-14 0c0 5 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><div><b>Serving</b>Portland Metro &amp; the Greater Willamette Valley</div></div>
+        <div class="contact-cta">
+          <a href="tel:+19718042207" class="btn">Call for a Free Estimate</a>
+          <a href="mailto:cody@bestcoastroofing.com?subject=Free%20Roofing%20Estimate%20Request" class="btn btn-steel">Email Us</a>
+        </div>
+      </div>
+      <div class="contact-photo">
+        <img src="img/gutter.jpg" alt="Portland home with a freshly completed roof by Best Coast Roofing" loading="lazy">
+        <div class="ov">Roofing done the right way<span>Free, no-obligation estimates across the Portland metro</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="roofline" aria-hidden="true"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Best Coast Roofing home">
+      <img src="img/logo.png" alt="Best Coast Roofing logo">
+      <span class="fn">Best Coast Roofing</span>
+    </a>
+    <p><a href="tel:+19718042207">(971) 804-2207</a> · <a href="mailto:cody@bestcoastroofing.com">cody@bestcoastroofing.com</a><br>Family-owned roof replacement, repair &amp; gutters · Portland, OR</p>
+    <p class="lic">Licensed · Bonded · Insured — Oregon CCB #217148</p>
+    <p class="note">✦ This is a free redesign concept created for Best Coast Roofing by Rose City Sites, NE Portland ✦</p>
+  </div>
+</footer>
+
+</body>
+</html>
